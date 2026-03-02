@@ -1,29 +1,43 @@
-import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect, useState, useRef, useCallback } from 'react'
 import useTheme from '../hooks/useTheme'
 
 export default function ThemeSwitcher() {
   const { current, cycle, setById, presets } = useTheme()
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(() => {
+    try {
+      const params = new URLSearchParams(window.location.search)
+      if (params.has('theme')) {
+        const val = params.get('theme')
+        if (val && val !== 'panel' && val !== '') setById(val)
+        return true
+      }
+    } catch { /* SSR safety */ }
+    return false
+  })
   const [toast, setToast] = useState<string | null>(null)
+  const keyBuffer = useRef<string[]>([])
+  const bufferTimer = useRef<ReturnType<typeof setTimeout>>(undefined)
+
+  const toggle = useCallback(() => setVisible((v) => !v), [])
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      // Alt+Shift+K to toggle panel (avoids browser shortcut conflicts)
-      if (e.altKey && e.shiftKey && e.key === 'K') {
-        e.preventDefault()
-        setVisible((v) => !v)
-      }
-      if (e.altKey && e.shiftKey && e.key === 'ArrowRight') {
-        e.preventDefault()
-        cycle(1)
-      }
-      if (e.altKey && e.shiftKey && e.key === 'ArrowLeft') {
-        e.preventDefault()
-        cycle(-1)
-      }
       if (e.key === 'Escape' && visible) {
         setVisible(false)
+        return
+      }
+      if (visible) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); cycle(1) }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); cycle(-1) }
+        return
+      }
+      clearTimeout(bufferTimer.current)
+      keyBuffer.current.push(e.key.toLowerCase())
+      if (keyBuffer.current.length > 5) keyBuffer.current.shift()
+      bufferTimer.current = setTimeout(() => { keyBuffer.current = [] }, 1500)
+      if (keyBuffer.current.slice(-3).join('') === 'btx') {
+        keyBuffer.current = []
+        setVisible(true)
       }
     }
     window.addEventListener('keydown', handler)
@@ -32,93 +46,96 @@ export default function ThemeSwitcher() {
 
   useEffect(() => {
     setToast(current.id)
-    const t = setTimeout(() => setToast(null), 2000)
+    const t = setTimeout(() => setToast(null), 2500)
     return () => clearTimeout(t)
   }, [current])
 
   return (
     <>
+      {/* Hidden trigger: click the invisible dot at bottom-right corner */}
+      <button
+        onClick={toggle}
+        className="fixed bottom-3 right-3 w-3 h-3 rounded-full opacity-0 hover:opacity-30 z-[200] transition-opacity cursor-default"
+        style={{ backgroundColor: current.colors[400] }}
+        aria-hidden="true"
+        tabIndex={-1}
+      />
+
       {/* Toast notification */}
-      <AnimatePresence>
-        {toast && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] pointer-events-none"
-          >
-            <div className="px-4 py-2 rounded-lg bg-btx-700/95 backdrop-blur-md border border-btx-500/40 shadow-xl flex items-center gap-3">
-              <div
-                className="w-3 h-3 rounded-full border border-white/20"
-                style={{ backgroundColor: current.colors[900] }}
-              />
-              <span className="text-xs text-btx-100 font-mono">{current.id}</span>
-              <span className="text-xs text-btx-300">|</span>
-              <span className="text-xs text-btx-200">{current.label}</span>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {toast && (
+        <div
+          className="fixed bottom-6 left-1/2 z-[100] pointer-events-none transition-all duration-300"
+          style={{ transform: 'translateX(-50%)', opacity: toast ? 1 : 0 }}
+        >
+          <div className="px-4 py-2 rounded-lg border shadow-xl flex items-center gap-3"
+            style={{ backgroundColor: 'rgba(21,39,68,0.95)', borderColor: 'rgba(38,64,96,0.4)' }}>
+            <div className="w-3 h-3 rounded-full border border-white/20"
+              style={{ backgroundColor: current.colors[900] }} />
+            <span className="text-xs font-mono" style={{ color: '#c4d1e0' }}>{current.id}</span>
+            <span className="text-xs" style={{ color: '#546e8f' }}>|</span>
+            <span className="text-xs" style={{ color: '#8fa4bd' }}>{current.label}</span>
+          </div>
+        </div>
+      )}
 
       {/* Full panel */}
-      <AnimatePresence>
-        {visible && (
-          <motion.div
-            initial={{ opacity: 0, x: 300 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 300 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed top-20 right-4 z-[100] w-72 bg-btx-800/98 backdrop-blur-xl border border-btx-500/40 rounded-xl shadow-2xl overflow-hidden"
-          >
-            <div className="px-4 py-3 border-b border-btx-500/30 flex items-center justify-between">
-              <span className="text-xs font-semibold text-btx-100 uppercase tracking-wider">Theme</span>
+      {visible && (
+        <div
+          className="fixed top-20 right-4 z-[200] w-72 rounded-xl shadow-2xl overflow-hidden border"
+          style={{
+            backgroundColor: 'rgba(15,29,50,0.98)',
+            backdropFilter: 'blur(16px)',
+            borderColor: 'rgba(38,64,96,0.4)',
+          }}
+        >
+          <div className="px-4 py-3 flex items-center justify-between"
+            style={{ borderBottom: '1px solid rgba(38,64,96,0.3)' }}>
+            <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: '#c4d1e0' }}>Theme</span>
+            <button
+              onClick={() => setVisible(false)}
+              className="text-xs transition-colors hover:text-white"
+              style={{ color: '#546e8f' }}
+            >
+              ESC
+            </button>
+          </div>
+          <div className="p-3 space-y-1.5 max-h-[60vh] overflow-y-auto">
+            {presets.map((preset) => (
               <button
-                onClick={() => setVisible(false)}
-                className="text-btx-300 hover:text-btx-100 text-xs transition-colors"
+                key={preset.id}
+                onClick={() => setById(preset.id)}
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all"
+                style={{
+                  backgroundColor: current.id === preset.id ? 'rgba(0,212,170,0.1)' : 'transparent',
+                  border: current.id === preset.id ? '1px solid rgba(0,212,170,0.3)' : '1px solid transparent',
+                }}
               >
-                ESC
+                <div className="flex gap-0.5 shrink-0">
+                  {[preset.colors[900], preset.colors[700], preset.colors[500]].map((c, i) => (
+                    <div key={i} className="w-4 h-4 rounded-sm border border-white/10"
+                      style={{ backgroundColor: c }} />
+                  ))}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-xs font-medium truncate" style={{ color: '#edf1f7' }}>{preset.label}</div>
+                  <div className="font-mono" style={{ fontSize: '10px', color: '#546e8f' }}>{preset.id}</div>
+                </div>
+                {current.id === preset.id && (
+                  <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: '#00d4aa' }} />
+                )}
               </button>
+            ))}
+          </div>
+          <div className="px-4 py-2.5" style={{ borderTop: '1px solid rgba(38,64,96,0.3)', backgroundColor: 'rgba(21,39,68,0.3)' }}>
+            <div className="space-y-0.5" style={{ fontSize: '10px', color: '#546e8f' }}>
+              <div>Type <kbd style={{ color: '#8fa4bd' }}>btx</kbd> to open · click corner dot</div>
+              <div><kbd style={{ color: '#8fa4bd' }}>←/→ ↑/↓</kbd> cycle themes</div>
+              <div><kbd style={{ color: '#8fa4bd' }}>Esc</kbd> close panel</div>
+              <div>URL: <kbd style={{ color: '#8fa4bd' }}>?theme</kbd> or <kbd style={{ color: '#8fa4bd' }}>?theme=id</kbd></div>
             </div>
-            <div className="p-3 space-y-1.5 max-h-[60vh] overflow-y-auto">
-              {presets.map((preset) => (
-                <button
-                  key={preset.id}
-                  onClick={() => setById(preset.id)}
-                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all ${
-                    current.id === preset.id
-                      ? 'bg-accent/10 border border-accent/30'
-                      : 'hover:bg-btx-600/50 border border-transparent'
-                  }`}
-                >
-                  <div className="flex gap-0.5 shrink-0">
-                    {[preset.colors[900], preset.colors[700], preset.colors[500]].map((c, i) => (
-                      <div
-                        key={i}
-                        className="w-4 h-4 rounded-sm border border-white/10"
-                        style={{ backgroundColor: c }}
-                      />
-                    ))}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-xs font-medium text-btx-50 truncate">{preset.label}</div>
-                    <div className="text-[10px] font-mono text-btx-300">{preset.id}</div>
-                  </div>
-                  {current.id === preset.id && (
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                  )}
-                </button>
-              ))}
-            </div>
-            <div className="px-4 py-2.5 border-t border-btx-500/30 bg-btx-700/30">
-              <div className="text-[10px] text-btx-300 space-y-0.5">
-                <div><kbd className="text-btx-200">Alt+Shift+K</kbd> toggle panel</div>
-                <div><kbd className="text-btx-200">Alt+Shift+←/→</kbd> cycle themes</div>
-                <div><kbd className="text-btx-200">Esc</kbd> close panel</div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      )}
     </>
   )
 }
