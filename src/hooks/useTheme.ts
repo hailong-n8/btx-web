@@ -114,6 +114,38 @@ export const themePresets: ThemePreset[] = [
       50: '#edf0f5',
     },
   },
+  {
+    id: 'ice-light',
+    label: 'ICE Light',
+    colors: {
+      900: '#ffffff',
+      800: '#f5f7fa',
+      700: '#eaeff5',
+      600: '#dde3ec',
+      500: '#c5ccda',
+      400: '#97a3b6',
+      300: '#64748b',
+      200: '#3b4963',
+      100: '#1e2d45',
+      50: '#0a1628',
+    },
+  },
+  {
+    id: 'nix-light',
+    label: 'NIX Warm Light',
+    colors: {
+      900: '#fafbfd',
+      800: '#f1f3f7',
+      700: '#e5e8ef',
+      600: '#d5dae4',
+      500: '#bcc3d2',
+      400: '#8d96aa',
+      300: '#5c6780',
+      200: '#3a4560',
+      100: '#1f2b42',
+      50: '#0d1525',
+    },
+  },
 ]
 
 const STORAGE_KEY = 'btx-theme-id'

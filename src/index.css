@@ -19,6 +19,7 @@
   --color-accent-dark: #00a886;
   --color-accent-blue: #0ea5e9;
   --color-accent-cyan: #22d3ee;
+  --color-accent-fg: #0a1628;
 }
 
 html {
@@ -35,7 +36,7 @@ body {
 
 ::selection {
   background-color: var(--color-accent);
-  color: var(--color-btx-900);
+  color: var(--color-accent-fg);
 }
 
 ::-webkit-scrollbar {

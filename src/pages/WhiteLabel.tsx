@@ -233,7 +233,7 @@ export default function WhiteLabel() {
               </div>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-accent hover:bg-accent-light text-btx-900 font-semibold rounded-lg transition-all group"
+                className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-accent hover:bg-accent-light text-accent-fg font-semibold rounded-lg transition-all group"
               >
                 Discuss Your Requirements
                 <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />

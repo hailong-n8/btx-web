@@ -216,7 +216,7 @@ export default function Liquidity() {
               </div>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-light text-btx-900 font-semibold rounded-lg transition-all w-full justify-center group"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-light text-accent-fg font-semibold rounded-lg transition-all w-full justify-center group"
               >
                 Apply Now
                 <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />

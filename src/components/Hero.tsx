@@ -52,7 +52,7 @@ export default function Hero({
           )}
 
           <h1
-            className={`font-bold tracking-tight leading-tight text-white ${
+            className={`font-bold tracking-tight leading-tight text-btx-50 ${
               compact ? 'text-3xl lg:text-5xl' : 'text-4xl lg:text-6xl xl:text-7xl'
             }`}
           >
@@ -81,7 +81,7 @@ export default function Hero({
               {primaryCTA && (
                 <Link
                   to={primaryCTA.to}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-light text-btx-900 font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-accent/20 group"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-light text-accent-fg font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-accent/20 group"
                 >
                   {primaryCTA.label}
                   <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />

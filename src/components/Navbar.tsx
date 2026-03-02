@@ -73,7 +73,7 @@ export default function Navbar() {
             </Link>
             <Link
               to="/contact"
-              className="text-sm font-medium bg-accent hover:bg-accent-light text-btx-900 px-4 py-2 rounded-md transition-colors"
+              className="text-sm font-medium bg-accent hover:bg-accent-light text-accent-fg px-4 py-2 rounded-md transition-colors"
             >
               Get Started
             </Link>
@@ -113,7 +113,7 @@ export default function Navbar() {
               </Link>
               <Link
                 to="/contact"
-                className="text-center text-sm font-medium bg-accent text-btx-900 px-4 py-3 rounded-md"
+                className="text-center text-sm font-medium bg-accent text-accent-fg px-4 py-3 rounded-md"
               >
                 Get Started
               </Link>

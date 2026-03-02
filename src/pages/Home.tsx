@@ -109,7 +109,7 @@ export default function Home() {
               Market Infrastructure for Sports Exchanges
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]" style={{ color: '#ffffff' }}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] text-btx-50">
               The Infrastructure Layer
               <br />
               for Global Sports
@@ -135,7 +135,7 @@ export default function Home() {
             >
               <Link
                 to="/developers"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-accent hover:bg-accent-light text-btx-900 font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-accent/25 group"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-accent hover:bg-accent-light text-accent-fg font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-accent/25 group"
               >
                 Access the API
                 <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
