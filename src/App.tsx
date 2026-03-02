@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import PageLayout from './components/PageLayout'
+import ThemeSwitcher from './components/ThemeSwitcher'
 import Home from './pages/Home'
 import About from './pages/About'
 import Technology from './pages/Technology'
@@ -14,6 +15,7 @@ import Contact from './pages/Contact'
 export default function App() {
   return (
     <PageLayout>
+      <ThemeSwitcher />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
