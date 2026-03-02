@@ -21,6 +21,12 @@ export default function ThemeSwitcher() {
   const toggle = useCallback(() => setVisible((v) => !v), [])
 
   useEffect(() => {
+    const handler = () => toggle()
+    window.addEventListener('btx-toggle-theme', handler)
+    return () => window.removeEventListener('btx-toggle-theme', handler)
+  }, [toggle])
+
+  useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && visible) {
         setVisible(false)

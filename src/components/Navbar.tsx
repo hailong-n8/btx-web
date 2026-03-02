@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Palette, Globe, ChevronDown } from 'lucide-react'
 
 const navLinks = [
   { path: '/', label: 'Home' },
@@ -14,9 +14,18 @@ const navLinks = [
   { path: '/contact', label: 'Contact' },
 ]
 
+const languages = [
+  { code: 'en', label: 'English', short: 'EN' },
+  { code: 'zh', label: '中文', short: '中' },
+  { code: 'ja', label: '日本語', short: 'JP' },
+]
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [langOpen, setLangOpen] = useState(false)
+  const [currentLang, setCurrentLang] = useState(languages[0])
+  const langRef = useRef<HTMLDivElement>(null)
   const location = useLocation()
 
   useEffect(() => {
@@ -27,7 +36,22 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false)
+    setLangOpen(false)
   }, [location])
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [])
+
+  const toggleTheme = () => {
+    window.dispatchEvent(new CustomEvent('btx-toggle-theme'))
+  }
 
   return (
     <nav
@@ -39,7 +63,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2 group shrink-0">
             <div className="w-8 h-8 rounded-md bg-accent/10 border border-accent/30 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
               <span className="text-accent font-bold text-sm">BT</span>
             </div>
@@ -64,21 +88,74 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="https://github.com/btx-api/btx-api"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-btx-200 hover:text-btx-50 transition-colors px-4 py-2 rounded-md border border-btx-500/50 hover:border-btx-400"
-            >
-              API Docs
-            </a>
-            <Link
-              to="/contact"
-              className="text-sm font-medium bg-accent hover:bg-accent-light text-accent-fg px-4 py-2 rounded-md transition-colors"
-            >
-              Get Started
-            </Link>
+          <div className="hidden lg:flex items-center">
+            {/* Utility buttons: Theme & Language */}
+            <div className="flex items-center gap-1 mr-4 border-r border-btx-500/30 pr-4">
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-md text-btx-300 hover:text-btx-50 hover:bg-btx-600/40 transition-colors"
+                title="Theme"
+              >
+                <Palette size={16} />
+              </button>
+
+              <div ref={langRef} className="relative">
+                <button
+                  onClick={() => setLangOpen(!langOpen)}
+                  className="flex items-center gap-1 px-2 py-2 rounded-md text-btx-300 hover:text-btx-50 hover:bg-btx-600/40 transition-colors"
+                  title="Language"
+                >
+                  <Globe size={16} />
+                  <span className="text-xs font-medium">{currentLang.short}</span>
+                  <ChevronDown size={12} className={`transition-transform ${langOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {langOpen && (
+                  <div
+                    className="absolute right-0 top-full mt-1 w-36 rounded-lg shadow-xl border overflow-hidden"
+                    style={{
+                      backgroundColor: 'rgba(15,29,50,0.98)',
+                      backdropFilter: 'blur(16px)',
+                      borderColor: 'rgba(38,64,96,0.4)',
+                    }}
+                  >
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => { setCurrentLang(lang); setLangOpen(false) }}
+                        className="w-full flex items-center gap-2 px-3 py-2 text-xs transition-colors hover:bg-white/5"
+                        style={{
+                          color: currentLang.code === lang.code ? '#00d4aa' : '#8fa4bd',
+                        }}
+                      >
+                        <span className="font-medium w-6">{lang.short}</span>
+                        <span>{lang.label}</span>
+                        {currentLang.code === lang.code && (
+                          <span className="ml-auto w-1.5 h-1.5 rounded-full bg-accent" />
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* CTA buttons */}
+            <div className="flex items-center gap-3">
+              <a
+                href="https://github.com/btx-api/btx-api"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-btx-200 hover:text-btx-50 transition-colors px-4 py-2 rounded-md border border-btx-500/50 hover:border-btx-400"
+              >
+                API Docs
+              </a>
+              <Link
+                to="/contact"
+                className="text-sm font-medium bg-accent hover:bg-accent-light text-accent-fg px-4 py-2 rounded-md transition-colors"
+              >
+                Get Started
+              </Link>
+            </div>
           </div>
 
           <button
@@ -90,6 +167,7 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-btx-800/98 backdrop-blur-md border-t border-btx-500/30">
           <div className="px-4 py-4 space-y-1">
@@ -106,7 +184,33 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <div className="pt-4 flex flex-col gap-2 border-t border-btx-500/30 mt-4">
+
+            {/* Mobile utility row */}
+            <div className="flex items-center gap-2 px-4 py-3 border-t border-btx-500/30 mt-3 pt-4">
+              <button
+                onClick={toggleTheme}
+                className="flex items-center gap-2 px-3 py-2 rounded-md text-btx-200 hover:text-btx-50 hover:bg-btx-600/40 transition-colors text-sm"
+              >
+                <Palette size={16} />
+                Theme
+              </button>
+              <div className="w-px h-5 bg-btx-500/30" />
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => setCurrentLang(lang)}
+                  className={`px-2 py-1.5 rounded text-xs font-medium transition-colors ${
+                    currentLang.code === lang.code
+                      ? 'text-accent bg-accent/10'
+                      : 'text-btx-300 hover:text-btx-50'
+                  }`}
+                >
+                  {lang.short}
+                </button>
+              ))}
+            </div>
+
+            <div className="flex flex-col gap-2 border-t border-btx-500/30 pt-3 mt-1">
               <a
                 href="https://github.com/btx-api/btx-api"
                 target="_blank"
