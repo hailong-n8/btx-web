@@ -86,75 +86,69 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="w-px h-5 bg-btx-500/30 mx-1" />
+            <a
+              href="https://github.com/btx-api/btx-api"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-2 text-sm font-medium rounded-md transition-colors text-btx-200 hover:text-btx-50 hover:bg-btx-600/50"
+            >
+              API Docs
+            </a>
+            <Link
+              to="/contact"
+              className="px-3 py-2 text-sm font-medium rounded-md transition-colors bg-accent hover:bg-accent-light text-accent-fg"
+            >
+              Get Started
+            </Link>
           </div>
 
-          <div className="hidden lg:flex items-center">
-            {/* Utility buttons: Theme & Language */}
-            <div className="flex items-center gap-1 mr-4 border-r border-btx-500/30 pr-4">
+          <div className="hidden lg:flex items-center gap-1">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-md text-btx-300 hover:text-btx-50 hover:bg-btx-600/40 transition-colors"
+              title="Theme"
+            >
+              <Palette size={16} />
+            </button>
+
+            <div ref={langRef} className="relative">
               <button
-                onClick={toggleTheme}
-                className="p-2 rounded-md text-btx-300 hover:text-btx-50 hover:bg-btx-600/40 transition-colors"
-                title="Theme"
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-1 px-2 py-2 rounded-md text-btx-300 hover:text-btx-50 hover:bg-btx-600/40 transition-colors"
+                title="Language"
               >
-                <Palette size={16} />
+                <Globe size={16} />
+                <span className="text-xs font-medium">{currentLang.short}</span>
+                <ChevronDown size={12} className={`transition-transform ${langOpen ? 'rotate-180' : ''}`} />
               </button>
-
-              <div ref={langRef} className="relative">
-                <button
-                  onClick={() => setLangOpen(!langOpen)}
-                  className="flex items-center gap-1 px-2 py-2 rounded-md text-btx-300 hover:text-btx-50 hover:bg-btx-600/40 transition-colors"
-                  title="Language"
+              {langOpen && (
+                <div
+                  className="absolute right-0 top-full mt-1 w-36 rounded-lg shadow-xl border overflow-hidden"
+                  style={{
+                    backgroundColor: 'rgba(15,29,50,0.98)',
+                    backdropFilter: 'blur(16px)',
+                    borderColor: 'rgba(38,64,96,0.4)',
+                  }}
                 >
-                  <Globe size={16} />
-                  <span className="text-xs font-medium">{currentLang.short}</span>
-                  <ChevronDown size={12} className={`transition-transform ${langOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {langOpen && (
-                  <div
-                    className="absolute right-0 top-full mt-1 w-36 rounded-lg shadow-xl border overflow-hidden"
-                    style={{
-                      backgroundColor: 'rgba(15,29,50,0.98)',
-                      backdropFilter: 'blur(16px)',
-                      borderColor: 'rgba(38,64,96,0.4)',
-                    }}
-                  >
-                    {languages.map((lang) => (
-                      <button
-                        key={lang.code}
-                        onClick={() => { setCurrentLang(lang); setLangOpen(false) }}
-                        className="w-full flex items-center gap-2 px-3 py-2 text-xs transition-colors hover:bg-white/5"
-                        style={{
-                          color: currentLang.code === lang.code ? '#00d4aa' : '#8fa4bd',
-                        }}
-                      >
-                        <span className="font-medium w-6">{lang.short}</span>
-                        <span>{lang.label}</span>
-                        {currentLang.code === lang.code && (
-                          <span className="ml-auto w-1.5 h-1.5 rounded-full bg-accent" />
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* CTA buttons */}
-            <div className="flex items-center gap-3">
-              <a
-                href="https://github.com/btx-api/btx-api"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium text-btx-200 hover:text-btx-50 transition-colors px-4 py-2 rounded-md border border-btx-500/50 hover:border-btx-400"
-              >
-                API Docs
-              </a>
-              <Link
-                to="/contact"
-                className="text-sm font-medium bg-accent hover:bg-accent-light text-accent-fg px-4 py-2 rounded-md transition-colors"
-              >
-                Get Started
-              </Link>
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => { setCurrentLang(lang); setLangOpen(false) }}
+                      className="w-full flex items-center gap-2 px-3 py-2 text-xs transition-colors hover:bg-white/5"
+                      style={{
+                        color: currentLang.code === lang.code ? '#00d4aa' : '#8fa4bd',
+                      }}
+                    >
+                      <span className="font-medium w-6">{lang.short}</span>
+                      <span>{lang.label}</span>
+                      {currentLang.code === lang.code && (
+                        <span className="ml-auto w-1.5 h-1.5 rounded-full bg-accent" />
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
