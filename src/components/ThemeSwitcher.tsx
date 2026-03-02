@@ -9,22 +9,26 @@ export default function ThemeSwitcher() {
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.shiftKey && e.key === 'T') {
+      // Alt+Shift+K to toggle panel (avoids browser shortcut conflicts)
+      if (e.altKey && e.shiftKey && e.key === 'K') {
         e.preventDefault()
         setVisible((v) => !v)
       }
-      if (e.ctrlKey && e.shiftKey && e.key === 'ArrowRight') {
+      if (e.altKey && e.shiftKey && e.key === 'ArrowRight') {
         e.preventDefault()
         cycle(1)
       }
-      if (e.ctrlKey && e.shiftKey && e.key === 'ArrowLeft') {
+      if (e.altKey && e.shiftKey && e.key === 'ArrowLeft') {
         e.preventDefault()
         cycle(-1)
+      }
+      if (e.key === 'Escape' && visible) {
+        setVisible(false)
       }
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
-  }, [cycle])
+  }, [cycle, visible])
 
   useEffect(() => {
     setToast(current.id)
@@ -107,8 +111,9 @@ export default function ThemeSwitcher() {
             </div>
             <div className="px-4 py-2.5 border-t border-btx-500/30 bg-btx-700/30">
               <div className="text-[10px] text-btx-300 space-y-0.5">
-                <div><kbd className="text-btx-200">Ctrl+Shift+T</kbd> toggle panel</div>
-                <div><kbd className="text-btx-200">Ctrl+Shift+←/→</kbd> cycle themes</div>
+                <div><kbd className="text-btx-200">Alt+Shift+K</kbd> toggle panel</div>
+                <div><kbd className="text-btx-200">Alt+Shift+←/→</kbd> cycle themes</div>
+                <div><kbd className="text-btx-200">Esc</kbd> close panel</div>
               </div>
             </div>
           </motion.div>
