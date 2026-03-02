@@ -65,12 +65,14 @@ export default function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Link
-              to="/developers"
+            <a
+              href="https://github.com/btx-api/btx-api"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm font-medium text-btx-200 hover:text-btx-50 transition-colors px-4 py-2 rounded-md border border-btx-500/50 hover:border-btx-400"
             >
               API Docs
-            </Link>
+            </a>
             <Link
               to="/contact"
               className="text-sm font-medium bg-accent hover:bg-accent-light text-accent-fg px-4 py-2 rounded-md transition-colors"
@@ -105,12 +107,14 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="pt-4 flex flex-col gap-2 border-t border-btx-500/30 mt-4">
-              <Link
-                to="/developers"
+              <a
+                href="https://github.com/btx-api/btx-api"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-center text-sm font-medium text-btx-200 px-4 py-3 rounded-md border border-btx-500/50"
               >
                 API Docs
-              </Link>
+              </a>
               <Link
                 to="/contact"
                 className="text-center text-sm font-medium bg-accent text-accent-fg px-4 py-3 rounded-md"
