@@ -1,36 +1,50 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Palette, Globe, ChevronDown } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import useTheme from '../hooks/useTheme'
 
-const navLinks = [
-  { path: '/', label: 'Home' },
-  { path: '/technology', label: 'Technology' },
-  { path: '/liquidity', label: 'Liquidity' },
-  { path: '/white-label', label: 'White Label' },
-  { path: '/markets', label: 'Markets' },
-  { path: '/developers', label: 'Developers' },
-  { path: '/compliance', label: 'Compliance' },
-  { path: '/about', label: 'About' },
-  { path: '/contact', label: 'Contact' },
+const navLinkKeys = [
+  { path: '/', key: 'nav.home' },
+  { path: '/technology', key: 'nav.technology' },
+  { path: '/liquidity', key: 'nav.liquidity' },
+  { path: '/white-label', key: 'nav.whiteLabel' },
+  { path: '/markets', key: 'nav.markets' },
+  { path: '/developers', key: 'nav.developers' },
+  { path: '/compliance', key: 'nav.compliance' },
+  { path: '/about', key: 'nav.about' },
+  { path: '/contact', key: 'nav.contact' },
 ]
 
 const languages = [
   { code: 'en', label: 'English', short: 'EN' },
-  { code: 'zh', label: '中文', short: '中' },
-  { code: 'ja', label: '日本語', short: 'JP' },
+  { code: 'zh-CN', label: '简体中文', short: '简' },
+  { code: 'zh-TW', label: '繁体中文', short: '繁' },
+  { code: 'es', label: 'Spanish', short: 'ES' },
+  { code: 'pt', label: 'Portuguese', short: 'PT' },
+  { code: 'fr', label: 'French', short: 'FR' },
+  { code: 'hi', label: 'Hindi', short: 'HI' },
+  { code: 'ja', label: 'Japanese', short: 'JA' },
+  { code: 'ar', label: 'Arabic', short: 'AR' },
 ]
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const [themeOpen, setThemeOpen] = useState(false)
-  const [currentLang, setCurrentLang] = useState(languages[0])
   const langRef = useRef<HTMLDivElement>(null)
   const themeRef = useRef<HTMLDivElement>(null)
   const location = useLocation()
   const { current, setById, presets } = useTheme()
+
+  const currentLang = languages.find((l) => l.code === i18n.language || i18n.language?.startsWith(l.code + '-')) ?? languages[0]
+
+  const setLanguage = (code: string) => {
+    i18n.changeLanguage(code)
+    setLangOpen(false)
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -86,7 +100,7 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
+            {navLinkKeys.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -96,7 +110,7 @@ export default function Navbar() {
                     : 'text-btx-200 hover:text-btx-50 hover:bg-btx-600/50'
                 }`}
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             ))}
             <div className="w-px h-5 bg-btx-500/30 mx-1" />
@@ -106,13 +120,13 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="px-3 py-2 text-sm font-medium rounded-md transition-colors text-btx-200 hover:text-btx-50 hover:bg-btx-600/50"
             >
-              API Docs
+              {t('nav.apiDocs')}
             </a>
             <Link
               to="/contact"
               className="px-3 py-2 text-sm font-medium rounded-md transition-colors bg-accent hover:bg-accent-light text-accent-fg"
             >
-              Get Started
+              {t('nav.getStarted')}
             </Link>
           </div>
 
@@ -173,22 +187,22 @@ export default function Navbar() {
               </button>
               {langOpen && (
                 <div
-                  className="absolute right-0 top-full mt-1 w-36 rounded-lg shadow-xl border overflow-hidden"
+                  className="absolute right-0 top-full mt-1 w-44 rounded-lg shadow-xl border overflow-hidden"
                   style={dropdownStyle}
                 >
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
-                      onClick={() => { setCurrentLang(lang); setLangOpen(false) }}
-                      className="w-full flex items-center gap-2 px-3 py-2 text-xs transition-colors hover:bg-white/5"
+                      onClick={() => setLanguage(lang.code)}
+                      className="w-full flex items-center gap-2 px-3 py-2 text-xs transition-colors hover:bg-white/5 text-left"
                       style={{
                         color: currentLang.code === lang.code ? '#00d4aa' : '#8fa4bd',
                       }}
                     >
-                      <span className="font-medium w-6">{lang.short}</span>
-                      <span>{lang.label}</span>
+                      <span className="font-medium w-6 shrink-0">{lang.short}</span>
+                      <span className="truncate">{lang.label}</span>
                       {currentLang.code === lang.code && (
-                        <span className="ml-auto w-1.5 h-1.5 rounded-full bg-accent" />
+                        <span className="ml-auto w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
                       )}
                     </button>
                   ))}
@@ -210,7 +224,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden bg-btx-800/98 backdrop-blur-md border-t border-btx-500/30">
           <div className="px-4 py-4 space-y-1">
-            {navLinks.map((link) => (
+            {navLinkKeys.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -220,12 +234,12 @@ export default function Navbar() {
                     : 'text-btx-200 hover:text-btx-50 hover:bg-btx-600/50'
                 }`}
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             ))}
 
             {/* Mobile utility row */}
-            <div className="flex items-center gap-2 px-4 py-3 border-t border-btx-500/30 mt-3 pt-4">
+            <div className="flex items-center gap-2 px-4 py-3 border-t border-btx-500/30 mt-3 pt-4 flex-wrap">
               <button
                 onClick={() => setThemeOpen(!themeOpen)}
                 className="flex items-center gap-2 px-3 py-2 rounded-md text-btx-200 hover:text-btx-50 hover:bg-btx-600/40 transition-colors text-sm"
@@ -237,7 +251,7 @@ export default function Navbar() {
               {languages.map((lang) => (
                 <button
                   key={lang.code}
-                  onClick={() => setCurrentLang(lang)}
+                  onClick={() => setLanguage(lang.code)}
                   className={`px-2 py-1.5 rounded text-xs font-medium transition-colors ${
                     currentLang.code === lang.code
                       ? 'text-accent bg-accent/10'
@@ -256,13 +270,13 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="text-center text-sm font-medium text-btx-200 px-4 py-3 rounded-md border border-btx-500/50"
               >
-                API Docs
+                {t('nav.apiDocs')}
               </a>
               <Link
                 to="/contact"
                 className="text-center text-sm font-medium bg-accent text-accent-fg px-4 py-3 rounded-md"
               >
-                Get Started
+                {t('nav.getStarted')}
               </Link>
             </div>
           </div>
