@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Palette, Globe, ChevronDown } from 'lucide-react'
+import useTheme from '../hooks/useTheme'
 
 const navLinks = [
   { path: '/', label: 'Home' },
@@ -24,9 +25,12 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
+  const [themeOpen, setThemeOpen] = useState(false)
   const [currentLang, setCurrentLang] = useState(languages[0])
   const langRef = useRef<HTMLDivElement>(null)
+  const themeRef = useRef<HTMLDivElement>(null)
   const location = useLocation()
+  const { current, setById, presets } = useTheme()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -37,20 +41,29 @@ export default function Navbar() {
   useEffect(() => {
     setMobileOpen(false)
     setLangOpen(false)
+    setThemeOpen(false)
   }, [location])
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (langRef.current && !langRef.current.contains(e.target as Node)) {
-        setLangOpen(false)
-      }
+      const target = e.target as Node
+      if (langRef.current && !langRef.current.contains(target)) setLangOpen(false)
+      if (themeRef.current && !themeRef.current.contains(target)) setThemeOpen(false)
     }
     document.addEventListener('mousedown', handler)
     return () => document.removeEventListener('mousedown', handler)
   }, [])
 
-  const toggleTheme = () => {
-    window.dispatchEvent(new CustomEvent('btx-toggle-theme'))
+  useEffect(() => {
+    const handler = () => setThemeOpen((v) => !v)
+    window.addEventListener('btx-toggle-theme', handler)
+    return () => window.removeEventListener('btx-toggle-theme', handler)
+  }, [])
+
+  const dropdownStyle = {
+    backgroundColor: 'rgba(15,29,50,0.98)',
+    backdropFilter: 'blur(16px)',
+    borderColor: 'rgba(38,64,96,0.4)',
   }
 
   return (
@@ -104,14 +117,50 @@ export default function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-1">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-md text-btx-300 hover:text-btx-50 hover:bg-btx-600/40 transition-colors"
-              title="Theme"
-            >
-              <Palette size={16} />
-            </button>
+            {/* Theme dropdown */}
+            <div ref={themeRef} className="relative">
+              <button
+                onClick={() => setThemeOpen(!themeOpen)}
+                className="p-2 rounded-md text-btx-300 hover:text-btx-50 hover:bg-btx-600/40 transition-colors"
+                title="Theme"
+              >
+                <Palette size={16} />
+              </button>
+              {themeOpen && (
+                <div
+                  className="absolute right-0 top-full mt-1 w-52 rounded-lg shadow-xl border overflow-hidden"
+                  style={dropdownStyle}
+                >
+                  <div className="py-1.5 max-h-[70vh] overflow-y-auto">
+                    {presets.map((preset) => (
+                      <button
+                        key={preset.id}
+                        onClick={() => { setById(preset.id); setThemeOpen(false) }}
+                        className="w-full flex items-center gap-2.5 px-3 py-2 text-left transition-colors hover:bg-white/5"
+                        style={{
+                          backgroundColor: current.id === preset.id ? 'rgba(0,212,170,0.08)' : undefined,
+                        }}
+                      >
+                        <div className="flex gap-0.5 shrink-0">
+                          {[preset.colors[900], preset.colors[700], preset.colors[500]].map((c, i) => (
+                            <div key={i} className="w-3 h-3 rounded-sm border border-white/10"
+                              style={{ backgroundColor: c }} />
+                          ))}
+                        </div>
+                        <span className="text-xs font-medium truncate" style={{ color: current.id === preset.id ? '#00d4aa' : '#c4d1e0' }}>
+                          {preset.label}
+                        </span>
+                        {current.id === preset.id && (
+                          <span className="ml-auto w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: '#00d4aa' }} />
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
 
+            {/* Language dropdown */}
             <div ref={langRef} className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
@@ -125,11 +174,7 @@ export default function Navbar() {
               {langOpen && (
                 <div
                   className="absolute right-0 top-full mt-1 w-36 rounded-lg shadow-xl border overflow-hidden"
-                  style={{
-                    backgroundColor: 'rgba(15,29,50,0.98)',
-                    backdropFilter: 'blur(16px)',
-                    borderColor: 'rgba(38,64,96,0.4)',
-                  }}
+                  style={dropdownStyle}
                 >
                   {languages.map((lang) => (
                     <button
@@ -182,7 +227,7 @@ export default function Navbar() {
             {/* Mobile utility row */}
             <div className="flex items-center gap-2 px-4 py-3 border-t border-btx-500/30 mt-3 pt-4">
               <button
-                onClick={toggleTheme}
+                onClick={() => setThemeOpen(!themeOpen)}
                 className="flex items-center gap-2 px-3 py-2 rounded-md text-btx-200 hover:text-btx-50 hover:bg-btx-600/40 transition-colors text-sm"
               >
                 <Palette size={16} />
