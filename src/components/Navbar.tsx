@@ -9,7 +9,7 @@ const navLinkKeys = [
   { path: '/', key: 'nav.home' },
   { path: '/technology', key: 'nav.technology' },
   { path: '/liquidity', key: 'nav.liquidity' },
-  { path: '/white-label', key: 'nav.whiteLabel', comingSoon: true },
+  { path: '/white-label', key: 'nav.whiteLabel' },
   { path: '/markets', key: 'nav.markets' },
   { path: '/developers', key: 'nav.developers' },
   { path: '/compliance', key: 'nav.compliance' },
