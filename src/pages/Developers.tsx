@@ -15,6 +15,7 @@ import {
 import Hero from '../components/Hero'
 import SectionHeader from '../components/SectionHeader'
 import CTASection from '../components/CTASection'
+import ComingSoonBadge from '../components/ComingSoonBadge'
 import useDocumentTitle from '../hooks/useDocumentTitle'
 
 const apiFeatures = [
@@ -149,12 +150,6 @@ export default function Developers() {
                     : 'border-btx-500/30 bg-btx-700/40 hover:border-accent/20'
                 }`}
               >
-                {feature.comingSoon && (
-                  <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[9px] text-btx-400 bg-btx-700/60 border border-btx-500/30">
-                    <span className="w-1 h-1 rounded-full bg-btx-400 shrink-0" />
-                    coming soon
-                  </span>
-                )}
                 <div className={`w-10 h-10 rounded-lg border flex items-center justify-center mb-4 transition-colors ${
                   feature.comingSoon
                     ? 'bg-btx-600/20 border-btx-500/20'
@@ -162,7 +157,10 @@ export default function Developers() {
                 }`}>
                   <feature.icon className={feature.comingSoon ? 'text-btx-400' : 'text-accent'} size={20} />
                 </div>
-                <h3 className="font-semibold text-btx-50 mb-2">{feature.title}</h3>
+                <div className="flex items-center gap-1.5 mb-2">
+                  <h3 className="font-semibold text-btx-50">{feature.title}</h3>
+                  {feature.comingSoon && <ComingSoonBadge />}
+                </div>
                 <p className="text-sm text-btx-200 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
@@ -253,10 +251,7 @@ export default function Developers() {
                       {cap.comingSoon && cap.comingSoon.map((item) => (
                         <span key={item} className="flex items-center gap-1">
                           <span className="text-sm text-btx-400 font-mono">+ {item}</span>
-                          <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[9px] text-btx-400 bg-btx-700/60 border border-btx-500/30">
-                            <span className="w-1 h-1 rounded-full bg-btx-400 shrink-0" />
-                            soon
-                          </span>
+                          <ComingSoonBadge />
                         </span>
                       ))}
                     </div>

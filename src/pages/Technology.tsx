@@ -17,6 +17,7 @@ import Hero from '../components/Hero'
 import SectionHeader from '../components/SectionHeader'
 import FeatureCard from '../components/FeatureCard'
 import CTASection from '../components/CTASection'
+import ComingSoonBadge from '../components/ComingSoonBadge'
 import useDocumentTitle from '../hooks/useDocumentTitle'
 
 const engineFeatures = [
@@ -124,19 +125,12 @@ export default function Technology() {
       {/* Risk & Profiling */}
       <section className="py-24 bg-btx-800/30 border-y border-btx-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-start gap-3">
-            <div className="flex-1">
-              <SectionHeader
-                label="Risk & Profiling Engine"
-                title="Intelligent Risk Management"
-                subtitle="Exposure controls, customer profiling, and automated hedging in one system."
-              />
-            </div>
-            <span className="mt-1 shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] text-btx-400 bg-btx-700/60 border border-btx-500/30">
-              <span className="w-1 h-1 rounded-full bg-btx-400" />
-              coming soon
-            </span>
-          </div>
+          <SectionHeader
+            label="Risk & Profiling Engine"
+            title="Intelligent Risk Management"
+            subtitle="Exposure controls, customer profiling, and automated hedging in one system."
+            badge={<ComingSoonBadge />}
+          />
           <div className="mt-14 grid sm:grid-cols-2 gap-6">
             {riskFeatures.map((f, i) => (
               <FeatureCard key={f.title} {...f} index={i} />
