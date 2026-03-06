@@ -21,17 +21,17 @@ const feeFeatures = [
   {
     icon: Percent,
     title: 'Transparent Fee Model',
-    description: 'Clear maker/taker fee structure with no hidden costs. Competitive rates designed for professional volume.',
+    description: 'No hidden costs. Competitive rates designed for professional volume.',
   },
   {
     icon: BarChart3,
     title: 'Volume-Based Tiers',
-    description: 'Progressive fee reduction as monthly volumes increase. Rewarding sustained market participation.',
+    description: 'Progressive fee reduction as monthly volumes increase.',
   },
   {
     icon: Award,
     title: 'Incentive Programs',
-    description: 'Performance-based fee rebates and network participation incentives for qualifying liquidity providers.',
+    description: 'Fee rebates and participation incentives for qualifying providers.',
   },
 ]
 
@@ -39,17 +39,17 @@ const infraFeatures = [
   {
     icon: Server,
     title: 'Co-Location Ready',
-    description: 'Low-latency connectivity options for firms requiring the fastest possible execution and market data delivery.',
+    description: 'Low-latency connectivity for fastest execution and data delivery.',
   },
   {
     icon: Timer,
     title: 'Latency Benchmarks',
-    description: 'Sub-5ms matching engine latency with consistent performance under high-volume conditions.',
+    description: 'Sub-5ms matching with consistent performance under high volume.',
   },
   {
     icon: ListOrdered,
     title: 'Advanced Order Types',
-    description: 'Limit, market, cancel-and-replace, and atomic multi-leg operations designed for algorithmic strategies.',
+    description: 'Limit, market, cancel-and-replace, and atomic multi-leg operations.',
   },
 ]
 
@@ -68,7 +68,7 @@ export default function Liquidity() {
         badge="Liquidity & Market Making"
         title="Built for Professional "
         titleAccent="Liquidity Providers"
-        subtitle="Deep order books, transparent fee structures, and performance-grade infrastructure designed for professional market makers and institutional liquidity providers."
+        subtitle="Deep order books, transparent fees, and performance infrastructure for professional market makers."
         primaryCTA={{ label: 'Apply as Liquidity Partner', to: '/contact' }}
         secondaryCTA={{ label: 'View API Docs', to: '/developers' }}
       />
@@ -79,7 +79,7 @@ export default function Liquidity() {
           <SectionHeader
             label="Fee Model"
             title="Competitive & Transparent Pricing"
-            subtitle="A clear maker/taker fee model with volume-based tiers and performance incentives."
+            subtitle="Clear maker/taker fees with volume tiers and performance incentives."
           />
           <div className="mt-14 grid sm:grid-cols-3 gap-6">
             {feeFeatures.map((f, i) => (
@@ -95,7 +95,7 @@ export default function Liquidity() {
           <SectionHeader
             label="Volume Tiers"
             title="Fee Schedule"
-            subtitle="Progressive fee reduction rewards sustained trading activity."
+            subtitle="Higher volumes unlock lower fees."
             center
           />
           <motion.div
@@ -140,7 +140,7 @@ export default function Liquidity() {
           <SectionHeader
             label="Infrastructure"
             title="Performance-Grade Trading Infrastructure"
-            subtitle="Purpose-built for algorithmic trading, market making, and high-frequency strategies."
+            subtitle="Built for algorithmic trading, market making, and high-frequency strategies."
           />
           <div className="mt-14 grid sm:grid-cols-3 gap-6">
             {infraFeatures.map((f, i) => (
@@ -158,24 +158,24 @@ export default function Liquidity() {
               <SectionHeader
                 label="Incentive Programs"
                 title="Rewarding Market Excellence"
-                subtitle="Structured incentive programs for liquidity providers who meet performance benchmarks and contribute to market quality."
+                subtitle="Structured rewards for providers meeting performance benchmarks."
               />
               <div className="mt-8 space-y-6">
                 {[
                   {
                     icon: Target,
                     title: 'Performance Rebates',
-                    desc: 'Earn fee rebates based on quoting quality, uptime, and spread tightness metrics.',
+                    desc: 'Fee rebates based on quoting quality, uptime, and spread metrics.',
                   },
                   {
                     icon: TrendingUp,
                     title: 'Volume Incentives',
-                    desc: 'Additional rewards for consistent monthly volume targets across priority markets.',
+                    desc: 'Additional rewards for consistent monthly volume targets.',
                   },
                   {
                     icon: Award,
                     title: 'Network Participation',
-                    desc: 'Strategic equity participation programs for qualifying infrastructure partners.',
+                    desc: 'Equity participation for qualifying infrastructure partners.',
                   },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
@@ -199,7 +199,7 @@ export default function Liquidity() {
             >
               <h3 className="text-xl font-bold text-btx-50 mb-4">Become a Liquidity Partner</h3>
               <p className="text-sm text-btx-200 leading-relaxed mb-6">
-                We're seeking professional market makers and institutional liquidity providers to join our network. Partners gain access to preferential fee structures, dedicated support, and co-location options.
+                Join our network for preferential fees, dedicated support, and co-location options.
               </p>
               <div className="space-y-3 mb-6">
                 {[
@@ -228,7 +228,7 @@ export default function Liquidity() {
 
       <CTASection
         title="Start Providing Liquidity"
-        subtitle="Connect with our partnerships team to discuss fee structures, technical requirements, and onboarding."
+        subtitle="Discuss fee structures, technical requirements, and onboarding with our partnerships team."
         primaryCTA={{ label: 'Contact Partnerships', to: '/contact' }}
         secondaryCTA={{ label: 'Explore Technology', to: '/technology' }}
       />

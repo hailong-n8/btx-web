@@ -21,26 +21,22 @@ const compliancePillars = [
   {
     icon: Scale,
     title: 'Jurisdictional Structure',
-    description:
-      'BTX operates within a carefully structured regulatory framework designed for multi-jurisdictional deployment. Our architecture supports localised compliance requirements while maintaining global operational standards.',
+    description: 'Multi-jurisdictional framework with localised compliance and global operational standards.',
   },
   {
     icon: UserCheck,
     title: 'KYC / AML Standards',
-    description:
-      'Comprehensive identity verification and anti-money laundering protocols integrated at every layer. Tiered KYC processes calibrated to risk levels and regulatory requirements.',
+    description: 'Identity verification and AML protocols at every layer, tiered by risk.',
   },
   {
     icon: Eye,
     title: 'Market Integrity & Surveillance',
-    description:
-      'Real-time surveillance systems monitor trading patterns, detect manipulation, and enforce market integrity. Automated alerts and investigation workflows for compliance teams.',
+    description: 'Real-time detection of manipulation with automated alerts for compliance teams.',
   },
   {
     icon: Shield,
     title: 'Responsible Market Operations',
-    description:
-      'Responsible trading controls including exposure limits, cooling-off mechanisms, and self-exclusion tools. Designed to meet operator obligations across regulated markets.',
+    description: 'Exposure limits, cooling-off, and self-exclusion tools for regulated markets.',
   },
 ]
 
@@ -48,32 +44,32 @@ const frameworks = [
   {
     icon: FileCheck,
     title: 'Transaction Monitoring',
-    description: 'Continuous monitoring of all transactions with automated screening against sanctions lists and PEP databases.',
+    description: 'Automated screening of all transactions against sanctions and PEP databases.',
   },
   {
     icon: AlertTriangle,
     title: 'Suspicious Activity Reporting',
-    description: 'Integrated SAR workflows with escalation protocols and regulatory filing support for compliance officers.',
+    description: 'SAR workflows with escalation protocols and regulatory filing support.',
   },
   {
     icon: Globe,
     title: 'Multi-Jurisdiction Support',
-    description: 'Configurable compliance rules per jurisdiction. Geo-fencing, product restrictions, and localised regulatory reporting.',
+    description: 'Per-jurisdiction rules with geo-fencing and localised reporting.',
   },
   {
     icon: Lock,
     title: 'Data Protection',
-    description: 'GDPR-compliant data handling with encryption at rest and in transit. Data residency controls for regional requirements.',
+    description: 'GDPR-compliant handling with encryption and data residency controls.',
   },
   {
     icon: BookOpen,
     title: 'Audit Trail',
-    description: 'Complete, immutable audit logs for all platform activity. Regulatory-ready reporting and on-demand data extraction.',
+    description: 'Immutable audit logs with regulatory-ready reporting.',
   },
   {
     icon: UserCheck,
     title: 'Identity Verification',
-    description: 'Multi-tier KYC with document verification, biometric checks, and ongoing due diligence for high-risk accounts.',
+    description: 'Multi-tier KYC with document, biometric, and ongoing due diligence.',
   },
 ]
 
@@ -96,7 +92,7 @@ export default function Compliance() {
         badge="Regulatory & Compliance"
         title="Built on Trust, "
         titleAccent="Governed by Standards"
-        subtitle="BTX operates with the regulatory rigour expected of institutional-grade market infrastructure. Our compliance framework is designed to give operators, traders, and regulators confidence in our platform."
+        subtitle="Regulatory rigour built for institutional-grade market infrastructure."
         compact
       />
 
@@ -106,7 +102,7 @@ export default function Compliance() {
           <SectionHeader
             label="Compliance Framework"
             title="Four Pillars of Regulatory Assurance"
-            subtitle="Our compliance architecture covers the full spectrum of regulatory requirements for exchange infrastructure."
+            subtitle="Full-spectrum compliance for exchange infrastructure."
             center
           />
           <div className="mt-16 grid md:grid-cols-2 gap-6">
@@ -123,7 +119,7 @@ export default function Compliance() {
           <SectionHeader
             label="Capabilities"
             title="Compliance Infrastructure"
-            subtitle="Integrated tools and systems that ensure regulatory adherence across all operations."
+            subtitle="Integrated tools for regulatory adherence across all operations."
             center
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -155,12 +151,10 @@ export default function Compliance() {
               <SectionHeader
                 label="Our Commitment"
                 title="Regulatory Excellence"
-                subtitle="BTX is committed to operating at the highest standards of regulatory compliance and market integrity."
+                subtitle="Operating at the highest standards of compliance and market integrity."
               />
               <p className="mt-4 text-sm text-btx-200 leading-relaxed">
-                We believe that strong compliance is not just a requirement — it's a competitive advantage.
-                Institutions and operators partner with BTX because they trust our governance, security,
-                and regulatory posture.
+                Strong compliance is a competitive advantage. Partners choose BTX for governance, security, and regulatory posture.
               </p>
             </div>
             <motion.div

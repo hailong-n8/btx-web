@@ -23,22 +23,22 @@ const engineFeatures = [
   {
     icon: Zap,
     title: 'Sub-5ms Matching Latency',
-    description: 'Deterministic price-time priority matching optimised for high-throughput environments.',
+    description: 'Deterministic matching optimised for high-throughput environments.',
   },
   {
     icon: Layers,
     title: 'Multi-Level Order Book',
-    description: 'Full depth-of-market visibility with synthetic liquidity via cross-runner matching algorithms.',
+    description: 'Full depth-of-market with synthetic liquidity via cross-runner algorithms.',
   },
   {
     icon: RotateCcw,
     title: 'Crash Recovery',
-    description: 'Persistent order state ensures zero order loss across system restarts and failover events.',
+    description: 'Zero order loss across system restarts and failover events.',
   },
   {
     icon: Timer,
     title: 'High Throughput',
-    description: 'Engineered to handle sustained order volumes with linear performance scaling.',
+    description: 'Linear performance scaling under sustained order volumes.',
   },
 ]
 
@@ -46,22 +46,22 @@ const riskFeatures = [
   {
     icon: ShieldCheck,
     title: 'Dynamic Exposure Control',
-    description: 'Per-market and global exposure limits with real-time position monitoring and automated risk responses.',
+    description: 'Per-market and global limits with real-time position monitoring.',
   },
   {
     icon: Users,
     title: 'Customer Intelligence',
-    description: 'Behavioural profiling and segmentation for sophisticated counterparty risk management.',
+    description: 'Behavioural profiling for sophisticated counterparty risk management.',
   },
   {
     icon: BarChart3,
     title: 'Liquidity Segmentation',
-    description: 'Smart order routing with adaptive spread management based on flow quality analysis.',
+    description: 'Adaptive spread management based on flow quality analysis.',
   },
   {
     icon: Workflow,
     title: 'Automated Hedging',
-    description: 'Real-time hedge execution via liquidity bridge with configurable strategy parameters.',
+    description: 'Real-time hedge execution via liquidity bridge with configurable parameters.',
   },
 ]
 
@@ -69,27 +69,27 @@ const marketFeatures = [
   {
     icon: Radio,
     title: 'Fast In-Play Markets',
-    description: 'Sub-second market updates for live event trading across all supported sports verticals.',
+    description: 'Sub-second updates for live event trading across all sports verticals.',
   },
   {
     icon: GitBranch,
     title: '15+ Market Types',
-    description: 'Match odds, handicaps, over/under, correct score, and custom event markets.',
+    description: 'Match odds, handicaps, over/under, correct score, and custom markets.',
   },
   {
     icon: Cpu,
     title: 'Custom Market Creation',
-    description: 'Agent-requested and programmatic market creation for niche events and prediction markets.',
+    description: 'Programmatic and agent-requested creation for niche events and prediction markets.',
   },
 ]
 
 const apiCapabilities = [
-  { label: 'gRPC API', description: 'High-performance binary protocol for orders, markets, and account management' },
-  { label: 'WebSocket Streams', description: 'Real-time streaming for prices, order updates, and market events' },
-  { label: 'Sandbox Environment', description: 'Full-featured test environment with simulated market data' },
-  { label: 'Idempotency', description: 'Safe retry semantics for all mutating operations' },
-  { label: 'Atomic Operations', description: 'Cancel-and-place orders in a single atomic request' },
-  { label: 'Rate Limiting', description: 'Transparent, tier-based rate limits with burst capacity' },
+  { label: 'gRPC API', description: 'Binary protocol for orders, markets, and account management.' },
+  { label: 'WebSocket Streams', description: 'Real-time streaming for prices, order updates, and market events.' },
+  { label: 'Sandbox Environment', description: 'Full test environment with simulated market data.' },
+  { label: 'Idempotency', description: 'Safe retry semantics for all mutating operations.' },
+  { label: 'Atomic Operations', description: 'Cancel-and-place orders in a single atomic request.' },
+  { label: 'Rate Limiting', description: 'Tier-based rate limits with burst capacity.' },
 ]
 
 export default function Technology() {
@@ -100,7 +100,7 @@ export default function Technology() {
         badge="Exchange Technology"
         title="Built for Performance. "
         titleAccent="Designed for Scale."
-        subtitle="Our exchange engine delivers institutional-grade performance with deterministic matching, comprehensive risk controls, and programmable APIs designed for professional market participants."
+        subtitle="Institutional-grade matching, risk controls, and programmable APIs for professional participants."
         primaryCTA={{ label: 'Access API Documentation', to: '/developers' }}
         secondaryCTA={{ label: 'Contact Engineering', to: '/contact' }}
       />
@@ -111,7 +111,7 @@ export default function Technology() {
           <SectionHeader
             label="Matching Engine"
             title="Deterministic Order Execution"
-            subtitle="Purpose-built matching engine with price-time priority, supporting complex order types and synthetic liquidity generation."
+            subtitle="Price-time priority matching with complex order types and synthetic liquidity."
           />
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {engineFeatures.map((f, i) => (
@@ -127,7 +127,7 @@ export default function Technology() {
           <SectionHeader
             label="Risk & Profiling Engine"
             title="Intelligent Risk Management"
-            subtitle="Dynamic exposure controls, customer profiling, and automated hedging infrastructure for sophisticated risk management."
+            subtitle="Exposure controls, customer profiling, and automated hedging in one system."
           />
           <div className="mt-14 grid sm:grid-cols-2 gap-6">
             {riskFeatures.map((f, i) => (
@@ -143,7 +143,7 @@ export default function Technology() {
           <SectionHeader
             label="Market Creation Engine"
             title="Flexible Market Infrastructure"
-            subtitle="Fast in-play markets, extensive market type coverage, and custom market creation capabilities."
+            subtitle="In-play markets, 15+ types, and custom market creation."
           />
           <div className="mt-14 grid sm:grid-cols-3 gap-6">
             {marketFeatures.map((f, i) => (
@@ -161,7 +161,7 @@ export default function Technology() {
               <SectionHeader
                 label="API Infrastructure"
                 title="Programmable Market Access"
-                subtitle="RESTful APIs, WebSocket streams, and sandbox environments designed for rapid integration and reliable operation."
+                subtitle="REST, WebSocket, and sandbox environments for rapid, reliable integration."
               />
               <div className="mt-8">
                 <motion.div
@@ -268,6 +268,7 @@ export default function Technology() {
       <CTASection
         title="Ready to Integrate?"
         subtitle="Get sandbox access and start building with our exchange APIs today."
+
         primaryCTA={{ label: 'Get API Access', to: '/developers' }}
         secondaryCTA={{ label: 'Talk to Engineering', to: '/contact' }}
       />

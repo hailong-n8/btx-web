@@ -16,25 +16,25 @@ const inquiryTypes = [
   {
     icon: Building2,
     title: 'Partnerships & White Label',
-    description: 'Discuss white-label deployment, operator partnerships, and commercial arrangements.',
+    description: 'White-label deployment, operator partnerships, and commercial arrangements.',
     email: 'partnerships@btx.exchange',
   },
   {
     icon: MessageSquare,
     title: 'Liquidity & Market Making',
-    description: 'Apply as a liquidity partner, discuss fee structures, and market making programmes.',
+    description: 'Liquidity partner applications, fee structures, and market making programmes.',
     email: 'liquidity@btx.exchange',
   },
   {
     icon: Mail,
     title: 'API & Technical Integration',
-    description: 'Request API credentials, sandbox access, and technical integration support.',
+    description: 'API credentials, sandbox access, and technical integration support.',
     email: 'developers@btx.exchange',
   },
   {
     icon: Globe,
     title: 'General Enquiries',
-    description: 'For press, compliance, regulatory questions, or other general enquiries.',
+    description: 'Press, compliance, regulatory, and general enquiries.',
     email: 'info@btx.exchange',
   },
 ]
@@ -61,7 +61,7 @@ export default function Contact() {
         badge="Contact"
         title="Get in "
         titleAccent="Touch"
-        subtitle="Whether you're exploring API integration, partnership opportunities, or white-label deployment — our team is ready to help."
+        subtitle="API integration, partnerships, or white-label deployment — we're ready to help."
         compact
       />
 

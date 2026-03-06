@@ -47,32 +47,32 @@ const marketCapabilities = [
   {
     icon: Clock,
     title: 'Real-Time In-Play',
-    description: 'Sub-second market updates with automated suspension and price adjustment during live events.',
+    description: 'Sub-second updates with automated suspension during live events.',
   },
   {
     icon: BarChart3,
     title: '15+ Market Types',
-    description: 'From simple match winner to complex session-based markets, supporting diverse trading strategies.',
+    description: 'From match winner to complex session markets — diverse strategies supported.',
   },
   {
     icon: Zap,
     title: 'Fast Market Creation',
-    description: 'Rapid deployment of new markets with automated pricing and settlement rules.',
+    description: 'Rapid deployment with automated pricing and settlement rules.',
   },
   {
     icon: PlusCircle,
     title: 'Custom Markets',
-    description: 'Agent-requested and bespoke markets for prediction events, political outcomes, and niche verticals.',
+    description: 'Bespoke markets for prediction events, political outcomes, and niche verticals.',
   },
   {
     icon: TrendingUp,
     title: 'Dynamic Pricing',
-    description: 'Algorithmically generated prices with real-time adjustment based on market activity and data feeds.',
+    description: 'Algorithmic prices with real-time adjustment from market activity and data feeds.',
   },
   {
     icon: Users,
     title: 'Multi-Operator Support',
-    description: 'Same underlying market infrastructure serves multiple white-label operators with isolated risk.',
+    description: 'Shared infrastructure serves multiple white-label operators with isolated risk.',
   },
 ]
 
@@ -93,7 +93,7 @@ export default function Markets() {
         badge="Markets & Coverage"
         title="Deep Vertical Coverage Across "
         titleAccent="Global Sports"
-        subtitle="BTX provides institutional-depth markets across cricket, football, tennis, and custom verticals — with real-time in-play trading and automated pricing."
+        subtitle="Institutional-depth markets in cricket, football, tennis, and custom verticals."
         primaryCTA={{ label: 'Access Markets', to: '/contact' }}
         secondaryCTA={{ label: 'View Technology', to: '/technology' }}
       />
@@ -104,7 +104,7 @@ export default function Markets() {
           <SectionHeader
             label="Sports Coverage"
             title="Core Sports Verticals"
-            subtitle="Deep market coverage across the world's most traded sports with full in-play support."
+            subtitle="Deep coverage across the world's most traded sports with full in-play support."
             center
           />
           <div className="mt-16 space-y-6">
@@ -182,7 +182,7 @@ export default function Markets() {
           <SectionHeader
             label="Capabilities"
             title="Market Infrastructure Features"
-            subtitle="Advanced capabilities that power every market on the BTX platform."
+            subtitle="Core capabilities powering every market on the BTX platform."
             center
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -214,14 +214,12 @@ export default function Markets() {
               <SectionHeader
                 label="Beyond Sports"
                 title="Custom & Prediction Markets"
-                subtitle="BTX supports market creation beyond traditional sports — enabling operators to serve niche audiences with bespoke trading opportunities."
+                subtitle="Custom markets for any verifiable outcome beyond traditional sports."
               />
               <div className="mt-8">
                 <Globe className="text-accent mb-4" size={28} />
                 <p className="text-sm text-btx-200 leading-relaxed">
-                  Our flexible market creation engine allows operators and agents to request custom markets
-                  for any verifiable outcome. Markets are subject to jurisdictional compliance and
-                  settlement verification requirements.
+                  Operators and agents request markets for any verifiable outcome, subject to jurisdictional compliance.
                 </p>
               </div>
             </div>
@@ -246,7 +244,7 @@ export default function Markets() {
 
       <CTASection
         title="Explore BTX Markets"
-        subtitle="Contact our team to discuss market coverage, custom verticals, or operator access."
+        subtitle="Discuss market coverage, custom verticals, or operator access with our team."
         primaryCTA={{ label: 'Contact Us', to: '/contact' }}
         secondaryCTA={{ label: 'API Documentation', to: '/developers' }}
       />

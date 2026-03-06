@@ -25,26 +25,22 @@ const included = [
   {
     icon: Palette,
     title: 'Fully Branded UI',
-    description:
-      'Deploy a complete trading interface with your brand identity — logo, colours, domain, and custom styling applied across all touchpoints.',
+    description: 'Your brand identity across the full trading interface — logo, colours, and domain.',
   },
   {
     icon: ShieldCheck,
     title: 'Risk Management Suite',
-    description:
-      'Dynamic exposure controls, customer profiling, and automated hedging infrastructure included out of the box.',
+    description: 'Exposure controls, customer profiling, and automated hedging — out of the box.',
   },
   {
     icon: BarChart3,
     title: 'Settlement Engine',
-    description:
-      'Automated settlement with multi-currency support, real-time reconciliation, and comprehensive audit trails.',
+    description: 'Automated multi-currency settlement with real-time reconciliation.',
   },
   {
     icon: Settings,
     title: 'Commission Splitting',
-    description:
-      'Flexible revenue-sharing structures with configurable commission models, tiered partner programs, and transparent reporting.',
+    description: 'Configurable commission models and transparent revenue sharing.',
   },
 ]
 
@@ -52,17 +48,17 @@ const integration = [
   {
     icon: Plug,
     title: 'API Access',
-    description: 'Full REST & WebSocket API access for deep integration with your existing systems and workflows.',
+    description: 'Full REST & WebSocket access for your systems and workflows.',
   },
   {
     icon: LayoutDashboard,
     title: 'Admin Dashboard',
-    description: 'Comprehensive back-office tools for user management, market configuration, and operational oversight.',
+    description: 'Back-office tools for user management, market config, and operations.',
   },
   {
     icon: LineChart,
     title: 'Real-Time Reporting',
-    description: 'Live dashboards with trading volumes, P&L analytics, customer activity, and risk exposure metrics.',
+    description: 'Live dashboards for volumes, P&L, customer activity, and risk.',
   },
 ]
 
@@ -70,30 +66,30 @@ const targetClients = [
   {
     icon: Globe,
     title: 'Regional Operators',
-    description: 'Launch a localised exchange for your market with region-specific sports, languages, and payment methods.',
+    description: 'Localised exchange with region-specific sports, languages, and payments.',
   },
   {
     icon: Users,
     title: 'Affiliates & Networks',
-    description: 'Convert your audience into active traders with a fully managed exchange platform under your brand.',
+    description: 'Turn your audience into active traders under your brand.',
   },
   {
     icon: Gamepad2,
     title: 'Sports Communities',
-    description: 'Engage sports fans with professional-grade prediction markets tailored to your community interests.',
+    description: 'Professional prediction markets tailored to your community.',
   },
   {
     icon: Coins,
     title: 'Crypto & Web3 Platforms',
-    description: 'Add sports trading to your crypto offering with seamless stablecoin integration and hybrid settlement.',
+    description: 'Sports trading with stablecoin integration and hybrid settlement.',
   },
 ]
 
 const steps = [
   { step: '01', title: 'Consultation', desc: 'Define scope, markets, branding, and commercial structure.' },
   { step: '02', title: 'Configuration', desc: 'Platform setup, branding, risk parameters, and API integration.' },
-  { step: '03', title: 'Testing', desc: 'Sandbox environment for UAT, stress testing, and compliance review.' },
-  { step: '04', title: 'Launch', desc: 'Go live with full support, monitoring, and ongoing optimisation.' },
+  { step: '03', title: 'Testing', desc: 'UAT, stress testing, and compliance review.' },
+  { step: '04', title: 'Launch', desc: 'Go live with full support and ongoing optimisation.' },
 ]
 
 export default function WhiteLabel() {
@@ -104,7 +100,7 @@ export default function WhiteLabel() {
         badge="White Label Solutions"
         title="Launch Your Own Exchange "
         titleAccent="in Weeks"
-        subtitle="Deploy a fully branded, exchange-grade trading platform powered by BTX infrastructure. From matching engine to settlement — everything you need to operate a professional sports exchange."
+        subtitle="Fully branded, exchange-grade platform powered by BTX. Matching engine to settlement — included."
         primaryCTA={{ label: 'Request a Demo', to: '/contact' }}
         secondaryCTA={{ label: 'View Technology', to: '/technology' }}
       />
@@ -115,7 +111,7 @@ export default function WhiteLabel() {
           <SectionHeader
             label="Platform Components"
             title="Everything You Need to Operate"
-            subtitle="A complete exchange stack — from front-end UI to back-end settlement — fully managed and continuously updated."
+            subtitle="Complete exchange stack — front-end to settlement — fully managed."
             center
           />
           <div className="mt-16 grid md:grid-cols-2 gap-6">
@@ -132,7 +128,7 @@ export default function WhiteLabel() {
           <SectionHeader
             label="Deployment Process"
             title="From Concept to Live Exchange"
-            subtitle="Our structured deployment process ensures a smooth, predictable launch timeline."
+            subtitle="Structured process for a smooth, predictable launch."
             center
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -165,7 +161,7 @@ export default function WhiteLabel() {
           <SectionHeader
             label="Integration"
             title="Seamless Technical Integration"
-            subtitle="Deep integration capabilities to connect BTX with your existing infrastructure."
+            subtitle="Connect BTX with your existing infrastructure."
             center
           />
           <div className="mt-16 grid md:grid-cols-3 gap-6">
@@ -182,7 +178,7 @@ export default function WhiteLabel() {
           <SectionHeader
             label="Target Partners"
             title="Built for Ambitious Operators"
-            subtitle="Whether you're a regional operator, sports community, or Web3 platform — BTX white-label gives you the infrastructure to compete."
+            subtitle="Regional operator, sports community, or Web3 platform — BTX gives you the infrastructure to compete."
             center
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -214,7 +210,7 @@ export default function WhiteLabel() {
               <SectionHeader
                 label="Why BTX"
                 title="The Operator's Advantage"
-                subtitle="BTX white-label is not a template — it's a live exchange infrastructure backed by institutional-grade technology."
+                subtitle="Live exchange infrastructure backed by institutional-grade technology."
               />
               <div className="mt-8 space-y-4">
                 {[

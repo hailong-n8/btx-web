@@ -18,20 +18,17 @@ const timeline = [
   {
     year: 'Foundation',
     title: '10+ Years Exchange Trading DNA',
-    description:
-      'Built on over a decade of exchange trading experience, BTX was founded to bring institutional-grade infrastructure to the sports trading market.',
+    description: 'A decade of exchange trading experience brought to institutional sports market infrastructure.',
   },
   {
     year: 'Evolution',
     title: 'Deep Sports Data Expertise',
-    description:
-      'Integration with comprehensive sports data sources — pricing models, real-time feeds, and predictive analytics powering accurate market creation.',
+    description: 'Pricing models, real-time feeds, and predictive analytics powering accurate market creation.',
   },
   {
     year: 'Today',
     title: 'Proven White-Label Infrastructure',
-    description:
-      'A mature platform serving operators globally with reliable matching, settlement, and risk management — continuously refined through production use.',
+    description: 'Mature platform serving global operators — matching, settlement, and risk management, continuously refined.',
   },
 ]
 
@@ -39,22 +36,19 @@ const groupStructure = [
   {
     icon: Database,
     title: 'Data',
-    description:
-      'Deep sports data integration and analytics. Real-time feeds, historical databases, and predictive modelling capabilities.',
+    description: 'Real-time feeds, historical databases, and predictive modelling.',
     highlight: 'Decimal Sports Data',
   },
   {
     icon: Cpu,
     title: 'Technology',
-    description:
-      'Purpose-built exchange infrastructure. Matching engine, risk systems, API platform, and operational tooling.',
+    description: 'Matching engine, risk systems, API platform, and operational tooling.',
     highlight: 'BTX Matching Engine & APIs',
   },
   {
     icon: Layers,
     title: 'Exchange Engine',
-    description:
-      'Core trading infrastructure. Liquidity bridge, settlement engine, risk controls, and market creation tools.',
+    description: 'Liquidity bridge, settlement engine, risk controls, and market creation tools.',
     highlight: 'Liquidity Bridge & Settlement',
   },
 ]
@@ -63,22 +57,22 @@ const values = [
   {
     icon: Shield,
     title: 'Integrity',
-    description: 'We operate with transparency and accountability. Our systems are designed for fair, auditable markets.',
+    description: 'Transparent, accountable systems designed for fair, auditable markets.',
   },
   {
     icon: Zap,
     title: 'Performance',
-    description: 'Sub-millisecond matters. We obsess over latency, throughput, and reliability in everything we build.',
+    description: 'Latency, throughput, and reliability — optimised in everything we build.',
   },
   {
     icon: TrendingUp,
     title: 'Innovation',
-    description: 'We continuously evolve our technology to stay ahead of market demands and operator requirements.',
+    description: 'Continuously evolving to meet market demands and operator needs.',
   },
   {
     icon: Globe,
     title: 'Global Reach',
-    description: 'Built for multi-region deployment with localisation, compliance, and infrastructure flexibility.',
+    description: 'Multi-region deployment with localisation, compliance, and infrastructure flexibility.',
   },
 ]
 
@@ -90,7 +84,7 @@ export default function About() {
         badge="About BTX"
         title="Build the Engine That Powers Global "
         titleAccent="Event Markets"
-        subtitle="BTX is market infrastructure — not another betting exchange. We provide the technology, liquidity, and operational backbone that powers professional sports trading exchanges worldwide."
+        subtitle="Market infrastructure powering professional sports trading exchanges worldwide."
         compact
       />
 
@@ -102,15 +96,14 @@ export default function About() {
               <SectionHeader
                 label="Our Mission"
                 title="Powering the Future of Sports Trading"
-                subtitle="We exist to provide the critical infrastructure that enables professional participants to create, access, and trade sports markets with institutional-grade tools and deep liquidity."
+                subtitle="Critical infrastructure for creating, accessing, and trading sports markets at institutional grade."
               />
               <div className="mt-8 flex items-start gap-4 p-5 rounded-xl bg-btx-700/40 border border-btx-500/30">
                 <Target className="text-accent shrink-0 mt-1" size={22} />
                 <div>
                   <h4 className="font-semibold text-btx-50 mb-1">Strategic Vision</h4>
                   <p className="text-sm text-btx-200 leading-relaxed">
-                    To be the exchange that powers exchanges — providing the underlying technology and liquidity
-                    layer that enables operators worldwide to build and scale their trading platforms.
+                    The exchange that powers exchanges — underlying technology and liquidity for operators worldwide.
                   </p>
                 </div>
               </div>
@@ -182,7 +175,7 @@ export default function About() {
           <SectionHeader
             label="Group Structure"
             title="Three Pillars of Infrastructure"
-            subtitle="BTX operates across three integrated verticals, each contributing to a cohesive exchange infrastructure platform."
+            subtitle="Three integrated verticals forming a cohesive exchange infrastructure platform."
             center
           />
           <div className="mt-16 grid md:grid-cols-3 gap-6">
@@ -236,7 +229,7 @@ export default function About() {
 
       <CTASection
         title="Partner with BTX"
-        subtitle="Explore how BTX infrastructure can power your exchange, trading operations, or market making activity."
+        subtitle="Explore how BTX infrastructure can power your exchange or market making activity."
         primaryCTA={{ label: 'Contact Us', to: '/contact' }}
         secondaryCTA={{ label: 'View Technology', to: '/technology' }}
       />

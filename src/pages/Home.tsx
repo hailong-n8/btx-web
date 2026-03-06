@@ -25,26 +25,22 @@ const pillars = [
   {
     icon: Waves,
     title: 'Deep Liquidity Access',
-    description:
-      'Aggregated liquidity from professional market makers and institutional sources, delivering tight spreads and deep order books across all supported markets.',
+    description: 'Tight spreads and deep order books from professional market makers and institutional sources.',
   },
   {
     icon: Cpu,
     title: 'Exchange-Grade Technology',
-    description:
-      'Purpose-built matching engine with deterministic execution, low-latency order processing, and real-time risk controls designed for high-throughput environments.',
+    description: 'Deterministic matching engine with low-latency execution and real-time risk controls.',
   },
   {
     icon: Brain,
     title: 'Market Intelligence & Profiling',
-    description:
-      'Advanced customer segmentation, dynamic exposure management, and automated hedging infrastructure for sophisticated risk management.',
+    description: 'Customer segmentation, dynamic exposure management, and automated hedging.',
   },
   {
     icon: Blocks,
     title: 'Modular White-Label Infrastructure',
-    description:
-      'Deploy a fully branded exchange in weeks with hosted UI, settlement engine, risk tools, and flexible commission structures.',
+    description: 'Deploy a branded exchange in weeks — UI, settlement, risk tools, and commissions included.',
   },
 ]
 
@@ -52,22 +48,22 @@ const audiences = [
   {
     icon: TrendingUp,
     title: 'Professional Market Makers',
-    description: 'High-performance APIs, competitive fee tiers, and co-location ready infrastructure.',
+    description: 'High-performance APIs, competitive fee tiers, and co-location ready.',
   },
   {
     icon: Building2,
     title: 'Exchanges & Operators',
-    description: 'White-label solutions with full branding control, settlement, and risk management.',
+    description: 'Full branding control, settlement, and risk management.',
   },
   {
     icon: Database,
     title: 'Sports Data Partners',
-    description: 'Deep sports data integration, real-time feeds, and predictive analytics capabilities.',
+    description: 'Sports data integration, real-time feeds, and predictive analytics.',
   },
   {
     icon: Users,
     title: 'Institutional Traders',
-    description: 'Professional-grade execution, advanced order types, and transparent market access.',
+    description: 'Professional execution, advanced order types, and transparent access.',
   },
 ]
 
@@ -123,8 +119,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-8 text-lg lg:text-xl text-btx-200 leading-relaxed max-w-2xl"
             >
-              High-performance exchange technology, deep professional liquidity, and
-              programmable APIs powering next-generation sports trading exchanges.
+              Exchange technology, professional liquidity, and programmable APIs for next-generation sports trading.
             </motion.p>
 
             <motion.div
@@ -186,7 +181,7 @@ export default function Home() {
           <SectionHeader
             label="Core Infrastructure"
             title="Enterprise-Grade Exchange Technology"
-            subtitle="Purpose-built components designed for professional market participants and exchange operators worldwide."
+            subtitle="Purpose-built for professional market participants and exchange operators worldwide."
             center
           />
           <div className="mt-16 grid md:grid-cols-2 gap-6">
@@ -214,7 +209,7 @@ export default function Home() {
           <SectionHeader
             label="Our Clients"
             title="Built for Professional Market Participants"
-            subtitle="BTX serves institutions and professionals who require exchange-grade infrastructure, deep liquidity, and programmable market access."
+            subtitle="Exchange-grade infrastructure, deep liquidity, and programmable access for institutions and professionals."
             center
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -246,7 +241,7 @@ export default function Home() {
               <SectionHeader
                 label="Technology"
                 title="Exchange Engine Architecture"
-                subtitle="Our matching engine processes orders with deterministic execution at sub-5ms latency. Designed for professional throughput with crash recovery and zero order loss."
+                subtitle="Sub-5ms deterministic execution with crash recovery and zero order loss."
               />
               <div className="mt-8 space-y-4">
                 {[
@@ -321,7 +316,7 @@ export default function Home() {
       {/* CTA */}
       <CTASection
         title="Ready to Build on BTX?"
-        subtitle="Connect with our team to explore API access, liquidity partnerships, or white-label deployment."
+        subtitle="Explore API access, liquidity partnerships, or white-label deployment with our team."
         primaryCTA={{ label: 'Contact Us', to: '/contact' }}
         secondaryCTA={{ label: 'View API Documentation', to: '/developers' }}
       />

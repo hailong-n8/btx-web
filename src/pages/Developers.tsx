@@ -21,22 +21,22 @@ const apiFeatures = [
   {
     icon: Plug,
     title: 'REST API',
-    description: 'Full-featured RESTful API for account management, order placement, market data, and settlement operations.',
+    description: 'Full-featured API for orders, market data, accounts, and settlement.',
   },
   {
     icon: Radio,
     title: 'WebSocket Streams',
-    description: 'Real-time data streams for prices, order updates, market events, and account notifications with minimal latency.',
+    description: 'Real-time streams for prices, orders, events, and notifications.',
   },
   {
     icon: TestTube2,
     title: 'Sandbox Environment',
-    description: 'Full-featured test environment with simulated markets, paper trading, and risk-free integration testing.',
+    description: 'Simulated markets for paper trading and risk-free testing.',
   },
   {
     icon: Package,
     title: 'SDKs & Libraries',
-    description: 'Official client libraries for Python, JavaScript/TypeScript, Java, and C# to accelerate your integration.',
+    description: 'Client libraries for Python, JavaScript/TypeScript, Java, and C#.',
   },
 ]
 
@@ -44,25 +44,25 @@ const resources = [
   {
     icon: BookOpen,
     title: 'API Documentation',
-    description: 'Comprehensive reference for all endpoints, request/response schemas, and authentication flows.',
+    description: 'Full reference for endpoints, schemas, and authentication.',
     tag: 'docs.btx.exchange',
   },
   {
     icon: Terminal,
     title: 'Code Samples',
-    description: 'Working examples in multiple languages covering common integration patterns and workflows.',
+    description: 'Working examples across languages for common integration patterns.',
     tag: 'GitHub',
   },
   {
     icon: Gauge,
     title: 'Rate Limits',
-    description: 'Detailed rate limit documentation per endpoint with guidance for high-frequency integrations.',
+    description: 'Per-endpoint rate limit docs with high-frequency guidance.',
     tag: 'Reference',
   },
   {
     icon: Activity,
     title: 'Status Page',
-    description: 'Real-time platform status, incident history, and uptime metrics for all BTX services.',
+    description: 'Live status, incident history, and uptime for all BTX services.',
     tag: 'status.btx.exchange',
   },
 ]
@@ -116,7 +116,7 @@ export default function Developers() {
         badge="Developer Portal"
         title="Build on BTX "
         titleAccent="Infrastructure"
-        subtitle="Powerful, well-documented APIs for market data, order management, and settlement. Everything you need to integrate with BTX exchange infrastructure."
+        subtitle="Well-documented APIs for market data, order management, and settlement."
         primaryCTA={{ label: 'Get API Access', to: '/contact' }}
         secondaryCTA={{ label: 'View Sandbox', to: '/contact' }}
         compact
@@ -128,7 +128,7 @@ export default function Developers() {
           <SectionHeader
             label="API Platform"
             title="Programmable Exchange Access"
-            subtitle="RESTful APIs, real-time WebSocket streams, and comprehensive SDKs for seamless integration."
+            subtitle="REST, WebSocket, and SDKs for seamless integration."
             center
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -158,7 +158,7 @@ export default function Developers() {
           <SectionHeader
             label="Quick Start"
             title="Get Started in Minutes"
-            subtitle="Simple, powerful APIs designed for rapid integration."
+            subtitle="Rapid integration with clean, powerful APIs."
             center
           />
           <div className="mt-16 grid lg:grid-cols-2 gap-6">
@@ -215,7 +215,7 @@ export default function Developers() {
               <SectionHeader
                 label="Specifications"
                 title="API Technical Details"
-                subtitle="Designed for professional integrators with institutional-grade requirements."
+                subtitle="Built for professional integrators."
               />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -274,7 +274,7 @@ export default function Developers() {
 
       <CTASection
         title="Start Building Today"
-        subtitle="Request API credentials and sandbox access to begin integrating with BTX infrastructure."
+        subtitle="Request API credentials and sandbox access to begin integrating with BTX."
         primaryCTA={{ label: 'Get API Access', to: '/contact' }}
         secondaryCTA={{ label: 'View Technology', to: '/technology' }}
       />
