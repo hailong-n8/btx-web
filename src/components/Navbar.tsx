@@ -3,12 +3,13 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Palette, Globe, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import useTheme from '../hooks/useTheme'
+import ComingSoonBadge from './ComingSoonBadge'
 
 const navLinkKeys = [
   { path: '/', key: 'nav.home' },
   { path: '/technology', key: 'nav.technology' },
   { path: '/liquidity', key: 'nav.liquidity' },
-  { path: '/white-label', key: 'nav.whiteLabel' },
+  { path: '/white-label', key: 'nav.whiteLabel', comingSoon: true },
   { path: '/markets', key: 'nav.markets' },
   { path: '/developers', key: 'nav.developers' },
   { path: '/compliance', key: 'nav.compliance' },
@@ -104,13 +105,14 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                className={`inline-flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                   location.pathname === link.path
                     ? 'text-accent bg-accent/10'
                     : 'text-btx-200 hover:text-btx-50 hover:bg-btx-600/50'
                 }`}
               >
                 {t(link.key)}
+                {link.comingSoon && <ComingSoonBadge />}
               </Link>
             ))}
             <div className="w-px h-5 bg-btx-500/30 mx-1" />
@@ -228,13 +230,14 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`block px-4 py-3 rounded-md text-sm font-medium transition-colors ${
+                className={`flex items-center gap-1.5 px-4 py-3 rounded-md text-sm font-medium transition-colors ${
                   location.pathname === link.path
                     ? 'text-accent bg-accent/10'
                     : 'text-btx-200 hover:text-btx-50 hover:bg-btx-600/50'
                 }`}
               >
                 {t(link.key)}
+                {link.comingSoon && <ComingSoonBadge />}
               </Link>
             ))}
 
