@@ -20,6 +20,7 @@ import CTASection from '../components/CTASection'
 import ComingSoonBadge from '../components/ComingSoonBadge'
 import useDocumentTitle from '../hooks/useDocumentTitle'
 
+
 const engineFeatures = [
   {
     icon: Zap,
@@ -86,8 +87,8 @@ const marketFeatures = [
 
 const apiCapabilities = [
   { label: 'gRPC API', description: 'Binary protocol for orders, markets, and account management.' },
-  { label: 'WebSocket Streams', description: 'Real-time streaming for prices, order updates, and market events.' },
-  { label: 'Sandbox Environment', description: 'Full test environment with simulated market data.' },
+  { label: 'WebSocket Streams', description: 'Real-time streaming for prices, order updates, and market events.', comingSoon: true },
+  { label: 'Sandbox Environment', description: 'Full test environment with simulated market data.', comingSoon: true },
   { label: 'Idempotency', description: 'Safe retry semantics for all mutating operations.' },
   { label: 'Atomic Operations', description: 'Cancel-and-place orders in a single atomic request.' },
   { label: 'Rate Limiting', description: 'Tier-based rate limits with burst capacity.' },
@@ -211,7 +212,10 @@ export default function Technology() {
                 >
                   <Code2 className="text-accent shrink-0 mt-0.5" size={18} />
                   <div>
-                    <h4 className="text-sm font-semibold text-btx-50">{cap.label}</h4>
+                    <div className="flex items-center gap-1.5">
+                      <h4 className="text-sm font-semibold text-btx-50">{cap.label}</h4>
+                      {cap.comingSoon && <ComingSoonBadge />}
+                    </div>
                     <p className="text-sm text-btx-200 mt-1">{cap.description}</p>
                   </div>
                 </motion.div>
