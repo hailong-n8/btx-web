@@ -267,6 +267,7 @@ export default function Developers() {
               <SectionHeader
                 label="Resources"
                 title="Developer Resources"
+                subtitle="Documentation, code samples, and tools to get you started."
               />
               <div className="mt-8 space-y-4">
                 {resources.map((resource, i) => (
