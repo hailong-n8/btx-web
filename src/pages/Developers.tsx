@@ -72,7 +72,26 @@ const resources = [
   },
 ]
 
-const codeExample = `// BTX WebSocket - Real-time Price Stream
+const grpcExample = `// BTX gRPC — Place a limit order (Python)
+import btx_pb2, btx_pb2_grpc
+import grpc
+
+channel = grpc.secure_channel(
+    'api.btx.exchange:443',
+    grpc.ssl_channel_credentials()
+)
+stub = btx_pb2_grpc.OrderServiceStub(channel)
+
+response = stub.PlaceOrder(btx_pb2.PlaceOrderRequest(
+    market_id='cricket_ipl_match_odds',
+    side='back',
+    price=2.50,
+    size=1000,
+    order_type='limit'
+))
+# response.order_id → "ord_abc123"`
+
+const wsExample = `// BTX WebSocket — Real-time price stream
 const ws = new WebSocket('wss://stream.btx.exchange/ws');
 
 ws.onopen = () => {
@@ -85,22 +104,10 @@ ws.onopen = () => {
 };
 
 ws.onmessage = (event) => {
-  const data = JSON.parse(event.data);
-  // { type: "price_update",
-  //   selection: "Mumbai Indians",
-  //   back: [{ price: 2.10, size: 5420 }],
-  //   lay: [{ price: 2.14, size: 3800 }] }
+  const { selection, back, lay } = JSON.parse(event.data);
+  // back: [{ price: 2.10, size: 5420 }]
+  // lay:  [{ price: 2.14, size: 3800 }]
 };`
-
-const restExample = `# Authenticate with BTX OAuth2
-curl -s -X POST "https://auth.btx.exchange/oauth2/token" \\
-  -H "Content-Type: application/x-www-form-urlencoded" \\
-  -d "grant_type=client_credentials" \\
-  -d "client_id=\${CLIENT_ID}" \\
-  -d "client_secret=\${CLIENT_SECRET}" \\
-  -d "scope=btx/prices btx/place_cancel_orders"
-
-# Response: { "access_token": "eyJ...", "token_type": "bearer" }`
 
 const apiCapabilities = [
   { label: 'Authentication', value: 'OAuth2 Client Credentials' },
@@ -178,6 +185,7 @@ export default function Developers() {
             center
           />
           <div className="mt-16 grid lg:grid-cols-2 gap-6">
+            {/* gRPC example — live */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -187,36 +195,38 @@ export default function Developers() {
             >
               <div className="flex items-center justify-between px-4 py-3 bg-btx-700/80 border-b border-btx-500/30">
                 <div className="flex items-center gap-2">
-                  <Braces size={14} className="text-accent" />
-                  <span className="text-xs font-medium text-btx-200">WebSocket — JavaScript</span>
+                  <Terminal size={14} className="text-accent" />
+                  <span className="text-xs font-medium text-btx-200">gRPC API — Python</span>
                 </div>
                 <button className="text-btx-300 hover:text-btx-100 transition-colors">
                   <Copy size={14} />
                 </button>
               </div>
               <pre className="p-5 bg-btx-800/80 text-sm leading-relaxed overflow-x-auto">
-                <code className="text-btx-200 font-mono text-xs">{codeExample}</code>
+                <code className="text-btx-200 font-mono text-xs">{grpcExample}</code>
               </pre>
             </motion.div>
 
+            {/* WebSocket example — coming soon */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-xl border border-btx-500/30 overflow-hidden"
+              className="rounded-xl border border-btx-500/20 overflow-hidden opacity-60"
             >
               <div className="flex items-center justify-between px-4 py-3 bg-btx-700/80 border-b border-btx-500/30">
                 <div className="flex items-center gap-2">
-                  <Terminal size={14} className="text-accent" />
-                  <span className="text-xs font-medium text-btx-200">REST API — cURL</span>
+                  <Braces size={14} className="text-btx-400" />
+                  <span className="text-xs font-medium text-btx-300">WebSocket — JavaScript</span>
+                  <ComingSoonBadge />
                 </div>
                 <button className="text-btx-300 hover:text-btx-100 transition-colors">
                   <Copy size={14} />
                 </button>
               </div>
               <pre className="p-5 bg-btx-800/80 text-sm leading-relaxed overflow-x-auto">
-                <code className="text-btx-200 font-mono text-xs">{restExample}</code>
+                <code className="text-btx-200 font-mono text-xs">{wsExample}</code>
               </pre>
             </motion.div>
           </div>
