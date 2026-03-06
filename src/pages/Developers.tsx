@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import {
-  Plug,
   Terminal,
   BookOpen,
   Package,
@@ -11,6 +10,7 @@ import {
   Copy,
   Braces,
   Radio,
+  Zap,
 } from 'lucide-react'
 import Hero from '../components/Hero'
 import SectionHeader from '../components/SectionHeader'
@@ -20,10 +20,9 @@ import useDocumentTitle from '../hooks/useDocumentTitle'
 
 const apiFeatures = [
   {
-    icon: Plug,
-    title: 'REST API',
-    description: 'Full-featured API for orders, market data, accounts, and settlement.',
-    comingSoon: true,
+    icon: Zap,
+    title: 'gRPC API',
+    description: 'High-performance binary protocol for order placement, market data, and account management.',
   },
   {
     icon: Radio,
