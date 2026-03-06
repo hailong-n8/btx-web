@@ -57,22 +57,22 @@ const values = [
   {
     icon: Shield,
     title: 'Integrity',
-    description: 'Transparent, accountable systems designed for fair, auditable markets.',
+    description: 'Fair, transparent, and auditable systems.',
   },
   {
     icon: Zap,
     title: 'Performance',
-    description: 'Latency, throughput, and reliability — optimised in everything we build.',
+    description: 'Obsessive focus on latency, throughput, and reliability.',
   },
   {
     icon: TrendingUp,
     title: 'Innovation',
-    description: 'Continuously evolving to meet market demands and operator needs.',
+    description: 'Continuously evolving ahead of market demands.',
   },
   {
     icon: Globe,
     title: 'Global Reach',
-    description: 'Multi-region deployment with localisation, compliance, and infrastructure flexibility.',
+    description: 'Multi-region deployment with localisation and compliance.',
   },
 ]
 
