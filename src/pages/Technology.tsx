@@ -233,7 +233,7 @@ export default function Technology() {
             viewport={{ once: true }}
             className="mt-14 bg-btx-700/30 border border-btx-500/30 rounded-xl p-8 lg:p-12"
           >
-            <div className="grid lg:grid-cols-5 gap-4 items-center">
+            <div className="grid lg:grid-cols-5 gap-4 items-start">
               {[
                 { label: 'Clients', items: ['gRPC', 'WebSocket', 'REST'], color: 'bg-accent-blue' },
                 { label: 'Gateway', items: ['Auth', 'Rate Limit', 'Routing'], color: 'bg-accent-cyan' },
