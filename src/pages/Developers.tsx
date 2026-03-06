@@ -39,7 +39,7 @@ const apiFeatures = [
   {
     icon: Package,
     title: 'SDKs & Libraries',
-    description: 'Client libraries for Python, JavaScript/TypeScript, Java, and C#.',
+    description: 'Client libraries for Python, JavaScript, Java, and C#.',
     comingSoon: true,
   },
 ]
