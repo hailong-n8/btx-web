@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Palette, Globe, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import useTheme from '../hooks/useTheme'
-import ComingSoonBadge from './ComingSoonBadge'
 
 const navLinkKeys = [
   { path: '/', key: 'nav.home' },
@@ -112,7 +111,6 @@ export default function Navbar() {
                 }`}
               >
                 {t(link.key)}
-                {link.comingSoon && <ComingSoonBadge />}
               </Link>
             ))}
             <div className="w-px h-5 bg-btx-500/30 mx-1" />
@@ -237,7 +235,6 @@ export default function Navbar() {
                 }`}
               >
                 {t(link.key)}
-                {link.comingSoon && <ComingSoonBadge />}
               </Link>
             ))}
 
