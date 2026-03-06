@@ -246,11 +246,11 @@ export default function Developers() {
                     className="flex items-center justify-between px-6 py-4 border-b border-btx-500/20 last:border-0"
                   >
                     <span className="text-sm text-btx-300">{cap.label}</span>
-                    <div className="flex items-center gap-2 flex-wrap justify-end">
+                    <div className="flex items-center gap-3 flex-wrap justify-end">
                       <span className="text-sm text-btx-100 font-medium font-mono">{cap.value}</span>
                       {cap.comingSoon && cap.comingSoon.map((item) => (
                         <span key={item} className="flex items-center gap-1">
-                          <span className="text-sm text-btx-400 font-mono">+ {item}</span>
+                          <span className="text-sm text-btx-100 font-medium font-mono">{item}</span>
                           <ComingSoonBadge />
                         </span>
                       ))}
