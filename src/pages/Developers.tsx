@@ -22,21 +22,25 @@ const apiFeatures = [
     icon: Plug,
     title: 'REST API',
     description: 'Full-featured API for orders, market data, accounts, and settlement.',
+    comingSoon: true,
   },
   {
     icon: Radio,
     title: 'WebSocket Streams',
     description: 'Real-time streams for prices, orders, events, and notifications.',
+    comingSoon: true,
   },
   {
     icon: TestTube2,
     title: 'Sandbox Environment',
     description: 'Simulated markets for paper trading and risk-free testing.',
+    comingSoon: true,
   },
   {
     icon: Package,
     title: 'SDKs & Libraries',
     description: 'Client libraries for Python, JavaScript/TypeScript, Java, and C#.',
+    comingSoon: true,
   },
 ]
 
@@ -100,11 +104,11 @@ curl -s -X POST "https://auth.btx.exchange/oauth2/token" \\
 const apiCapabilities = [
   { label: 'Authentication', value: 'OAuth2 Client Credentials' },
   { label: 'Rate Limits', value: 'Up to 100 req/s (configurable)' },
-  { label: 'Protocols', value: 'gRPC, REST, WebSocket' },
+  { label: 'Protocols', value: 'gRPC', comingSoon: ['REST', 'WebSocket'] },
   { label: 'Idempotency', value: 'Built-in idempotency keys' },
   { label: 'Order Types', value: 'Limit, Market, Cancel-Replace' },
   { label: 'Data Formats', value: 'JSON (REST), JSON (WS)' },
-  { label: 'Environments', value: 'Production + Sandbox' },
+  { label: 'Environments', value: 'Production', comingSoon: ['Sandbox'] },
   { label: 'SLA', value: '99.9% uptime guarantee' },
 ]
 
@@ -139,10 +143,23 @@ export default function Developers() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-6 rounded-xl border border-btx-500/30 bg-btx-700/40 hover:border-accent/20 transition-colors group"
+                className={`p-6 rounded-xl border transition-colors group relative ${
+                  feature.comingSoon
+                    ? 'border-btx-500/20 bg-btx-700/20 opacity-60'
+                    : 'border-btx-500/30 bg-btx-700/40 hover:border-accent/20'
+                }`}
               >
-                <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/15 transition-colors">
-                  <feature.icon className="text-accent" size={20} />
+                {feature.comingSoon && (
+                  <span className="absolute top-3 right-3 px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider bg-amber-500/15 text-amber-400 border border-amber-500/25">
+                    Soon
+                  </span>
+                )}
+                <div className={`w-10 h-10 rounded-lg border flex items-center justify-center mb-4 transition-colors ${
+                  feature.comingSoon
+                    ? 'bg-btx-600/20 border-btx-500/20'
+                    : 'bg-accent/10 border-accent/20 group-hover:bg-accent/15'
+                }`}>
+                  <feature.icon className={feature.comingSoon ? 'text-btx-400' : 'text-accent'} size={20} />
                 </div>
                 <h3 className="font-semibold text-btx-50 mb-2">{feature.title}</h3>
                 <p className="text-sm text-btx-200 leading-relaxed">{feature.description}</p>
@@ -230,7 +247,17 @@ export default function Developers() {
                     className="flex items-center justify-between px-6 py-4 border-b border-btx-500/20 last:border-0"
                   >
                     <span className="text-sm text-btx-300">{cap.label}</span>
-                    <span className="text-sm text-btx-100 font-medium font-mono">{cap.value}</span>
+                    <div className="flex items-center gap-2 flex-wrap justify-end">
+                      <span className="text-sm text-btx-100 font-medium font-mono">{cap.value}</span>
+                      {cap.comingSoon && cap.comingSoon.map((item) => (
+                        <span key={item} className="flex items-center gap-1">
+                          <span className="text-sm text-btx-400 font-mono">+ {item}</span>
+                          <span className="px-1.5 py-0.5 rounded text-[9px] font-semibold uppercase tracking-wider bg-amber-500/15 text-amber-400 border border-amber-500/25">
+                            Soon
+                          </span>
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </motion.div>
