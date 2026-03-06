@@ -150,8 +150,9 @@ export default function Developers() {
                 }`}
               >
                 {feature.comingSoon && (
-                  <span className="absolute top-3 right-3 px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider bg-amber-500/15 text-amber-400 border border-amber-500/25">
-                    Soon
+                  <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[9px] text-btx-400 bg-btx-700/60 border border-btx-500/30">
+                    <span className="w-1 h-1 rounded-full bg-btx-400 shrink-0" />
+                    coming soon
                   </span>
                 )}
                 <div className={`w-10 h-10 rounded-lg border flex items-center justify-center mb-4 transition-colors ${
@@ -252,8 +253,9 @@ export default function Developers() {
                       {cap.comingSoon && cap.comingSoon.map((item) => (
                         <span key={item} className="flex items-center gap-1">
                           <span className="text-sm text-btx-400 font-mono">+ {item}</span>
-                          <span className="px-1.5 py-0.5 rounded text-[9px] font-semibold uppercase tracking-wider bg-amber-500/15 text-amber-400 border border-amber-500/25">
-                            Soon
+                          <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[9px] text-btx-400 bg-btx-700/60 border border-btx-500/30">
+                            <span className="w-1 h-1 rounded-full bg-btx-400 shrink-0" />
+                            soon
                           </span>
                         </span>
                       ))}
