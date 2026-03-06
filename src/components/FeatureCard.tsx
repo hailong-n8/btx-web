@@ -23,8 +23,8 @@ export default function FeatureCard({ icon: Icon, title, description, items, ind
         <div className="w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors">
           <Icon className="text-accent" size={24} />
         </div>
-        <h3 className="text-lg font-semibold text-btx-50 mb-3">{title}</h3>
-        <p className="text-sm text-btx-200 leading-relaxed">{description}</p>
+        <h3 className="text-base font-semibold text-btx-50 mb-3 line-clamp-1">{title}</h3>
+        <p className="text-sm text-btx-200 leading-relaxed line-clamp-2">{description}</p>
         {items && items.length > 0 && (
           <ul className="mt-4 space-y-2">
             {items.map((item) => (

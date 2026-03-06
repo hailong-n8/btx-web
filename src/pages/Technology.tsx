@@ -22,23 +22,23 @@ import useDocumentTitle from '../hooks/useDocumentTitle'
 const engineFeatures = [
   {
     icon: Zap,
-    title: 'Sub-5ms Matching Latency',
-    description: 'Deterministic matching optimised for high-throughput environments.',
+    title: 'Sub-5ms Latency',
+    description: 'Deterministic price-time priority matching optimised for high-throughput environments.',
   },
   {
     icon: Layers,
     title: 'Multi-Level Order Book',
-    description: 'Full depth-of-market with synthetic liquidity via cross-runner algorithms.',
+    description: 'Full market depth with synthetic liquidity via cross-runner matching algorithms.',
   },
   {
     icon: RotateCcw,
     title: 'Crash Recovery',
-    description: 'Zero order loss across system restarts and failover events.',
+    description: 'Persistent order state guarantees zero loss across system restarts and failover events.',
   },
   {
     icon: Timer,
     title: 'High Throughput',
-    description: 'Linear performance scaling under sustained order volumes.',
+    description: 'Engineered for linear performance scaling under sustained high-volume load.',
   },
 ]
 
