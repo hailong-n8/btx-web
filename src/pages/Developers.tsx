@@ -2,14 +2,10 @@ import { motion } from 'framer-motion'
 import {
   Terminal,
   BookOpen,
-  Package,
   TestTube2,
-  Gauge,
   Activity,
   ArrowRight,
   Copy,
-  Braces,
-  Radio,
   Zap,
 } from 'lucide-react'
 import Hero from '../components/Hero'
@@ -25,21 +21,9 @@ const apiFeatures = [
     description: 'High-performance binary protocol for order placement, market data, and account management.',
   },
   {
-    icon: Radio,
-    title: 'WebSocket Streams',
-    description: 'Real-time streams for prices, orders, events, and notifications.',
-    comingSoon: true,
-  },
-  {
     icon: TestTube2,
     title: 'Sandbox Environment',
     description: 'Simulated markets for paper trading and risk-free testing.',
-    comingSoon: true,
-  },
-  {
-    icon: Package,
-    title: 'SDKs & Libraries',
-    description: 'Client libraries for Python, JavaScript, Java, and C#.',
     comingSoon: true,
   },
 ]
@@ -56,12 +40,6 @@ const resources = [
     title: 'Code Samples',
     description: 'Working examples across languages for common integration patterns.',
     tag: 'GitHub',
-  },
-  {
-    icon: Gauge,
-    title: 'Rate Limits',
-    description: 'Per-endpoint rate limit docs with high-frequency guidance.',
-    tag: 'Reference',
   },
   {
     icon: Activity,
@@ -90,31 +68,12 @@ response = stub.PlaceOrder(btx_pb2.PlaceOrderRequest(
 ))
 # response.order_id → "ord_abc123"`
 
-const wsExample = `// BTX WebSocket — Real-time price stream
-const ws = new WebSocket('wss://stream.btx.exchange/ws');
-
-ws.onopen = () => {
-  ws.send(JSON.stringify({
-    type: 'subscribe',
-    channel: 'prices',
-    market_type: 'CRICKET_MATCH_ODDS',
-    event_id: 'ipl_2026_mi_vs_csk'
-  }));
-};
-
-ws.onmessage = (event) => {
-  const { selection, back, lay } = JSON.parse(event.data);
-  // back: [{ price: 2.10, size: 5420 }]
-  // lay:  [{ price: 2.14, size: 3800 }]
-};`
-
 const apiCapabilities = [
   { label: 'Authentication', value: 'OAuth2 Client Credentials' },
-  { label: 'Rate Limits', value: 'Up to 100 req/s (configurable)' },
-  { label: 'Protocols', value: 'gRPC', comingSoon: ['REST', 'WebSocket'] },
+  { label: 'Protocol', value: 'gRPC' },
   { label: 'Idempotency', value: 'Built-in idempotency keys' },
   { label: 'Order Types', value: 'Limit, Market, Cancel-Replace' },
-  { label: 'Data Formats', value: 'JSON (REST), JSON (WS)' },
+  { label: 'Data Format', value: 'Protocol Buffers (Protobuf)' },
   { label: 'Environments', value: 'Production', comingSoon: ['Sandbox'] },
   { label: 'SLA', value: '99.9% uptime guarantee' },
 ]
@@ -129,7 +88,7 @@ export default function Developers() {
         titleAccent="Infrastructure"
         subtitle="Well-documented APIs for market data, order management, and settlement."
         primaryCTA={{ label: 'Get API Access', to: '/contact' }}
-        secondaryCTA={{ label: 'View Sandbox', to: '/contact' }}
+        secondaryCTA={{ label: 'View Technology', to: '/technology' }}
         compact
       />
 
@@ -139,10 +98,10 @@ export default function Developers() {
           <SectionHeader
             label="API Platform"
             title="Programmable Exchange Access"
-            subtitle="REST, WebSocket, and SDKs for seamless integration."
+            subtitle="gRPC API and sandbox for seamless integration."
             center
           />
-          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-16 grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {apiFeatures.map((feature, i) => (
               <motion.div
                 key={feature.title}
@@ -183,8 +142,7 @@ export default function Developers() {
             subtitle="Rapid integration with clean, powerful APIs."
             center
           />
-          <div className="mt-16 grid lg:grid-cols-2 gap-6">
-            {/* gRPC example — live */}
+          <div className="mt-16 max-w-2xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -203,29 +161,6 @@ export default function Developers() {
               </div>
               <pre className="p-5 bg-btx-800/80 text-sm leading-relaxed overflow-x-auto">
                 <code className="text-btx-200 font-mono text-xs">{grpcExample}</code>
-              </pre>
-            </motion.div>
-
-            {/* WebSocket example — coming soon */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-xl border border-btx-500/20 overflow-hidden opacity-60"
-            >
-              <div className="flex items-center justify-between px-4 py-3 bg-btx-700/80 border-b border-btx-500/30">
-                <div className="flex items-center gap-2">
-                  <Braces size={14} className="text-btx-400" />
-                  <span className="text-xs font-medium text-btx-300">WebSocket — JavaScript</span>
-                  <ComingSoonBadge />
-                </div>
-                <button className="text-btx-300 hover:text-btx-100 transition-colors">
-                  <Copy size={14} />
-                </button>
-              </div>
-              <pre className="p-5 bg-btx-800/80 text-sm leading-relaxed overflow-x-auto">
-                <code className="text-btx-200 font-mono text-xs">{wsExample}</code>
               </pre>
             </motion.div>
           </div>

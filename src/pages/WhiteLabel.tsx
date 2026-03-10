@@ -30,7 +30,7 @@ const included = [
   {
     icon: ShieldCheck,
     title: 'Risk Management Suite',
-    description: 'Exposure controls, customer profiling, and automated hedging — out of the box.',
+    description: 'Position monitoring, market controls, and operational risk tools — out of the box.',
   },
   {
     icon: BarChart3,
@@ -48,7 +48,7 @@ const integration = [
   {
     icon: Plug,
     title: 'API Access',
-    description: 'Full REST & WebSocket access for your systems and workflows.',
+    description: 'Full gRPC API access for your systems and workflows.',
   },
   {
     icon: LayoutDashboard,

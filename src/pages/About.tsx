@@ -17,8 +17,8 @@ import useDocumentTitle from '../hooks/useDocumentTitle'
 const timeline = [
   {
     year: 'Foundation',
-    title: '10+ Years Exchange Trading DNA',
-    description: 'A decade of exchange trading experience brought to institutional sports market infrastructure.',
+    title: '20+ Years Exchange Trading DNA',
+    description: 'Two decades of exchange trading experience brought to institutional sports market infrastructure.',
   },
   {
     year: 'Evolution',
@@ -113,12 +113,11 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-3 gap-4"
             >
               {[
-                { value: '10+', label: 'Years Trading DNA' },
+                { value: '20+', label: 'Years Trading DNA' },
                 { value: '15+', label: 'Market Types' },
-                { value: '<5ms', label: 'Execution Latency' },
                 { value: '99.9%', label: 'Platform Uptime' },
               ].map((stat) => (
                 <div

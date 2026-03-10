@@ -43,13 +43,13 @@ const infraFeatures = [
   },
   {
     icon: Timer,
-    title: 'Latency Benchmarks',
-    description: 'Sub-5ms matching with consistent performance under high volume.',
+    title: 'Low-Latency Matching',
+    description: 'Consistent performance and fast execution under high volume.',
   },
   {
     icon: ListOrdered,
     title: 'Advanced Order Types',
-    description: 'Limit, market, cancel-and-replace, and atomic multi-leg operations.',
+    description: 'Limit, market, and cancel-and-replace operations.',
   },
 ]
 

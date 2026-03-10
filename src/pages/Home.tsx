@@ -4,7 +4,6 @@ import {
   ArrowRight,
   Waves,
   Cpu,
-  Brain,
   Blocks,
   BarChart3,
   Building2,
@@ -12,7 +11,6 @@ import {
   TrendingUp,
   Users,
   Globe,
-  Zap,
   Clock,
 } from 'lucide-react'
 import useDocumentTitle from '../hooks/useDocumentTitle'
@@ -31,11 +29,6 @@ const pillars = [
     icon: Cpu,
     title: 'Exchange-Grade Technology',
     description: 'Deterministic matching engine with low-latency execution and real-time risk controls.',
-  },
-  {
-    icon: Brain,
-    title: 'Market Intelligence & Profiling',
-    description: 'Customer segmentation, dynamic exposure management, and automated hedging.',
   },
   {
     icon: Blocks,
@@ -69,8 +62,7 @@ const audiences = [
 
 const metrics = [
   { value: '15+', label: 'Market Types' },
-  { value: '<5ms', label: 'Matching Latency' },
-  { value: '10+', label: 'Years Exchange DNA' },
+  { value: '20+', label: 'Years Exchange DNA' },
   { value: '99.9%', label: 'Uptime SLA' },
 ]
 
@@ -155,11 +147,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-btx-500/30 rounded-xl overflow-hidden border border-btx-500/30"
+            className="mt-20 grid grid-cols-3 gap-px bg-btx-500/30 rounded-xl overflow-hidden border border-btx-500/30"
           >
             {[
               { icon: Globe, label: 'Global Markets', value: 'Multi-Region' },
-              { icon: Zap, label: 'Execution Speed', value: '<5ms' },
               { icon: BarChart3, label: 'Market Types', value: '15+' },
               { icon: Clock, label: 'Platform Uptime', value: '99.9%' },
             ].map((stat) => (
@@ -184,7 +175,7 @@ export default function Home() {
             subtitle="Purpose-built for professional market participants and exchange operators worldwide."
             center
           />
-          <div className="mt-16 grid md:grid-cols-2 gap-6">
+          <div className="mt-16 grid md:grid-cols-3 gap-6">
             {pillars.map((pillar, i) => (
               <FeatureCard key={pillar.title} {...pillar} index={i} />
             ))}
@@ -195,7 +186,7 @@ export default function Home() {
       {/* Metrics */}
       <section className="py-20 bg-btx-800/50 border-y border-btx-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-btx-500/30">
+          <div className="grid grid-cols-3 divide-x divide-btx-500/30">
             {metrics.map((metric, i) => (
               <MetricCard key={metric.label} {...metric} index={i} />
             ))}
@@ -241,15 +232,14 @@ export default function Home() {
               <SectionHeader
                 label="Technology"
                 title="Exchange Engine Architecture"
-                subtitle="Sub-5ms deterministic execution with crash recovery and zero order loss."
+                subtitle="Deterministic execution with crash recovery and zero order loss."
               />
               <div className="mt-8 space-y-4">
                 {[
                   'Low-latency order book with price-time priority',
                   'Synthetic liquidity via cross-runner matching',
-                  'Real-time risk controls and exposure management',
-                  'REST & WebSocket APIs with sandbox access',
-                  'Atomic cancel-and-place order operations',
+                  'Real-time risk controls and position management',
+                  'gRPC API with full market and order access',
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center mt-0.5 shrink-0">
@@ -278,10 +268,10 @@ export default function Home() {
             >
               <div className="bg-btx-700/50 border border-btx-500/30 rounded-xl p-8 space-y-4">
                 {[
-                  { label: 'Client Layer', items: ['REST API', 'WebSocket', 'FIX Gateway'], color: '#0ea5e9' },
+                  { label: 'Client Layer', items: ['gRPC API'], color: '#0ea5e9' },
                   { label: 'Matching Engine', items: ['Order Book', 'Price Engine', 'Risk Check'], color: '#00d4aa' },
-                  { label: 'Liquidity Bridge', items: ['Aggregation', 'Hedging', 'Settlement'], color: '#00d4aa' },
-                  { label: 'Data Layer', items: ['Sports Data', 'Analytics', 'Profiling'], color: '#22d3ee' },
+                  { label: 'Liquidity Bridge', items: ['Aggregation', 'Settlement'], color: '#00d4aa' },
+                  { label: 'Data Layer', items: ['Sports Data', 'Analytics'], color: '#22d3ee' },
                 ].map((layer, i) => (
                   <div key={layer.label}>
                     <div className="flex items-center gap-3 mb-2">

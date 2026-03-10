@@ -25,7 +25,6 @@ const footerSections = [
     links: [
       { label: 'API Documentation', to: '/developers' },
       { label: 'Sandbox Access', to: '/developers' },
-      { label: 'SDKs & Libraries', to: '/developers' },
       { label: 'Status Page', to: '/developers' },
     ],
   },

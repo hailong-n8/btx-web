@@ -1,17 +1,12 @@
 import { motion } from 'framer-motion'
 import {
   Cpu,
-  ShieldCheck,
   Radio,
   Code2,
-  Zap,
   RotateCcw,
-  BarChart3,
-  Users,
   Layers,
   Timer,
   GitBranch,
-  Workflow,
 } from 'lucide-react'
 import Hero from '../components/Hero'
 import SectionHeader from '../components/SectionHeader'
@@ -22,11 +17,6 @@ import useDocumentTitle from '../hooks/useDocumentTitle'
 
 
 const engineFeatures = [
-  {
-    icon: Zap,
-    title: 'Sub-5ms Latency',
-    description: 'Deterministic price-time priority matching optimised for high-throughput environments.',
-  },
   {
     icon: Layers,
     title: 'Multi-Level Order Book',
@@ -41,29 +31,6 @@ const engineFeatures = [
     icon: Timer,
     title: 'High Throughput',
     description: 'Engineered for linear performance scaling under sustained high-volume load.',
-  },
-]
-
-const riskFeatures = [
-  {
-    icon: ShieldCheck,
-    title: 'Dynamic Exposure Control',
-    description: 'Per-market and global limits with real-time position monitoring.',
-  },
-  {
-    icon: Users,
-    title: 'Customer Intelligence',
-    description: 'Behavioural profiling for sophisticated counterparty risk management.',
-  },
-  {
-    icon: BarChart3,
-    title: 'Liquidity Segmentation',
-    description: 'Adaptive spread management based on flow quality analysis.',
-  },
-  {
-    icon: Workflow,
-    title: 'Automated Hedging',
-    description: 'Real-time hedge execution via liquidity bridge with configurable parameters.',
   },
 ]
 
@@ -87,11 +54,8 @@ const marketFeatures = [
 
 const apiCapabilities = [
   { label: 'gRPC API', description: 'Binary protocol for orders, markets, and account management.' },
-  { label: 'WebSocket Streams', description: 'Real-time streaming for prices, order updates, and market events.', comingSoon: true },
   { label: 'Sandbox Environment', description: 'Full test environment with simulated market data.', comingSoon: true },
   { label: 'Idempotency', description: 'Safe retry semantics for all mutating operations.' },
-  { label: 'Atomic Operations', description: 'Cancel-and-place orders in a single atomic request.' },
-  { label: 'Rate Limiting', description: 'Tier-based rate limits with burst capacity.' },
 ]
 
 export default function Technology() {
@@ -115,7 +79,7 @@ export default function Technology() {
             title="Deterministic Order Execution"
             subtitle="Price-time priority matching with complex order types and synthetic liquidity."
           />
-          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-14 grid sm:grid-cols-3 gap-6">
             {engineFeatures.map((f, i) => (
               <FeatureCard key={f.title} {...f} index={i} />
             ))}
@@ -123,25 +87,8 @@ export default function Technology() {
         </div>
       </section>
 
-      {/* Risk & Profiling */}
-      <section className="py-24 bg-btx-800/30 border-y border-btx-500/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            label="Risk & Profiling Engine"
-            title="Intelligent Risk Management"
-            subtitle="Exposure controls, customer profiling, and automated hedging in one system."
-            badge={<ComingSoonBadge />}
-          />
-          <div className="mt-14 grid sm:grid-cols-2 gap-6">
-            {riskFeatures.map((f, i) => (
-              <FeatureCard key={f.title} {...f} index={i} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Market Creation */}
-      <section className="py-24 bg-btx-900">
+      <section className="py-24 bg-btx-800/30 border-y border-btx-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             label="Market Creation Engine"
@@ -157,14 +104,14 @@ export default function Technology() {
       </section>
 
       {/* APIs */}
-      <section className="py-24 bg-btx-800/30 border-y border-btx-500/20">
+      <section className="py-24 bg-btx-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
               <SectionHeader
                 label="API Infrastructure"
                 title="Programmable Market Access"
-                subtitle="REST, WebSocket, and sandbox environments for rapid, reliable integration."
+                subtitle="gRPC API and sandbox environments for rapid, reliable integration."
               />
               <div className="mt-8">
                 <motion.div
@@ -226,7 +173,7 @@ export default function Technology() {
       </section>
 
       {/* Architecture Diagram */}
-      <section className="py-24 bg-btx-900">
+      <section className="py-24 bg-btx-800/30 border-y border-btx-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             label="System Architecture"
@@ -241,11 +188,11 @@ export default function Technology() {
           >
             <div className="grid lg:grid-cols-5 gap-4 items-start">
               {[
-                { label: 'Clients', items: ['gRPC', 'WebSocket', 'REST'], color: 'bg-accent-blue' },
-                { label: 'Gateway', items: ['Auth', 'Rate Limit', 'Routing'], color: 'bg-accent-cyan' },
+                { label: 'Clients', items: ['gRPC API'], color: 'bg-accent-blue' },
+                { label: 'Gateway', items: ['Auth', 'Routing'], color: 'bg-accent-cyan' },
                 { label: 'Engine', items: ['Order Book', 'Matching', 'Risk'], color: 'bg-accent' },
-                { label: 'Bridge', items: ['Aggregation', 'Hedging', 'Settlement'], color: 'bg-accent' },
-                { label: 'Data', items: ['Sports Feed', 'Analytics', 'Profiling'], color: 'bg-accent-cyan' },
+                { label: 'Bridge', items: ['Aggregation', 'Settlement'], color: 'bg-accent' },
+                { label: 'Data', items: ['Sports Feed', 'Analytics'], color: 'bg-accent-cyan' },
               ].map((block, i) => (
                 <div key={block.label}>
                   <div className="text-center mb-3">
