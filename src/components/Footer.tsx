@@ -84,11 +84,11 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} BTX Exchange. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link to="/compliance" className="text-xs text-btx-300 hover:text-btx-100 transition-colors">
+            <Link to="/privacy" className="text-xs text-btx-300 hover:text-btx-100 transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/compliance" className="text-xs text-btx-300 hover:text-btx-100 transition-colors">
-              Terms of Service
+            <Link to="/terms" className="text-xs text-btx-300 hover:text-btx-100 transition-colors">
+              Terms & Conditions
             </Link>
             <Link to="/compliance" className="text-xs text-btx-300 hover:text-btx-100 transition-colors">
               Regulatory

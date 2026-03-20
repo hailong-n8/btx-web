@@ -11,6 +11,8 @@ import Web3 from './pages/Web3'
 import Compliance from './pages/Compliance'
 import Developers from './pages/Developers'
 import Contact from './pages/Contact'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import Terms from './pages/Terms'
 
 export default function App() {
   return (
@@ -27,6 +29,8 @@ export default function App() {
         <Route path="/compliance" element={<Compliance />} />
         <Route path="/developers" element={<Developers />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<Terms />} />
       </Routes>
     </PageLayout>
   )
