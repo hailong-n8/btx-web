@@ -6,7 +6,7 @@ const sections = [
   {
     title: '1. Acceptance of Terms',
     items: [
-      'By accessing or using BTX Exchange services, APIs, or platform infrastructure, you agree to be bound by these Terms and Conditions.',
+      'By accessing or using IQEX Exchange services, APIs, or platform infrastructure, you agree to be bound by these Terms and Conditions.',
       'If you are using our services on behalf of an organisation, you represent that you have authority to bind that organisation to these terms.',
       'If you do not agree, you must not access or use our services.',
     ],
@@ -14,7 +14,7 @@ const sections = [
   {
     title: '2. Services',
     items: [
-      'BTX provides exchange infrastructure, matching engine technology, gRPC API access, and white-label platform solutions for sports trading markets.',
+      'IQEX provides exchange infrastructure, matching engine technology, gRPC API access, and white-label platform solutions for sports trading markets.',
       'Services are provided on an "as available" basis. We target 99.9% uptime but do not guarantee uninterrupted access.',
       'We reserve the right to modify, suspend, or discontinue any part of the service with reasonable notice.',
     ],
@@ -49,15 +49,15 @@ const sections = [
   {
     title: '6. Intellectual Property',
     items: [
-      'All platform technology, APIs, documentation, and branding are the property of BTX Exchange or its licensors.',
-      'White-label partners receive a limited licence to use BTX technology as specified in their partnership agreement.',
+      'All platform technology, APIs, documentation, and branding are the property of IQEX Exchange or its licensors.',
+      'White-label partners receive a limited licence to use IQEX technology as specified in their partnership agreement.',
       'No rights are granted beyond what is expressly stated in these terms or a separate written agreement.',
     ],
   },
   {
     title: '7. Limitation of Liability',
     items: [
-      'BTX Exchange shall not be liable for indirect, incidental, consequential, or punitive damages arising from your use of our services.',
+      'IQEX Exchange shall not be liable for indirect, incidental, consequential, or punitive damages arising from your use of our services.',
       'Our total liability for any claim shall not exceed the fees paid by you in the twelve months preceding the claim.',
       'We are not liable for losses resulting from market movements, system outages beyond our reasonable control, or third-party service failures.',
     ],
@@ -65,7 +65,7 @@ const sections = [
   {
     title: '8. Indemnification',
     items: [
-      'You agree to indemnify and hold BTX Exchange harmless from any claims, damages, or expenses arising from your breach of these terms or misuse of our services.',
+      'You agree to indemnify and hold IQEX Exchange harmless from any claims, damages, or expenses arising from your breach of these terms or misuse of our services.',
     ],
   },
   {
@@ -101,7 +101,7 @@ export default function Terms() {
         badge="Legal"
         title="Terms & "
         titleAccent="Conditions"
-        subtitle="The terms governing your use of BTX Exchange services and infrastructure."
+        subtitle="The terms governing your use of IQEX Exchange services and infrastructure."
         compact
       />
 
@@ -133,8 +133,8 @@ export default function Terms() {
             <h3 className="text-sm font-semibold text-btx-50 mb-2">Contact</h3>
             <p className="text-sm text-btx-200">
               For questions about these terms, contact us at{' '}
-              <a href="mailto:legal@btx.exchange" className="text-accent hover:text-accent-light transition-colors">
-                legal@btx.exchange
+              <a href="mailto:legal@iqex.io" className="text-accent hover:text-accent-light transition-colors">
+                legal@iqex.io
               </a>
             </p>
           </div>

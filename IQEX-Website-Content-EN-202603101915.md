@@ -1,4 +1,4 @@
-# BTX Exchange — Website Content (English)
+# IQEX Exchange — Website Content (English)
 
 > Generated: 2026-03-10 19:15
 > Scope: All page sections, headings, descriptions, CTAs, and data tables.
@@ -78,7 +78,7 @@ Deterministic execution with crash recovery and zero order loss.
 | Liquidity Bridge | Aggregation, Settlement |
 | Data Layer | Sports Data, Analytics |
 
-### CTA — Ready to Build on BTX?
+### CTA — Ready to Build on IQEX?
 
 Explore API access, liquidity partnerships, or white-label deployment with our team.
 
@@ -91,7 +91,7 @@ Explore API access, liquidity partnerships, or white-label deployment with our t
 
 ### Hero
 
-**Badge:** About BTX
+**Badge:** About IQEX
 
 **Title:** Build the Engine That Powers Global Event Markets
 
@@ -126,7 +126,7 @@ Three integrated verticals forming a cohesive exchange infrastructure platform.
 | Title | Description | Highlight |
 |-------|-------------|-----------|
 | Data | Real-time feeds, historical databases, and predictive modelling. | Decimal Sports Data |
-| Technology | Matching engine, risk systems, API platform, and operational tooling. | BTX Matching Engine & APIs |
+| Technology | Matching engine, risk systems, API platform, and operational tooling. | IQEX Matching Engine & APIs |
 | Exchange Engine | Liquidity bridge, settlement engine, risk controls, and market creation tools. | Liquidity Bridge & Settlement |
 
 ### Our Values — What Drives Us
@@ -138,9 +138,9 @@ Three integrated verticals forming a cohesive exchange infrastructure platform.
 | Innovation | Continuously evolving ahead of market demands. |
 | Global Reach | Multi-region deployment with localisation and compliance. |
 
-### CTA — Partner with BTX
+### CTA — Partner with IQEX
 
-Explore how BTX infrastructure can power your exchange or market making activity.
+Explore how IQEX infrastructure can power your exchange or market making activity.
 
 - Contact Us → /contact
 - View Technology → /technology
@@ -229,7 +229,7 @@ Get sandbox access and start building with our exchange APIs today.
 
 **Badge:** Developer Portal
 
-**Title:** Build on BTX Infrastructure
+**Title:** Build on IQEX Infrastructure
 
 **Subtitle:** Well-documented APIs for market data, order management, and settlement.
 
@@ -252,17 +252,17 @@ Rapid integration with clean, powerful APIs.
 
 **Code Example: gRPC API — Python**
 ```python
-// BTX gRPC — Place a limit order (Python)
-import btx_pb2, btx_pb2_grpc
+// IQEX gRPC — Place a limit order (Python)
+import iqex_pb2, iqex_pb2_grpc
 import grpc
 
 channel = grpc.secure_channel(
-    'api.btx.exchange:443',
+    'api.iqex.io:443',
     grpc.ssl_channel_credentials()
 )
-stub = btx_pb2_grpc.OrderServiceStub(channel)
+stub = iqex_pb2_grpc.OrderServiceStub(channel)
 
-response = stub.PlaceOrder(btx_pb2.PlaceOrderRequest(
+response = stub.PlaceOrder(iqex_pb2.PlaceOrderRequest(
     market_id='cricket_ipl_match_odds',
     side='back',
     price=2.50,
@@ -293,13 +293,13 @@ Documentation, code samples, and tools to get you started.
 
 | Title | Description | Tag |
 |-------|-------------|-----|
-| API Documentation | Full reference for endpoints, schemas, and authentication. | docs.btx.exchange |
+| API Documentation | Full reference for endpoints, schemas, and authentication. | docs.iqex.io |
 | Code Samples | Working examples across languages for common integration patterns. | GitHub |
-| Status Page | Live status, incident history, and uptime for all BTX services. | status.btx.exchange |
+| Status Page | Live status, incident history, and uptime for all IQEX services. | status.iqex.io |
 
 ### CTA — Start Building Today
 
-Request API credentials and sandbox access to begin integrating with BTX.
+Request API credentials and sandbox access to begin integrating with IQEX.
 
 - Get API Access → /contact
 - View Technology → /technology
@@ -391,7 +391,7 @@ Discuss fee structures, technical requirements, and onboarding with our partners
 
 **Title:** Launch Your Own Exchange in Weeks
 
-**Subtitle:** Fully branded, exchange-grade platform powered by BTX. Matching engine to settlement — included.
+**Subtitle:** Fully branded, exchange-grade platform powered by IQEX. Matching engine to settlement — included.
 
 **CTAs:**
 - Request a Demo → /contact
@@ -421,7 +421,7 @@ Structured process for a smooth, predictable launch.
 
 ### Integration — Seamless Technical Integration
 
-Connect BTX with your existing infrastructure.
+Connect IQEX with your existing infrastructure.
 
 | Title | Description |
 |-------|-------------|
@@ -431,7 +431,7 @@ Connect BTX with your existing infrastructure.
 
 ### Target Partners — Built for Ambitious Operators
 
-Regional operator, sports community, or Web3 platform — BTX gives you the infrastructure to compete.
+Regional operator, sports community, or Web3 platform — IQEX gives you the infrastructure to compete.
 
 | Title | Description |
 |-------|-------------|
@@ -440,13 +440,13 @@ Regional operator, sports community, or Web3 platform — BTX gives you the infr
 | Sports Communities | Professional prediction markets tailored to your community. |
 | Crypto & Web3 Platforms | Sports trading with stablecoin integration and hybrid settlement. |
 
-### Why BTX — The Operator's Advantage
+### Why IQEX — The Operator's Advantage
 
 Live exchange infrastructure backed by institutional-grade technology.
 
 - No development team required — fully managed platform
 - Continuous updates to matching engine and risk systems
-- Access to BTX liquidity pool and market maker network
+- Access to IQEX liquidity pool and market maker network
 - Flexible commercial terms with transparent revenue sharing
 - Dedicated account management and technical support
 - Full regulatory and compliance framework support
@@ -503,7 +503,7 @@ Deep coverage across the world's most traded sports with full in-play support.
 
 ### Capabilities — Market Infrastructure Features
 
-Core capabilities powering every market on the BTX platform.
+Core capabilities powering every market on the IQEX platform.
 
 | Title | Description |
 |-------|-------------|
@@ -529,7 +529,7 @@ Operators and agents request markets for any verifiable outcome, subject to juri
 | Esports | Competitive gaming markets across major titles and tournaments. |
 | Niche Sports | Kabaddi, table tennis, darts, and emerging sports coverage. |
 
-### CTA — Explore BTX Markets
+### CTA — Explore IQEX Markets
 
 Discuss market coverage, custom verticals, or operator access with our team.
 
@@ -576,7 +576,7 @@ Integrated tools for regulatory adherence across all operations.
 
 Operating at the highest standards of compliance and market integrity.
 
-Strong compliance is a competitive advantage. Partners choose BTX for governance, security, and regulatory posture.
+Strong compliance is a competitive advantage. Partners choose IQEX for governance, security, and regulatory posture.
 
 **Our Commitments:**
 - Licensed or licensable framework across target jurisdictions
@@ -593,7 +593,7 @@ Strong compliance is a competitive advantage. Partners choose BTX for governance
 For regulatory questions, compliance documentation, or partnership discussions.
 
 - Contact Compliance → /contact
-- About BTX → /about
+- About IQEX → /about
 
 ---
 
@@ -623,10 +623,10 @@ For regulatory questions, compliance documentation, or partnership discussions.
 
 | Title | Description | Email |
 |-------|-------------|-------|
-| Partnerships & White Label | White-label deployment, operator partnerships, and commercial arrangements. | partnerships@btx.exchange |
-| Liquidity & Market Making | Liquidity partner applications, fee structures, and market making programmes. | liquidity@btx.exchange |
-| API & Technical Integration | API credentials, sandbox access, and technical integration support. | developers@btx.exchange |
-| General Enquiries | Press, compliance, regulatory, and general enquiries. | info@btx.exchange |
+| Partnerships & White Label | White-label deployment, operator partnerships, and commercial arrangements. | partnerships@iqex.io |
+| Liquidity & Market Making | Liquidity partner applications, fee structures, and market making programmes. | liquidity@iqex.io |
+| API & Technical Integration | API credentials, sandbox access, and technical integration support. | developers@iqex.io |
+| General Enquiries | Press, compliance, regulatory, and general enquiries. | info@iqex.io |
 
 ### Response Times
 
@@ -646,9 +646,9 @@ For regulatory questions, compliance documentation, or partnership discussions.
 - Solutions: Exchange Technology, Liquidity Access, White Label, Web3 Rails
 - Markets: Cricket, Football, Tennis, Custom Markets
 - Developers: API Documentation, Sandbox Access, Status Page
-- Company: About BTX, Compliance, Contact
+- Company: About IQEX, Compliance, Contact
 
-**Bottom Bar:** © 2026 BTX Exchange. All rights reserved. | Privacy Policy | Terms of Service | Regulatory
+**Bottom Bar:** © 2026 IQEX Exchange. All rights reserved. | Privacy Policy | Terms of Service | Regulatory
 
 ---
 

@@ -43,7 +43,7 @@ const groupStructure = [
     icon: Cpu,
     title: 'Technology',
     description: 'Matching engine, risk systems, API platform, and operational tooling.',
-    highlight: 'BTX Matching Engine & APIs',
+    highlight: 'IQEX Matching Engine & APIs',
   },
   {
     icon: Layers,
@@ -77,11 +77,11 @@ const values = [
 ]
 
 export default function About() {
-  useDocumentTitle('About BTX')
+  useDocumentTitle('About IQEX')
   return (
     <>
       <Hero
-        badge="About BTX"
+        badge="About IQEX"
         title="Build the Engine That Powers Global "
         titleAccent="Event Markets"
         subtitle="Market infrastructure powering professional sports trading exchanges worldwide."
@@ -227,8 +227,8 @@ export default function About() {
       </section>
 
       <CTASection
-        title="Partner with BTX"
-        subtitle="Explore how BTX infrastructure can power your exchange or market making activity."
+        title="Partner with IQEX"
+        subtitle="Explore how IQEX infrastructure can power your exchange or market making activity."
         primaryCTA={{ label: 'Contact Us', to: '/contact' }}
         secondaryCTA={{ label: 'View Technology', to: '/technology' }}
       />

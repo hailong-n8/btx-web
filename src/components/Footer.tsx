@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
+import BrandLogo from './BrandLogo'
 
 const footerSections = [
   {
@@ -31,7 +32,7 @@ const footerSections = [
   {
     title: 'Company',
     links: [
-      { label: 'About BTX', to: '/about' },
+      { label: 'About IQEX', to: '/about' },
       { label: 'Compliance', to: '/compliance' },
       { label: 'Contact', to: '/contact' },
     ],
@@ -44,13 +45,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-md bg-accent/10 border border-accent/30 flex items-center justify-center">
-                <span className="text-accent font-bold text-sm">BT</span>
-              </div>
-              <span className="text-xl font-bold tracking-tight">
-                BTX<span className="text-accent">.</span>
-              </span>
+            <Link to="/" className="mb-4 inline-flex">
+              <BrandLogo />
             </Link>
             <p className="text-sm text-btx-200 leading-relaxed max-w-xs">
               The infrastructure layer for global sports markets. Exchange-grade technology powering next-generation trading.
@@ -81,7 +77,7 @@ export default function Footer() {
 
         <div className="py-6 border-t border-btx-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-btx-300">
-            &copy; {new Date().getFullYear()} BTX Exchange. All rights reserved.
+            &copy; {new Date().getFullYear()} IQEX Exchange. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link to="/privacy" className="text-xs text-btx-300 hover:text-btx-100 transition-colors">

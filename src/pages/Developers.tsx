@@ -33,7 +33,7 @@ const resources = [
     icon: BookOpen,
     title: 'API Documentation',
     description: 'Full reference for endpoints, schemas, and authentication.',
-    tag: 'docs.btx.exchange',
+    tag: 'docs.iqex.io',
   },
   {
     icon: Terminal,
@@ -44,22 +44,22 @@ const resources = [
   {
     icon: Activity,
     title: 'Status Page',
-    description: 'Live status, incident history, and uptime for all BTX services.',
-    tag: 'status.btx.exchange',
+    description: 'Live status, incident history, and uptime for all IQEX services.',
+    tag: 'status.iqex.io',
   },
 ]
 
-const grpcExample = `// BTX gRPC — Place a limit order (Python)
-import btx_pb2, btx_pb2_grpc
+const grpcExample = `// IQEX gRPC — Place a limit order (Python)
+import iqex_pb2, iqex_pb2_grpc
 import grpc
 
 channel = grpc.secure_channel(
-    'api.btx.exchange:443',
+    'api.iqex.io:443',
     grpc.ssl_channel_credentials()
 )
-stub = btx_pb2_grpc.OrderServiceStub(channel)
+stub = iqex_pb2_grpc.OrderServiceStub(channel)
 
-response = stub.PlaceOrder(btx_pb2.PlaceOrderRequest(
+response = stub.PlaceOrder(iqex_pb2.PlaceOrderRequest(
     market_id='cricket_ipl_match_odds',
     side='back',
     price=2.50,
@@ -84,7 +84,7 @@ export default function Developers() {
     <>
       <Hero
         badge="Developer Portal"
-        title="Build on BTX "
+        title="Build on IQEX "
         titleAccent="Infrastructure"
         subtitle="Well-documented APIs for market data, order management, and settlement."
         primaryCTA={{ label: 'Get API Access', to: '/contact' }}
@@ -243,7 +243,7 @@ export default function Developers() {
 
       <CTASection
         title="Start Building Today"
-        subtitle="Request API credentials and sandbox access to begin integrating with BTX."
+        subtitle="Request API credentials and sandbox access to begin integrating with IQEX."
         primaryCTA={{ label: 'Get API Access', to: '/contact' }}
         secondaryCTA={{ label: 'View Technology', to: '/technology' }}
       />

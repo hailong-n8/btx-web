@@ -16,9 +16,9 @@ export default function ThemeSwitcher() {
       keyBuffer.current.push(e.key.toLowerCase())
       if (keyBuffer.current.length > 5) keyBuffer.current.shift()
       bufferTimer.current = setTimeout(() => { keyBuffer.current = [] }, 1500)
-      if (keyBuffer.current.slice(-3).join('') === 'btx') {
+      if (keyBuffer.current.slice(-4).join('') === 'iqex') {
         keyBuffer.current = []
-        window.dispatchEvent(new CustomEvent('btx-toggle-theme'))
+        window.dispatchEvent(new CustomEvent('iqex-toggle-theme'))
       }
     }
     window.addEventListener('keydown', handler)

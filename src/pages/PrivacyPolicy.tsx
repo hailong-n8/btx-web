@@ -43,7 +43,7 @@ const sections = [
   {
     title: '5. Data Retention',
     items: [
-      'Account data is retained for the duration of your relationship with BTX and as required by applicable regulations.',
+      'Account data is retained for the duration of your relationship with IQEX and as required by applicable regulations.',
       'Transaction records are retained for the minimum period required by financial regulatory obligations.',
       'You may request deletion of personal data subject to our legal and regulatory retention requirements.',
     ],
@@ -55,7 +55,7 @@ const sections = [
       'Correction: request correction of inaccurate or incomplete data.',
       'Deletion: request deletion of your data, subject to regulatory requirements.',
       'Portability: request your data in a structured, machine-readable format.',
-      'To exercise any of these rights, contact privacy@btx.exchange.',
+      'To exercise any of these rights, contact privacy@iqex.io.',
     ],
   },
   {
@@ -83,7 +83,7 @@ export default function PrivacyPolicy() {
         badge="Legal"
         title="Privacy "
         titleAccent="Policy"
-        subtitle="How BTX Exchange collects, uses, and protects your personal information."
+        subtitle="How IQEX Exchange collects, uses, and protects your personal information."
         compact
       />
 
@@ -115,8 +115,8 @@ export default function PrivacyPolicy() {
             <h3 className="text-sm font-semibold text-btx-50 mb-2">Contact</h3>
             <p className="text-sm text-btx-200">
               For privacy-related enquiries, contact us at{' '}
-              <a href="mailto:privacy@btx.exchange" className="text-accent hover:text-accent-light transition-colors">
-                privacy@btx.exchange
+              <a href="mailto:privacy@iqex.io" className="text-accent hover:text-accent-light transition-colors">
+                privacy@iqex.io
               </a>
             </p>
           </div>

@@ -182,7 +182,7 @@ export default function Markets() {
           <SectionHeader
             label="Capabilities"
             title="Market Infrastructure Features"
-            subtitle="Core capabilities powering every market on the BTX platform."
+            subtitle="Core capabilities powering every market on the IQEX platform."
             center
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -243,7 +243,7 @@ export default function Markets() {
       </section>
 
       <CTASection
-        title="Explore BTX Markets"
+        title="Explore IQEX Markets"
         subtitle="Discuss market coverage, custom verticals, or operator access with our team."
         primaryCTA={{ label: 'Contact Us', to: '/contact' }}
         secondaryCTA={{ label: 'API Documentation', to: '/developers' }}

@@ -154,7 +154,7 @@ export default function Compliance() {
                 subtitle="Operating at the highest standards of compliance and market integrity."
               />
               <p className="mt-4 text-sm text-btx-200 leading-relaxed">
-                Strong compliance is a competitive advantage. Partners choose BTX for governance, security, and regulatory posture.
+                Strong compliance is a competitive advantage. Partners choose IQEX for governance, security, and regulatory posture.
               </p>
             </div>
             <motion.div
@@ -182,7 +182,7 @@ export default function Compliance() {
         title="Compliance Enquiries"
         subtitle="For regulatory questions, compliance documentation, or partnership discussions."
         primaryCTA={{ label: 'Contact Compliance', to: '/contact' }}
-        secondaryCTA={{ label: 'About BTX', to: '/about' }}
+        secondaryCTA={{ label: 'About IQEX', to: '/about' }}
       />
     </>
   )

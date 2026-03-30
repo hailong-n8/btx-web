@@ -17,25 +17,25 @@ const inquiryTypes = [
     icon: Building2,
     title: 'Partnerships & White Label',
     description: 'White-label deployment, operator partnerships, and commercial arrangements.',
-    email: 'partnerships@btx.exchange',
+    email: 'partnerships@iqex.io',
   },
   {
     icon: MessageSquare,
     title: 'Liquidity & Market Making',
     description: 'Liquidity partner applications, fee structures, and market making programmes.',
-    email: 'liquidity@btx.exchange',
+    email: 'liquidity@iqex.io',
   },
   {
     icon: Mail,
     title: 'API & Technical Integration',
     description: 'API credentials, sandbox access, and technical integration support.',
-    email: 'developers@btx.exchange',
+    email: 'developers@iqex.io',
   },
   {
     icon: Globe,
     title: 'General Enquiries',
     description: 'Press, compliance, regulatory, and general enquiries.',
-    email: 'info@btx.exchange',
+    email: 'info@iqex.io',
   },
 ]
 

@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Palette, Globe, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import useTheme from '../hooks/useTheme'
+import BrandLogo from './BrandLogo'
 
 const navLinkKeys = [
   { path: '/', key: 'nav.home' },
@@ -70,8 +71,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const handler = () => setThemeOpen((v) => !v)
-    window.addEventListener('btx-toggle-theme', handler)
-    return () => window.removeEventListener('btx-toggle-theme', handler)
+    window.addEventListener('iqex-toggle-theme', handler)
+    return () => window.removeEventListener('iqex-toggle-theme', handler)
   }, [])
 
   const dropdownStyle = {
@@ -90,13 +91,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link to="/" className="flex items-center gap-2 group shrink-0">
-            <div className="w-8 h-8 rounded-md bg-accent/10 border border-accent/30 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-              <span className="text-accent font-bold text-sm">BT</span>
-            </div>
-            <span className="text-xl font-bold tracking-tight">
-              BTX<span className="text-accent">.</span>
-            </span>
+          <Link to="/" className="group shrink-0">
+            <BrandLogo className="group-hover:opacity-90 transition-opacity" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
@@ -115,7 +111,7 @@ export default function Navbar() {
             ))}
             <div className="w-px h-5 bg-btx-500/30 mx-1" />
             <a
-              href="https://github.com/btx-api/btx-api"
+              href="https://github.com/iqex-api/iqex-api"
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 py-2 text-sm font-medium rounded-md transition-colors text-btx-200 hover:text-btx-50 hover:bg-btx-600/50"
@@ -265,7 +261,7 @@ export default function Navbar() {
 
             <div className="flex flex-col gap-2 border-t border-btx-500/30 pt-3 mt-1">
               <a
-                href="https://github.com/btx-api/btx-api"
+                href="https://github.com/iqex-api/iqex-api"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-center text-sm font-medium text-btx-200 px-4 py-3 rounded-md border border-btx-500/50"

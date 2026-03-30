@@ -100,7 +100,7 @@ export default function WhiteLabel() {
         badge="White Label Solutions"
         title="Launch Your Own Exchange "
         titleAccent="in Weeks"
-        subtitle="Fully branded, exchange-grade platform powered by BTX. Matching engine to settlement — included."
+        subtitle="Fully branded, exchange-grade platform powered by IQEX. Matching engine to settlement — included."
         primaryCTA={{ label: 'Request a Demo', to: '/contact' }}
         secondaryCTA={{ label: 'View Technology', to: '/technology' }}
       />
@@ -161,7 +161,7 @@ export default function WhiteLabel() {
           <SectionHeader
             label="Integration"
             title="Seamless Technical Integration"
-            subtitle="Connect BTX with your existing infrastructure."
+            subtitle="Connect IQEX with your existing infrastructure."
             center
           />
           <div className="mt-16 grid md:grid-cols-3 gap-6">
@@ -178,7 +178,7 @@ export default function WhiteLabel() {
           <SectionHeader
             label="Target Partners"
             title="Built for Ambitious Operators"
-            subtitle="Regional operator, sports community, or Web3 platform — BTX gives you the infrastructure to compete."
+            subtitle="Regional operator, sports community, or Web3 platform — IQEX gives you the infrastructure to compete."
             center
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -202,13 +202,13 @@ export default function WhiteLabel() {
         </div>
       </section>
 
-      {/* Why BTX */}
+      {/* Why IQEX */}
       <section className="py-24 bg-btx-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <SectionHeader
-                label="Why BTX"
+                label="Why IQEX"
                 title="The Operator's Advantage"
                 subtitle="Live exchange infrastructure backed by institutional-grade technology."
               />
@@ -216,7 +216,7 @@ export default function WhiteLabel() {
                 {[
                   'No development team required — fully managed platform',
                   'Continuous updates to matching engine and risk systems',
-                  'Access to BTX liquidity pool and market maker network',
+                  'Access to IQEX liquidity pool and market maker network',
                   'Flexible commercial terms with transparent revenue sharing',
                   'Dedicated account management and technical support',
                   'Full regulatory and compliance framework support',

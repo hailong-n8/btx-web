@@ -305,7 +305,7 @@ export default function Home() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Build on BTX?"
+        title="Ready to Build on IQEX?"
         subtitle="Explore API access, liquidity partnerships, or white-label deployment with our team."
         primaryCTA={{ label: 'Contact Us', to: '/contact' }}
         secondaryCTA={{ label: 'View API Documentation', to: '/developers' }}
