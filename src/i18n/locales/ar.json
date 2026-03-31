@@ -580,7 +580,7 @@
     "specComplianceLabel": "الامتثال",
     "specComplianceValue": "نقاط ربط KYC/AML مدمجة",
     "specApiLabel": "تكامل API",
-    "specApiValue": "REST وWebhook callbacks",
+    "specApiValue": "gRPC API",
     "benefitsLabel": "المزايا",
     "benefitsTitle": "لماذا مسارات دفع هجينة",
     "benefitsSubtitle": "اجمع بين أفضل ما في البنية التقليدية والرقمية للمدفوعات.",

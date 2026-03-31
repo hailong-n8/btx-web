@@ -580,7 +580,7 @@
     "specComplianceLabel": "合規能力",
     "specComplianceValue": "內建 KYC/AML 接入點",
     "specApiLabel": "API 整合",
-    "specApiValue": "REST 與 Webhook 回呼",
+    "specApiValue": "gRPC API",
     "benefitsLabel": "優勢",
     "benefitsTitle": "為何選擇混合支付通道",
     "benefitsSubtitle": "整合傳統與加密支付基礎設施的雙重優勢。",

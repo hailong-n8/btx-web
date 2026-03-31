@@ -580,7 +580,7 @@
     "specComplianceLabel": "Compliance",
     "specComplianceValue": "Built-in KYC/AML hooks",
     "specApiLabel": "API Integration",
-    "specApiValue": "REST & Webhook callbacks",
+    "specApiValue": "gRPC API",
     "benefitsLabel": "Benefits",
     "benefitsTitle": "Why Hybrid Payment Rails",
     "benefitsSubtitle": "Combine the best of traditional and crypto payment infrastructure.",

@@ -580,7 +580,7 @@
     "specComplianceLabel": "コンプライアンス",
     "specComplianceValue": "KYC/AML フック内蔵",
     "specApiLabel": "API 連携",
-    "specApiValue": "REST / Webhook コールバック",
+    "specApiValue": "gRPC API",
     "benefitsLabel": "メリット",
     "benefitsTitle": "なぜハイブリッド決済レールか",
     "benefitsSubtitle": "従来型と暗号資産決済インフラの強みを組み合わせます。",
