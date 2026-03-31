@@ -138,7 +138,7 @@ export default function Navbar() {
               </button>
               {themeOpen && (
                 <div
-                  className="absolute right-0 top-full mt-1 w-52 rounded-lg shadow-xl border overflow-hidden"
+                  className="absolute left-1/2 -translate-x-1/2 top-full mt-1 w-36 rounded-lg shadow-xl border overflow-hidden"
                   style={dropdownStyle}
                 >
                   <div className="py-1.5 max-h-[70vh] overflow-y-auto">
@@ -151,12 +151,10 @@ export default function Navbar() {
                           backgroundColor: current.id === preset.id ? 'rgba(0,212,170,0.08)' : undefined,
                         }}
                       >
-                        <div className="flex gap-0.5 shrink-0">
-                          {[preset.colors[900], preset.colors[700], preset.colors[500]].map((c, i) => (
-                            <div key={i} className="w-3 h-3 rounded-sm border border-white/10"
-                              style={{ backgroundColor: c }} />
-                          ))}
-                        </div>
+                        <div
+                          className="w-3 h-3 rounded-sm border border-white/10 shrink-0"
+                          style={{ backgroundColor: preset.colors[900] }}
+                        />
                         <span className="text-xs font-medium truncate" style={{ color: current.id === preset.id ? '#00d4aa' : '#c4d1e0' }}>
                           {preset.label}
                         </span>
