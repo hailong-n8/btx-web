@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import {
   TrendingUp,
   Percent,
@@ -20,70 +21,71 @@ import useDocumentTitle from '../hooks/useDocumentTitle'
 const feeFeatures = [
   {
     icon: Percent,
-    title: 'Transparent Fee Model',
-    description: 'No hidden costs. Competitive rates designed for professional volume.',
+    titleKey: 'liquidity.feeTransparent',
+    descriptionKey: 'liquidity.feeTransparentDesc',
   },
   {
     icon: BarChart3,
-    title: 'Volume-Based Tiers',
-    description: 'Progressive fee reduction as monthly volumes increase.',
+    titleKey: 'liquidity.feeVolume',
+    descriptionKey: 'liquidity.feeVolumeDesc',
   },
   {
     icon: Award,
-    title: 'Incentive Programs',
-    description: 'Fee rebates and participation incentives for qualifying providers.',
+    titleKey: 'liquidity.feeIncentive',
+    descriptionKey: 'liquidity.feeIncentiveDesc',
   },
 ]
 
 const infraFeatures = [
   {
     icon: Server,
-    title: 'Co-Location Ready',
-    description: 'Low-latency connectivity for fastest execution and data delivery.',
+    titleKey: 'liquidity.infraCoLocation',
+    descriptionKey: 'liquidity.infraCoLocationDesc',
   },
   {
     icon: Timer,
-    title: 'Low-Latency Matching',
-    description: 'Consistent performance and fast execution under high volume.',
+    titleKey: 'liquidity.infraLatency',
+    descriptionKey: 'liquidity.infraLatencyDesc',
   },
   {
     icon: ListOrdered,
-    title: 'Advanced Order Types',
-    description: 'Limit, market, and cancel-and-replace operations.',
+    titleKey: 'liquidity.infraOrderTypes',
+    descriptionKey: 'liquidity.infraOrderTypesDesc',
   },
 ]
 
 const tiers = [
-  { tier: 'Standard', volume: '< £1M / month', makerFee: '0.10%', takerFee: '0.20%' },
-  { tier: 'Professional', volume: '£1M – £10M', makerFee: '0.06%', takerFee: '0.15%' },
-  { tier: 'Institutional', volume: '£10M – £50M', makerFee: '0.03%', takerFee: '0.10%' },
-  { tier: 'Market Maker', volume: '> £50M', makerFee: 'Custom', takerFee: 'Custom' },
+  { tierKey: 'liquidity.tierStandard', volume: '< £1M / month', makerFee: '0.10%', takerFee: '0.20%' },
+  { tierKey: 'liquidity.tierProfessional', volume: '£1M – £10M', makerFee: '0.06%', takerFee: '0.15%' },
+  { tierKey: 'liquidity.tierInstitutional', volume: '£10M – £50M', makerFee: '0.03%', takerFee: '0.10%' },
+  { tierKey: 'liquidity.tierMarketMaker', volume: '> £50M', makerFee: 'Custom', takerFee: 'Custom' },
 ]
 
 export default function Liquidity() {
-  useDocumentTitle('Liquidity & Market Making')
+  const { t } = useTranslation()
+  useDocumentTitle('liquidity.pageTitle')
   return (
     <>
       <Hero
-        badge="Liquidity & Market Making"
-        title="Built for Professional "
-        titleAccent="Liquidity Providers"
-        subtitle="Deep order books, transparent fees, and performance infrastructure for professional market makers."
-        primaryCTA={{ label: 'Apply as Liquidity Partner', to: '/contact' }}
-        secondaryCTA={{ label: 'View API Docs', to: '/developers' }}
+        badge={t('liquidity.heroBadge')}
+        title={t('liquidity.heroTitle')}
+        titleAccent={t('liquidity.heroAccent')}
+        subtitle={t('liquidity.heroSubtitle')}
+        primaryCTA={{ label: t('liquidity.ctaApply'), to: '/contact' }}
+        secondaryCTA={{ label: t('liquidity.ctaViewDocs'), to: '/developers' }}
       />
 
       {/* Fee Model */}
       <section className="py-24 bg-btx-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Fee Model"
-            title="Competitive & Transparent Pricing"
-            subtitle="Clear maker/taker fees with volume tiers and performance incentives."
+            label={t('liquidity.feeLabel')}
+            title={t('liquidity.feeTitle')}
+            subtitle={t('liquidity.feeSubtitle')}
           />
           <div className="mt-14 grid sm:grid-cols-3 gap-6">
             {feeFeatures.map((f, i) => (
-              <FeatureCard key={f.title} {...f} index={i} />
+              <FeatureCard key={f.titleKey} icon={f.icon} title={t(f.titleKey)} description={t(f.descriptionKey)} index={i} />
             ))}
           </div>
         </div>
@@ -93,9 +95,9 @@ export default function Liquidity() {
       <section className="py-24 bg-btx-800/30 border-y border-btx-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Volume Tiers"
-            title="Fee Schedule"
-            subtitle="Higher volumes unlock lower fees."
+            label={t('liquidity.tiersLabel')}
+            title={t('liquidity.tiersTitle')}
+            subtitle={t('liquidity.tiersSubtitle')}
             center
           />
           <motion.div
@@ -107,29 +109,29 @@ export default function Liquidity() {
             <table className="w-full">
               <thead>
                 <tr className="bg-btx-700/50">
-                  <th className="text-left px-6 py-4 text-sm font-semibold text-btx-100 uppercase tracking-wider">Tier</th>
-                  <th className="text-left px-6 py-4 text-sm font-semibold text-btx-100 uppercase tracking-wider">Monthly Volume</th>
-                  <th className="text-center px-6 py-4 text-sm font-semibold text-btx-100 uppercase tracking-wider">Maker Fee</th>
-                  <th className="text-center px-6 py-4 text-sm font-semibold text-btx-100 uppercase tracking-wider">Taker Fee</th>
+                  <th className="text-left px-6 py-4 text-sm font-semibold text-btx-100 uppercase tracking-wider">{t('liquidity.tierHeader')}</th>
+                  <th className="text-left px-6 py-4 text-sm font-semibold text-btx-100 uppercase tracking-wider">{t('liquidity.tierVolume')}</th>
+                  <th className="text-center px-6 py-4 text-sm font-semibold text-btx-100 uppercase tracking-wider">{t('liquidity.tierMaker')}</th>
+                  <th className="text-center px-6 py-4 text-sm font-semibold text-btx-100 uppercase tracking-wider">{t('liquidity.tierTaker')}</th>
                 </tr>
               </thead>
               <tbody>
-                {tiers.map((t, i) => (
+                {tiers.map((tier, i) => (
                   <tr
-                    key={t.tier}
+                    key={tier.tierKey}
                     className={`border-t border-btx-500/20 ${i === tiers.length - 1 ? 'bg-accent/5' : 'bg-btx-800/50'}`}
                   >
-                    <td className="px-6 py-4 text-sm font-medium text-btx-50">{t.tier}</td>
-                    <td className="px-6 py-4 text-sm text-btx-200">{t.volume}</td>
-                    <td className="px-6 py-4 text-sm text-accent text-center font-mono">{t.makerFee}</td>
-                    <td className="px-6 py-4 text-sm text-btx-100 text-center font-mono">{t.takerFee}</td>
+                    <td className="px-6 py-4 text-sm font-medium text-btx-50">{t(tier.tierKey)}</td>
+                    <td className="px-6 py-4 text-sm text-btx-200">{tier.volume}</td>
+                    <td className="px-6 py-4 text-sm text-accent text-center font-mono">{tier.makerFee}</td>
+                    <td className="px-6 py-4 text-sm text-btx-100 text-center font-mono">{tier.takerFee}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </motion.div>
           <p className="mt-4 text-xs text-btx-300 text-center">
-            Custom pricing available for qualifying market makers. Contact us for details.
+            {t('liquidity.tierCustomNote')}
           </p>
         </div>
       </section>
@@ -138,13 +140,13 @@ export default function Liquidity() {
       <section className="py-24 bg-btx-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Infrastructure"
-            title="Performance-Grade Trading Infrastructure"
-            subtitle="Built for algorithmic trading, market making, and high-frequency strategies."
+            label={t('liquidity.infraLabel')}
+            title={t('liquidity.infraTitle')}
+            subtitle={t('liquidity.infraSubtitle')}
           />
           <div className="mt-14 grid sm:grid-cols-3 gap-6">
             {infraFeatures.map((f, i) => (
-              <FeatureCard key={f.title} {...f} index={i} />
+              <FeatureCard key={f.titleKey} icon={f.icon} title={t(f.titleKey)} description={t(f.descriptionKey)} index={i} />
             ))}
           </div>
         </div>
@@ -156,35 +158,35 @@ export default function Liquidity() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <SectionHeader
-                label="Incentive Programs"
-                title="Rewarding Market Excellence"
-                subtitle="Structured rewards for providers meeting performance benchmarks."
+                label={t('liquidity.incentiveLabel')}
+                title={t('liquidity.incentiveTitle')}
+                subtitle={t('liquidity.incentiveSubtitle')}
               />
               <div className="mt-8 space-y-6">
                 {[
                   {
                     icon: Target,
-                    title: 'Performance Rebates',
-                    desc: 'Fee rebates based on quoting quality, uptime, and spread metrics.',
+                    titleKey: 'liquidity.incentiveRebates',
+                    descKey: 'liquidity.incentiveRebatesDesc',
                   },
                   {
                     icon: TrendingUp,
-                    title: 'Volume Incentives',
-                    desc: 'Additional rewards for consistent monthly volume targets.',
+                    titleKey: 'liquidity.incentiveVolume',
+                    descKey: 'liquidity.incentiveVolumeDesc',
                   },
                   {
                     icon: Award,
-                    title: 'Network Participation',
-                    desc: 'Equity participation for qualifying infrastructure partners.',
+                    titleKey: 'liquidity.incentiveNetwork',
+                    descKey: 'liquidity.incentiveNetworkDesc',
                   },
                 ].map((item) => (
-                  <div key={item.title} className="flex gap-4">
+                  <div key={item.titleKey} className="flex gap-4">
                     <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
                       <item.icon className="text-accent" size={18} />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-btx-50 text-sm">{item.title}</h4>
-                      <p className="text-sm text-btx-200 mt-1">{item.desc}</p>
+                      <h4 className="font-semibold text-btx-50 text-sm">{t(item.titleKey)}</h4>
+                      <p className="text-sm text-btx-200 mt-1">{t(item.descKey)}</p>
                     </div>
                   </div>
                 ))}
@@ -197,20 +199,20 @@ export default function Liquidity() {
               viewport={{ once: true }}
               className="bg-btx-700/50 border border-btx-500/30 rounded-xl p-8"
             >
-              <h3 className="text-xl font-bold text-btx-50 mb-4">Become a Liquidity Partner</h3>
+              <h3 className="text-xl font-bold text-btx-50 mb-4">{t('liquidity.partnerTitle')}</h3>
               <p className="text-sm text-btx-200 leading-relaxed mb-6">
-                Join our network for preferential fees, dedicated support, and co-location options.
+                {t('liquidity.partnerDesc')}
               </p>
               <div className="space-y-3 mb-6">
                 {[
-                  'Dedicated account management',
-                  'Custom fee negotiation',
-                  'Priority API support',
-                  'Early access to new markets',
-                ].map((perk) => (
-                  <div key={perk} className="flex items-center gap-2 text-sm text-btx-200">
+                  'liquidity.partnerPerk1',
+                  'liquidity.partnerPerk2',
+                  'liquidity.partnerPerk3',
+                  'liquidity.partnerPerk4',
+                ].map((perkKey) => (
+                  <div key={perkKey} className="flex items-center gap-2 text-sm text-btx-200">
                     <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                    {perk}
+                    {t(perkKey)}
                   </div>
                 ))}
               </div>
@@ -218,7 +220,7 @@ export default function Liquidity() {
                 to="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-light text-accent-fg font-semibold rounded-lg transition-all w-full justify-center group"
               >
-                Apply Now
+                {t('liquidity.partnerApply')}
                 <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </motion.div>
@@ -227,10 +229,10 @@ export default function Liquidity() {
       </section>
 
       <CTASection
-        title="Start Providing Liquidity"
-        subtitle="Discuss fee structures, technical requirements, and onboarding with our partnerships team."
-        primaryCTA={{ label: 'Contact Partnerships', to: '/contact' }}
-        secondaryCTA={{ label: 'Explore Technology', to: '/technology' }}
+        title={t('liquidity.ctaTitle')}
+        subtitle={t('liquidity.ctaSubtitle')}
+        primaryCTA={{ label: t('liquidity.ctaContact'), to: '/contact' }}
+        secondaryCTA={{ label: t('liquidity.ctaExplore'), to: '/technology' }}
       />
     </>
   )

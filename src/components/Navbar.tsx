@@ -4,6 +4,7 @@ import { Menu, X, Palette, Globe, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import useTheme from '../hooks/useTheme'
 import BrandLogo from './BrandLogo'
+import { appLanguages, resolveLanguage } from '../i18n/languages'
 
 const navLinkKeys = [
   { path: '/', key: 'nav.home' },
@@ -17,18 +18,6 @@ const navLinkKeys = [
   { path: '/contact', key: 'nav.contact' },
 ]
 
-const languages = [
-  { code: 'en', label: 'English', short: 'EN' },
-  { code: 'zh-CN', label: '简体中文', short: '简' },
-  { code: 'zh-TW', label: '繁体中文', short: '繁' },
-  { code: 'es', label: 'Spanish', short: 'ES' },
-  { code: 'pt', label: 'Portuguese', short: 'PT' },
-  { code: 'fr', label: 'French', short: 'FR' },
-  { code: 'hi', label: 'Hindi', short: 'HI' },
-  { code: 'ja', label: 'Japanese', short: 'JA' },
-  { code: 'ar', label: 'Arabic', short: 'AR' },
-]
-
 export default function Navbar() {
   const { t, i18n } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
@@ -40,7 +29,7 @@ export default function Navbar() {
   const location = useLocation()
   const { current, setById, presets } = useTheme()
 
-  const currentLang = languages.find((l) => l.code === i18n.language || i18n.language?.startsWith(l.code + '-')) ?? languages[0]
+  const currentLang = resolveLanguage(i18n.language)
 
   const setLanguage = (code: string) => {
     i18n.changeLanguage(code)
@@ -132,7 +121,7 @@ export default function Navbar() {
               <button
                 onClick={() => setThemeOpen(!themeOpen)}
                 className="p-2 rounded-md text-btx-300 hover:text-btx-50 hover:bg-btx-600/40 transition-colors"
-                title="Theme"
+                title={t('nav.theme')}
               >
                 <Palette size={16} />
               </button>
@@ -173,7 +162,7 @@ export default function Navbar() {
               <button
                 onClick={() => setLangOpen(!langOpen)}
                 className="flex items-center gap-1 px-2 py-2 rounded-md text-btx-300 hover:text-btx-50 hover:bg-btx-600/40 transition-colors"
-                title="Language"
+                title={t('nav.language')}
               >
                 <Globe size={16} />
                 <span className="text-xs font-medium">{currentLang.short}</span>
@@ -184,7 +173,7 @@ export default function Navbar() {
                   className="absolute right-0 top-full mt-1 w-44 rounded-lg shadow-xl border overflow-hidden"
                   style={dropdownStyle}
                 >
-                  {languages.map((lang) => (
+                  {appLanguages.filter((lang) => lang.enabled).map((lang) => (
                     <button
                       key={lang.code}
                       onClick={() => setLanguage(lang.code)}
@@ -239,10 +228,10 @@ export default function Navbar() {
                 className="flex items-center gap-2 px-3 py-2 rounded-md text-btx-200 hover:text-btx-50 hover:bg-btx-600/40 transition-colors text-sm"
               >
                 <Palette size={16} />
-                Theme
+                {t('nav.theme')}
               </button>
               <div className="w-px h-5 bg-btx-500/30" />
-              {languages.map((lang) => (
+              {appLanguages.filter((lang) => lang.enabled).map((lang) => (
                 <button
                   key={lang.code}
                   onClick={() => setLanguage(lang.code)}

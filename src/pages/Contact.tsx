@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import {
   Mail,
   MessageSquare,
@@ -12,35 +13,36 @@ import Hero from '../components/Hero'
 import SectionHeader from '../components/SectionHeader'
 import useDocumentTitle from '../hooks/useDocumentTitle'
 
-const inquiryTypes = [
-  {
-    icon: Building2,
-    title: 'Partnerships & White Label',
-    description: 'White-label deployment, operator partnerships, and commercial arrangements.',
-    email: 'partnerships@iqex.io',
-  },
-  {
-    icon: MessageSquare,
-    title: 'Liquidity & Market Making',
-    description: 'Liquidity partner applications, fee structures, and market making programmes.',
-    email: 'liquidity@iqex.io',
-  },
-  {
-    icon: Mail,
-    title: 'API & Technical Integration',
-    description: 'API credentials, sandbox access, and technical integration support.',
-    email: 'developers@iqex.io',
-  },
-  {
-    icon: Globe,
-    title: 'General Enquiries',
-    description: 'Press, compliance, regulatory, and general enquiries.',
-    email: 'info@iqex.io',
-  },
-]
-
 export default function Contact() {
-  useDocumentTitle('Contact')
+  const { t } = useTranslation()
+  useDocumentTitle('contact.pageTitle')
+
+  const inquiryTypes = [
+    {
+      icon: Building2,
+      title: t('contact.channelPartnership'),
+      description: t('contact.channelPartnershipDesc'),
+      email: 'partnerships@iqex.io',
+    },
+    {
+      icon: MessageSquare,
+      title: t('contact.channelLiquidity'),
+      description: t('contact.channelLiquidityDesc'),
+      email: 'liquidity@iqex.io',
+    },
+    {
+      icon: Mail,
+      title: t('contact.channelTechnical'),
+      description: t('contact.channelTechnicalDesc'),
+      email: 'developers@iqex.io',
+    },
+    {
+      icon: Globe,
+      title: t('contact.channelGeneral'),
+      description: t('contact.channelGeneralDesc'),
+      email: 'info@iqex.io',
+    },
+  ]
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -58,10 +60,10 @@ export default function Contact() {
   return (
     <>
       <Hero
-        badge="Contact"
-        title="Get in "
-        titleAccent="Touch"
-        subtitle="API integration, partnerships, or white-label deployment — we're ready to help."
+        badge={t('contact.heroBadge')}
+        title={t('contact.heroTitle')}
+        titleAccent={t('contact.heroAccent')}
+        subtitle={t('contact.heroSubtitle')}
         compact
       />
 
@@ -71,8 +73,8 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="lg:col-span-3">
               <SectionHeader
-                label="Send a Message"
-                title="Tell Us About Your Requirements"
+                label={t('contact.formLabel')}
+                title={t('contact.formTitle')}
               />
               {submitted ? (
                 <motion.div
@@ -81,81 +83,81 @@ export default function Contact() {
                   className="mt-8 p-8 rounded-xl border border-accent/30 bg-accent/5 text-center"
                 >
                   <CheckCircle2 className="text-accent mx-auto mb-4" size={40} />
-                  <h3 className="text-xl font-bold text-btx-50 mb-2">Message Received</h3>
+                  <h3 className="text-xl font-bold text-btx-50 mb-2">{t('contact.successTitle')}</h3>
                   <p className="text-btx-200">
-                    Thank you for your enquiry. Our team will respond within one business day.
+                    {t('contact.successDesc')}
                   </p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="mt-8 space-y-6">
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-btx-200 mb-2">Full Name *</label>
+                      <label className="block text-sm font-medium text-btx-200 mb-2">{t('contact.fieldName')}</label>
                       <input
                         type="text"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full px-4 py-3 rounded-lg bg-btx-700/50 border border-btx-500/30 text-btx-50 text-sm placeholder:text-btx-400 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-colors"
-                        placeholder="Your name"
+                        placeholder={t('contact.fieldNamePlaceholder')}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-btx-200 mb-2">Email Address *</label>
+                      <label className="block text-sm font-medium text-btx-200 mb-2">{t('contact.fieldEmail')}</label>
                       <input
                         type="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full px-4 py-3 rounded-lg bg-btx-700/50 border border-btx-500/30 text-btx-50 text-sm placeholder:text-btx-400 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-colors"
-                        placeholder="you@company.com"
+                        placeholder={t('contact.fieldEmailPlaceholder')}
                       />
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-btx-200 mb-2">Company</label>
+                      <label className="block text-sm font-medium text-btx-200 mb-2">{t('contact.fieldCompany')}</label>
                       <input
                         type="text"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         className="w-full px-4 py-3 rounded-lg bg-btx-700/50 border border-btx-500/30 text-btx-50 text-sm placeholder:text-btx-400 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-colors"
-                        placeholder="Company name"
+                        placeholder={t('contact.fieldCompanyPlaceholder')}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-btx-200 mb-2">Enquiry Type *</label>
+                      <label className="block text-sm font-medium text-btx-200 mb-2">{t('contact.fieldType')}</label>
                       <select
                         required
                         value={formData.type}
                         onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                         className="w-full px-4 py-3 rounded-lg bg-btx-700/50 border border-btx-500/30 text-btx-50 text-sm focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-colors appearance-none"
                       >
-                        <option value="" className="bg-btx-700">Select type</option>
-                        <option value="partnership" className="bg-btx-700">Partnerships & White Label</option>
-                        <option value="liquidity" className="bg-btx-700">Liquidity & Market Making</option>
-                        <option value="technical" className="bg-btx-700">API & Technical Integration</option>
-                        <option value="compliance" className="bg-btx-700">Compliance & Regulatory</option>
-                        <option value="general" className="bg-btx-700">General Enquiry</option>
+                        <option value="" className="bg-btx-700">{t('contact.fieldTypeDefault')}</option>
+                        <option value="partnership" className="bg-btx-700">{t('contact.typePartnership')}</option>
+                        <option value="liquidity" className="bg-btx-700">{t('contact.typeLiquidity')}</option>
+                        <option value="technical" className="bg-btx-700">{t('contact.typeTechnical')}</option>
+                        <option value="compliance" className="bg-btx-700">{t('contact.typeCompliance')}</option>
+                        <option value="general" className="bg-btx-700">{t('contact.typeGeneral')}</option>
                       </select>
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-btx-200 mb-2">Message *</label>
+                    <label className="block text-sm font-medium text-btx-200 mb-2">{t('contact.fieldMessage')}</label>
                     <textarea
                       required
                       rows={5}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-3 rounded-lg bg-btx-700/50 border border-btx-500/30 text-btx-50 text-sm placeholder:text-btx-400 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-colors resize-none"
-                      placeholder="Tell us about your requirements, use case, or questions..."
+                      placeholder={t('contact.fieldMessagePlaceholder')}
                     />
                   </div>
                   <button
                     type="submit"
                     className="inline-flex items-center gap-2 px-8 py-3.5 bg-accent hover:bg-accent-light text-accent-fg font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-accent/25 group"
                   >
-                    Send Message
+                    {t('contact.submitButton')}
                     <Send size={16} className="group-hover:translate-x-0.5 transition-transform" />
                   </button>
                 </form>
@@ -164,7 +166,7 @@ export default function Contact() {
 
             {/* Contact Channels */}
             <div className="lg:col-span-2">
-              <SectionHeader label="Direct Channels" title="Reach Our Teams" />
+              <SectionHeader label={t('contact.channelsLabel')} title={t('contact.channelsTitle')} />
               <div className="mt-8 space-y-4">
                 {inquiryTypes.map((type, i) => (
                   <motion.div
@@ -195,19 +197,19 @@ export default function Contact() {
               </div>
 
               <div className="mt-8 p-5 rounded-xl border border-btx-500/20 bg-btx-700/20">
-                <h4 className="text-sm font-semibold text-btx-100 mb-2">Response Times</h4>
+                <h4 className="text-sm font-semibold text-btx-100 mb-2">{t('contact.responseTitle')}</h4>
                 <div className="space-y-2 text-xs text-btx-300">
                   <div className="flex justify-between">
-                    <span>Partnership enquiries</span>
-                    <span className="text-btx-100">Within 24 hours</span>
+                    <span>{t('contact.responsePartnership')}</span>
+                    <span className="text-btx-100">{t('contact.responsePartnershipTime')}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Technical support</span>
-                    <span className="text-btx-100">Within 4 hours</span>
+                    <span>{t('contact.responseTechnical')}</span>
+                    <span className="text-btx-100">{t('contact.responseTechnicalTime')}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>General enquiries</span>
-                    <span className="text-btx-100">Within 48 hours</span>
+                    <span>{t('contact.responseGeneral')}</span>
+                    <span className="text-btx-100">{t('contact.responseGeneralTime')}</span>
                   </div>
                 </div>
               </div>

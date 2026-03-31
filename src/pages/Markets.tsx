@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import {
   Trophy,
   Dribbble,
@@ -18,25 +19,25 @@ import CTASection from '../components/CTASection'
 
 const sportsMarkets = [
   {
-    name: 'Cricket',
+    nameKey: 'markets.cricket',
     icon: Trophy,
-    tag: 'Primary Focus',
+    tagKey: 'markets.cricketTag',
     leagues: ['IPL', 'ICC World Cup', 'The Ashes', 'Big Bash League', 'PSL', 'CPL'],
     marketTypes: ['Match Odds', 'Match Odds with Draw', 'Completed Match', 'Tied Match', 'Innings Session Total', 'Innings Total Line'],
     highlight: true,
   },
   {
-    name: 'Football',
+    nameKey: 'markets.football',
     icon: Dribbble,
-    tag: 'Global Coverage',
+    tagKey: 'markets.footballTag',
     leagues: ['FIFA World Cup 2026', 'Premier League', 'La Liga', 'Champions League', 'Serie A', 'Bundesliga'],
     marketTypes: ['Full Time Match Odds', 'Asian Handicap', 'Asian Handicap Total Goals', 'Total Goals Over/Under', 'Correct Score'],
     highlight: true,
   },
   {
-    name: 'Tennis',
+    nameKey: 'markets.tennis',
     icon: Target,
-    tag: 'Deep Markets',
+    tagKey: 'markets.tennisTag',
     leagues: ['Grand Slams', 'ATP Tour', 'WTA Tour', 'Davis Cup'],
     marketTypes: ['Match Odds', 'Set Winner'],
     highlight: false,
@@ -46,71 +47,72 @@ const sportsMarkets = [
 const marketCapabilities = [
   {
     icon: Clock,
-    title: 'Real-Time In-Play',
-    description: 'Sub-second updates with automated suspension during live events.',
+    titleKey: 'markets.capInPlay',
+    descriptionKey: 'markets.capInPlayDesc',
   },
   {
     icon: BarChart3,
-    title: '15+ Market Types',
-    description: 'From match winner to complex session markets — diverse strategies supported.',
+    titleKey: 'markets.capTypes',
+    descriptionKey: 'markets.capTypesDesc',
   },
   {
     icon: Zap,
-    title: 'Fast Market Creation',
-    description: 'Rapid deployment with automated pricing and settlement rules.',
+    titleKey: 'markets.capFast',
+    descriptionKey: 'markets.capFastDesc',
   },
   {
     icon: PlusCircle,
-    title: 'Custom Markets',
-    description: 'Bespoke markets for prediction events, political outcomes, and niche verticals.',
+    titleKey: 'markets.capCustom',
+    descriptionKey: 'markets.capCustomDesc',
   },
   {
     icon: TrendingUp,
-    title: 'Dynamic Pricing',
-    description: 'Algorithmic prices with real-time adjustment from market activity and data feeds.',
+    titleKey: 'markets.capPricing',
+    descriptionKey: 'markets.capPricingDesc',
   },
   {
     icon: Users,
-    title: 'Multi-Operator Support',
-    description: 'Shared infrastructure serves multiple white-label operators with isolated risk.',
+    titleKey: 'markets.capMultiOp',
+    descriptionKey: 'markets.capMultiOpDesc',
   },
 ]
 
 const customMarkets = [
-  { name: 'Prediction Markets', desc: 'Event-driven markets for outcomes beyond traditional sports.' },
-  { name: 'Agent-Requested', desc: 'Custom markets created on demand for specific operator needs.' },
-  { name: 'Political Events', desc: 'Election and political outcome markets (jurisdiction dependent).' },
-  { name: 'Entertainment', desc: 'Awards, reality TV, and cultural event markets.' },
-  { name: 'Esports', desc: 'Competitive gaming markets across major titles and tournaments.' },
-  { name: 'Niche Sports', desc: 'Kabaddi, table tennis, darts, and emerging sports coverage.' },
+  { nameKey: 'markets.customPrediction', descKey: 'markets.customPredictionDesc' },
+  { nameKey: 'markets.customAgent', descKey: 'markets.customAgentDesc' },
+  { nameKey: 'markets.customPolitical', descKey: 'markets.customPoliticalDesc' },
+  { nameKey: 'markets.customEntertainment', descKey: 'markets.customEntertainmentDesc' },
+  { nameKey: 'markets.customEsports', descKey: 'markets.customEsportsDesc' },
+  { nameKey: 'markets.customNiche', descKey: 'markets.customNicheDesc' },
 ]
 
 export default function Markets() {
-  useDocumentTitle('Markets & Coverage')
+  const { t } = useTranslation()
+  useDocumentTitle('markets.pageTitle')
   return (
     <>
       <Hero
-        badge="Markets & Coverage"
-        title="Deep Vertical Coverage Across "
-        titleAccent="Global Sports"
-        subtitle="Institutional-depth markets in cricket, football, tennis, and custom verticals."
-        primaryCTA={{ label: 'Access Markets', to: '/contact' }}
-        secondaryCTA={{ label: 'View Technology', to: '/technology' }}
+        badge={t('markets.heroBadge')}
+        title={t('markets.heroTitle')}
+        titleAccent={t('markets.heroAccent')}
+        subtitle={t('markets.heroSubtitle')}
+        primaryCTA={{ label: t('markets.ctaAccess'), to: '/contact' }}
+        secondaryCTA={{ label: t('markets.ctaViewTech'), to: '/technology' }}
       />
 
       {/* Sports Markets */}
       <section className="py-24 bg-btx-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Sports Coverage"
-            title="Core Sports Verticals"
-            subtitle="Deep coverage across the world's most traded sports with full in-play support."
+            label={t('markets.sportsLabel')}
+            title={t('markets.sportsTitle')}
+            subtitle={t('markets.sportsSubtitle')}
             center
           />
           <div className="mt-16 space-y-6">
             {sportsMarkets.map((sport, i) => (
               <motion.div
-                key={sport.name}
+                key={sport.nameKey}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -129,18 +131,18 @@ export default function Markets() {
                       <sport.icon className={sport.highlight ? 'text-accent' : 'text-btx-200'} size={24} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-btx-50">{sport.name}</h3>
+                      <h3 className="text-xl font-bold text-btx-50">{t(sport.nameKey)}</h3>
                       <span className={`text-xs font-medium uppercase tracking-wider ${
                         sport.highlight ? 'text-accent' : 'text-btx-300'
                       }`}>
-                        {sport.tag}
+                        {t(sport.tagKey)}
                       </span>
                     </div>
                   </div>
                   <div className="flex-1 grid sm:grid-cols-2 gap-6">
                     <div>
                       <h4 className="text-xs font-semibold text-btx-100 uppercase tracking-wider mb-3">
-                        Leagues & Competitions
+                        {t('markets.leaguesTitle')}
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {sport.leagues.map((league) => (
@@ -155,7 +157,7 @@ export default function Markets() {
                     </div>
                     <div>
                       <h4 className="text-xs font-semibold text-btx-100 uppercase tracking-wider mb-3">
-                        Market Types
+                        {t('markets.marketTypesTitle')}
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {sport.marketTypes.map((mt) => (
@@ -180,15 +182,15 @@ export default function Markets() {
       <section className="py-24 bg-btx-800/30 border-y border-btx-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Capabilities"
-            title="Market Infrastructure Features"
-            subtitle="Core capabilities powering every market on the IQEX platform."
+            label={t('markets.capLabel')}
+            title={t('markets.capTitle')}
+            subtitle={t('markets.capSubtitle')}
             center
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {marketCapabilities.map((cap, i) => (
               <motion.div
-                key={cap.title}
+                key={cap.titleKey}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -198,8 +200,8 @@ export default function Markets() {
                 <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/15 transition-colors">
                   <cap.icon className="text-accent" size={20} />
                 </div>
-                <h3 className="font-semibold text-btx-50 mb-2">{cap.title}</h3>
-                <p className="text-sm text-btx-200 leading-relaxed">{cap.description}</p>
+                <h3 className="font-semibold text-btx-50 mb-2">{t(cap.titleKey)}</h3>
+                <p className="text-sm text-btx-200 leading-relaxed">{t(cap.descriptionKey)}</p>
               </motion.div>
             ))}
           </div>
@@ -212,29 +214,29 @@ export default function Markets() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
               <SectionHeader
-                label="Beyond Sports"
-                title="Custom & Prediction Markets"
-                subtitle="Custom markets for any verifiable outcome beyond traditional sports."
+                label={t('markets.customLabel')}
+                title={t('markets.customTitle')}
+                subtitle={t('markets.customSubtitle')}
               />
               <div className="mt-8">
                 <Globe className="text-accent mb-4" size={28} />
                 <p className="text-sm text-btx-200 leading-relaxed">
-                  Operators and agents request markets for any verifiable outcome, subject to jurisdictional compliance.
+                  {t('markets.customDesc')}
                 </p>
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               {customMarkets.map((market, i) => (
                 <motion.div
-                  key={market.name}
+                  key={market.nameKey}
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
                   className="p-5 rounded-lg border border-btx-500/20 bg-btx-700/30"
                 >
-                  <h4 className="text-sm font-semibold text-btx-50 mb-1">{market.name}</h4>
-                  <p className="text-xs text-btx-300 leading-relaxed">{market.desc}</p>
+                  <h4 className="text-sm font-semibold text-btx-50 mb-1">{t(market.nameKey)}</h4>
+                  <p className="text-xs text-btx-300 leading-relaxed">{t(market.descKey)}</p>
                 </motion.div>
               ))}
             </div>
@@ -243,10 +245,10 @@ export default function Markets() {
       </section>
 
       <CTASection
-        title="Explore IQEX Markets"
-        subtitle="Discuss market coverage, custom verticals, or operator access with our team."
-        primaryCTA={{ label: 'Contact Us', to: '/contact' }}
-        secondaryCTA={{ label: 'API Documentation', to: '/developers' }}
+        title={t('markets.ctaTitle')}
+        subtitle={t('markets.ctaSubtitle')}
+        primaryCTA={{ label: t('markets.ctaContact'), to: '/contact' }}
+        secondaryCTA={{ label: t('markets.ctaDocs'), to: '/developers' }}
       />
     </>
   )

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import {
   Terminal,
   BookOpen,
@@ -17,13 +18,13 @@ import useDocumentTitle from '../hooks/useDocumentTitle'
 const apiFeatures = [
   {
     icon: Zap,
-    title: 'gRPC API',
-    description: 'High-performance binary protocol for order placement, market data, and account management.',
+    titleKey: 'developers.apiGrpcTitle',
+    descriptionKey: 'developers.apiGrpcDesc',
   },
   {
     icon: TestTube2,
-    title: 'Sandbox Environment',
-    description: 'Simulated markets for paper trading and risk-free testing.',
+    titleKey: 'developers.apiSandboxTitle',
+    descriptionKey: 'developers.apiSandboxDesc',
     comingSoon: true,
   },
 ]
@@ -31,20 +32,20 @@ const apiFeatures = [
 const resources = [
   {
     icon: BookOpen,
-    title: 'API Documentation',
-    description: 'Full reference for endpoints, schemas, and authentication.',
+    titleKey: 'developers.resApiDocs',
+    descriptionKey: 'developers.resApiDocsDesc',
     tag: 'docs.iqex.io',
   },
   {
     icon: Terminal,
-    title: 'Code Samples',
-    description: 'Working examples across languages for common integration patterns.',
+    titleKey: 'developers.resCodeSamples',
+    descriptionKey: 'developers.resCodeSamplesDesc',
     tag: 'GitHub',
   },
   {
     icon: Activity,
-    title: 'Status Page',
-    description: 'Live status, incident history, and uptime for all IQEX services.',
+    titleKey: 'developers.resStatus',
+    descriptionKey: 'developers.resStatusDesc',
     tag: 'status.iqex.io',
   },
 ]
@@ -69,26 +70,27 @@ response = stub.PlaceOrder(iqex_pb2.PlaceOrderRequest(
 # response.order_id → "ord_abc123"`
 
 const apiCapabilities = [
-  { label: 'Authentication', value: 'OAuth2 Client Credentials' },
-  { label: 'Protocol', value: 'gRPC' },
-  { label: 'Idempotency', value: 'Built-in idempotency keys' },
-  { label: 'Order Types', value: 'Limit, Market, Cancel-Replace' },
-  { label: 'Data Format', value: 'Protocol Buffers (Protobuf)' },
-  { label: 'Environments', value: 'Production', comingSoon: ['Sandbox'] },
-  { label: 'SLA', value: '99.9% uptime guarantee' },
+  { labelKey: 'developers.specAuthLabel', valueKey: 'developers.specAuthValue' },
+  { labelKey: 'developers.specProtocolLabel', valueKey: 'developers.specProtocolValue' },
+  { labelKey: 'developers.specIdempotencyLabel', valueKey: 'developers.specIdempotencyValue' },
+  { labelKey: 'developers.specOrderTypesLabel', valueKey: 'developers.specOrderTypesValue' },
+  { labelKey: 'developers.specDataFormatLabel', valueKey: 'developers.specDataFormatValue' },
+  { labelKey: 'developers.specEnvironmentsLabel', valueKey: 'developers.specEnvironmentsValue', comingSoon: ['developers.specEnvironmentsComingSoon'] },
+  { labelKey: 'developers.specSlaLabel', valueKey: 'developers.specSlaValue' },
 ]
 
 export default function Developers() {
-  useDocumentTitle('Developer Portal')
+  const { t } = useTranslation()
+  useDocumentTitle('developers.pageTitle')
   return (
     <>
       <Hero
-        badge="Developer Portal"
-        title="Build on IQEX "
-        titleAccent="Infrastructure"
-        subtitle="Well-documented APIs for market data, order management, and settlement."
-        primaryCTA={{ label: 'Get API Access', to: '/contact' }}
-        secondaryCTA={{ label: 'View Technology', to: '/technology' }}
+        badge={t('developers.heroBadge')}
+        title={t('developers.heroTitle')}
+        titleAccent={t('developers.heroAccent')}
+        subtitle={t('developers.heroSubtitle')}
+        primaryCTA={{ label: t('developers.ctaGetAccess'), to: '/contact' }}
+        secondaryCTA={{ label: t('developers.ctaViewTech'), to: '/technology' }}
         compact
       />
 
@@ -96,15 +98,15 @@ export default function Developers() {
       <section className="py-24 bg-btx-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="API Platform"
-            title="Programmable Exchange Access"
-            subtitle="gRPC API and sandbox for seamless integration."
+            label={t('developers.apiLabel')}
+            title={t('developers.apiTitle')}
+            subtitle={t('developers.apiSubtitle')}
             center
           />
           <div className="mt-16 grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {apiFeatures.map((feature, i) => (
               <motion.div
-                key={feature.title}
+                key={feature.titleKey}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -123,10 +125,10 @@ export default function Developers() {
                   <feature.icon className={feature.comingSoon ? 'text-btx-400' : 'text-accent'} size={20} />
                 </div>
                 <div className="flex items-center gap-1.5 mb-2">
-                  <h3 className="font-semibold text-btx-50">{feature.title}</h3>
+                  <h3 className="font-semibold text-btx-50">{t(feature.titleKey)}</h3>
                   {feature.comingSoon && <ComingSoonBadge />}
                 </div>
-                <p className="text-sm text-btx-200 leading-relaxed">{feature.description}</p>
+                <p className="text-sm text-btx-200 leading-relaxed">{t(feature.descriptionKey)}</p>
               </motion.div>
             ))}
           </div>
@@ -137,9 +139,9 @@ export default function Developers() {
       <section className="py-24 bg-btx-800/30 border-y border-btx-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Quick Start"
-            title="Get Started in Minutes"
-            subtitle="Rapid integration with clean, powerful APIs."
+            label={t('developers.quickLabel')}
+            title={t('developers.quickTitle')}
+            subtitle={t('developers.quickSubtitle')}
             center
           />
           <div className="mt-16 max-w-2xl mx-auto">
@@ -153,7 +155,7 @@ export default function Developers() {
               <div className="flex items-center justify-between px-4 py-3 bg-btx-700/80 border-b border-btx-500/30">
                 <div className="flex items-center gap-2">
                   <Terminal size={14} className="text-accent" />
-                  <span className="text-xs font-medium text-btx-200">gRPC API — Python</span>
+                  <span className="text-xs font-medium text-btx-200">{t('developers.codeSampleLabel')}</span>
                 </div>
                 <button className="text-btx-300 hover:text-btx-100 transition-colors">
                   <Copy size={14} />
@@ -173,9 +175,9 @@ export default function Developers() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
               <SectionHeader
-                label="Specifications"
-                title="API Technical Details"
-                subtitle="Built for professional integrators."
+                label={t('developers.specLabel')}
+                title={t('developers.specTitle')}
+                subtitle={t('developers.specSubtitle')}
               />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -186,15 +188,15 @@ export default function Developers() {
               >
                 {apiCapabilities.map((cap) => (
                   <div
-                    key={cap.label}
+                    key={cap.labelKey}
                     className="flex items-center justify-between px-6 py-4 border-b border-btx-500/20 last:border-0"
                   >
-                    <span className="text-sm text-btx-300">{cap.label}</span>
+                    <span className="text-sm text-btx-300">{t(cap.labelKey)}</span>
                     <div className="flex items-center gap-3 flex-wrap justify-end">
-                      <span className="text-sm text-btx-100 font-medium font-mono">{cap.value}</span>
+                      <span className="text-sm text-btx-100 font-medium font-mono">{t(cap.valueKey)}</span>
                       {cap.comingSoon && cap.comingSoon.map((item) => (
                         <span key={item} className="flex items-center gap-1">
-                          <span className="text-sm text-btx-100 font-medium font-mono">{item}</span>
+                          <span className="text-sm text-btx-100 font-medium font-mono">{t(item)}</span>
                           <ComingSoonBadge />
                         </span>
                       ))}
@@ -206,14 +208,14 @@ export default function Developers() {
 
             <div>
               <SectionHeader
-                label="Resources"
-                title="Developer Resources"
-                subtitle="Documentation, code samples, and tools to get you started."
+                label={t('developers.resLabel')}
+                title={t('developers.resTitle')}
+                subtitle={t('developers.resSubtitle')}
               />
               <div className="mt-8 space-y-4">
                 {resources.map((resource, i) => (
                   <motion.div
-                    key={resource.title}
+                    key={resource.titleKey}
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -225,12 +227,12 @@ export default function Developers() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-semibold text-btx-50 text-sm">{resource.title}</h3>
+                        <h3 className="font-semibold text-btx-50 text-sm">{t(resource.titleKey)}</h3>
                         <span className="px-2 py-0.5 rounded bg-btx-600/80 text-[10px] text-btx-300 font-mono">
                           {resource.tag}
                         </span>
                       </div>
-                      <p className="text-xs text-btx-200 leading-relaxed">{resource.description}</p>
+                      <p className="text-xs text-btx-200 leading-relaxed">{t(resource.descriptionKey)}</p>
                     </div>
                     <ArrowRight size={14} className="text-btx-400 group-hover:text-accent shrink-0 mt-1 transition-colors" />
                   </motion.div>
@@ -242,10 +244,10 @@ export default function Developers() {
       </section>
 
       <CTASection
-        title="Start Building Today"
-        subtitle="Request API credentials and sandbox access to begin integrating with IQEX."
-        primaryCTA={{ label: 'Get API Access', to: '/contact' }}
-        secondaryCTA={{ label: 'View Technology', to: '/technology' }}
+        title={t('developers.ctaTitle')}
+        subtitle={t('developers.ctaSubtitle')}
+        primaryCTA={{ label: t('developers.ctaGetAccess2'), to: '/contact' }}
+        secondaryCTA={{ label: t('developers.ctaViewTech'), to: '/technology' }}
       />
     </>
   )

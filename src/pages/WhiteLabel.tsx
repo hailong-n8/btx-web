@@ -13,6 +13,7 @@ import {
   ArrowRight,
   CheckCircle2,
 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import Hero from '../components/Hero'
 import SectionHeader from '../components/SectionHeader'
 import FeatureCard from '../components/FeatureCard'
@@ -24,99 +25,100 @@ import useDocumentTitle from '../hooks/useDocumentTitle'
 const included = [
   {
     icon: Palette,
-    title: 'Fully Branded UI',
-    description: 'Your brand identity across the full trading interface — logo, colours, and domain.',
+    titleKey: 'whiteLabel.compBrandedUI',
+    descriptionKey: 'whiteLabel.compBrandedUIDesc',
   },
   {
     icon: ShieldCheck,
-    title: 'Risk Management Suite',
-    description: 'Position monitoring, market controls, and operational risk tools — out of the box.',
+    titleKey: 'whiteLabel.compRisk',
+    descriptionKey: 'whiteLabel.compRiskDesc',
   },
   {
     icon: BarChart3,
-    title: 'Settlement Engine',
-    description: 'Automated multi-currency settlement with real-time reconciliation.',
+    titleKey: 'whiteLabel.compSettlement',
+    descriptionKey: 'whiteLabel.compSettlementDesc',
   },
   {
     icon: Settings,
-    title: 'Commission Splitting',
-    description: 'Configurable commission models and transparent revenue sharing.',
+    titleKey: 'whiteLabel.compCommission',
+    descriptionKey: 'whiteLabel.compCommissionDesc',
   },
 ]
 
 const integration = [
   {
     icon: Plug,
-    title: 'API Access',
-    description: 'Full gRPC API access for your systems and workflows.',
+    titleKey: 'whiteLabel.intApi',
+    descriptionKey: 'whiteLabel.intApiDesc',
   },
   {
     icon: LayoutDashboard,
-    title: 'Admin Dashboard',
-    description: 'Back-office tools for user management, market config, and operations.',
+    titleKey: 'whiteLabel.intDashboard',
+    descriptionKey: 'whiteLabel.intDashboardDesc',
   },
   {
     icon: LineChart,
-    title: 'Real-Time Reporting',
-    description: 'Live dashboards for volumes, P&L, customer activity, and risk.',
+    titleKey: 'whiteLabel.intReporting',
+    descriptionKey: 'whiteLabel.intReportingDesc',
   },
 ]
 
 const targetClients = [
   {
     icon: Globe,
-    title: 'Regional Operators',
-    description: 'Localised exchange with region-specific sports, languages, and payments.',
+    titleKey: 'whiteLabel.partnerRegional',
+    descriptionKey: 'whiteLabel.partnerRegionalDesc',
   },
   {
     icon: Users,
-    title: 'Affiliates & Networks',
-    description: 'Turn your audience into active traders under your brand.',
+    titleKey: 'whiteLabel.partnerAffiliates',
+    descriptionKey: 'whiteLabel.partnerAffiliatesDesc',
   },
   {
     icon: Gamepad2,
-    title: 'Sports Communities',
-    description: 'Professional prediction markets tailored to your community.',
+    titleKey: 'whiteLabel.partnerSports',
+    descriptionKey: 'whiteLabel.partnerSportsDesc',
   },
   {
     icon: Coins,
-    title: 'Crypto & Web3 Platforms',
-    description: 'Sports trading with stablecoin integration and hybrid settlement.',
+    titleKey: 'whiteLabel.partnerCrypto',
+    descriptionKey: 'whiteLabel.partnerCryptoDesc',
   },
 ]
 
 const steps = [
-  { step: '01', title: 'Consultation', desc: 'Define scope, markets, branding, and commercial structure.' },
-  { step: '02', title: 'Configuration', desc: 'Platform setup, branding, risk parameters, and API integration.' },
-  { step: '03', title: 'Testing', desc: 'UAT, stress testing, and compliance review.' },
-  { step: '04', title: 'Launch', desc: 'Go live with full support and ongoing optimisation.' },
+  { step: '01', titleKey: 'whiteLabel.step1', descKey: 'whiteLabel.step1Desc' },
+  { step: '02', titleKey: 'whiteLabel.step2', descKey: 'whiteLabel.step2Desc' },
+  { step: '03', titleKey: 'whiteLabel.step3', descKey: 'whiteLabel.step3Desc' },
+  { step: '04', titleKey: 'whiteLabel.step4', descKey: 'whiteLabel.step4Desc' },
 ]
 
 export default function WhiteLabel() {
-  useDocumentTitle('White Label Solutions')
+  const { t } = useTranslation()
+  useDocumentTitle('whiteLabel.pageTitle')
   return (
     <>
       <Hero
-        badge="White Label Solutions"
-        title="Launch Your Own Exchange "
-        titleAccent="in Weeks"
-        subtitle="Fully branded, exchange-grade platform powered by IQEX. Matching engine to settlement — included."
-        primaryCTA={{ label: 'Request a Demo', to: '/contact' }}
-        secondaryCTA={{ label: 'View Technology', to: '/technology' }}
+        badge={t('whiteLabel.heroBadge')}
+        title={t('whiteLabel.heroTitle')}
+        titleAccent={t('whiteLabel.heroAccent')}
+        subtitle={t('whiteLabel.heroSubtitle')}
+        primaryCTA={{ label: t('whiteLabel.ctaDemo'), to: '/contact' }}
+        secondaryCTA={{ label: t('whiteLabel.ctaViewTech'), to: '/technology' }}
       />
 
       {/* What's Included */}
       <section className="py-24 bg-btx-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Platform Components"
-            title="Everything You Need to Operate"
-            subtitle="Complete exchange stack — front-end to settlement — fully managed."
+            label={t('whiteLabel.componentsLabel')}
+            title={t('whiteLabel.componentsTitle')}
+            subtitle={t('whiteLabel.componentsSubtitle')}
             center
           />
           <div className="mt-16 grid md:grid-cols-2 gap-6">
             {included.map((item, i) => (
-              <FeatureCard key={item.title} {...item} index={i} />
+              <FeatureCard key={item.titleKey} icon={item.icon} title={t(item.titleKey)} description={t(item.descriptionKey)} index={i} />
             ))}
           </div>
         </div>
@@ -126,9 +128,9 @@ export default function WhiteLabel() {
       <section className="py-24 bg-btx-800/30 border-y border-btx-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Deployment Process"
-            title="From Concept to Live Exchange"
-            subtitle="Structured process for a smooth, predictable launch."
+            label={t('whiteLabel.deployLabel')}
+            title={t('whiteLabel.deployTitle')}
+            subtitle={t('whiteLabel.deploySubtitle')}
             center
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -142,8 +144,8 @@ export default function WhiteLabel() {
                 className="relative p-6 rounded-xl border border-btx-500/30 bg-btx-700/40"
               >
                 <div className="text-4xl font-bold text-accent/20 mb-4">{s.step}</div>
-                <h3 className="text-lg font-semibold text-btx-50 mb-2">{s.title}</h3>
-                <p className="text-sm text-btx-200 leading-relaxed">{s.desc}</p>
+                <h3 className="text-lg font-semibold text-btx-50 mb-2">{t(s.titleKey)}</h3>
+                <p className="text-sm text-btx-200 leading-relaxed">{t(s.descKey)}</p>
                 {i < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-3 text-btx-500">
                     <ArrowRight size={16} />
@@ -159,14 +161,14 @@ export default function WhiteLabel() {
       <section className="py-24 bg-btx-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Integration"
-            title="Seamless Technical Integration"
-            subtitle="Connect IQEX with your existing infrastructure."
+            label={t('whiteLabel.integrationLabel')}
+            title={t('whiteLabel.integrationTitle')}
+            subtitle={t('whiteLabel.integrationSubtitle')}
             center
           />
           <div className="mt-16 grid md:grid-cols-3 gap-6">
             {integration.map((item, i) => (
-              <FeatureCard key={item.title} {...item} index={i} />
+              <FeatureCard key={item.titleKey} icon={item.icon} title={t(item.titleKey)} description={t(item.descriptionKey)} index={i} />
             ))}
           </div>
         </div>
@@ -176,15 +178,15 @@ export default function WhiteLabel() {
       <section className="py-24 bg-btx-800/30 border-y border-btx-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Target Partners"
-            title="Built for Ambitious Operators"
-            subtitle="Regional operator, sports community, or Web3 platform — IQEX gives you the infrastructure to compete."
+            label={t('whiteLabel.partnersLabel')}
+            title={t('whiteLabel.partnersTitle')}
+            subtitle={t('whiteLabel.partnersSubtitle')}
             center
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {targetClients.map((client, i) => (
               <motion.div
-                key={client.title}
+                key={client.titleKey}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -194,8 +196,8 @@ export default function WhiteLabel() {
                 <div className="w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/15 transition-colors">
                   <client.icon className="text-accent" size={22} />
                 </div>
-                <h3 className="font-semibold text-btx-50 mb-2">{client.title}</h3>
-                <p className="text-sm text-btx-200 leading-relaxed">{client.description}</p>
+                <h3 className="font-semibold text-btx-50 mb-2">{t(client.titleKey)}</h3>
+                <p className="text-sm text-btx-200 leading-relaxed">{t(client.descriptionKey)}</p>
               </motion.div>
             ))}
           </div>
@@ -208,22 +210,22 @@ export default function WhiteLabel() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <SectionHeader
-                label="Why IQEX"
-                title="The Operator's Advantage"
-                subtitle="Live exchange infrastructure backed by institutional-grade technology."
+                label={t('whiteLabel.whyLabel')}
+                title={t('whiteLabel.whyTitle')}
+                subtitle={t('whiteLabel.whySubtitle')}
               />
               <div className="mt-8 space-y-4">
                 {[
-                  'No development team required — fully managed platform',
-                  'Continuous updates to matching engine and risk systems',
-                  'Access to IQEX liquidity pool and market maker network',
-                  'Flexible commercial terms with transparent revenue sharing',
-                  'Dedicated account management and technical support',
-                  'Full regulatory and compliance framework support',
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3">
+                  'whiteLabel.whyItem1',
+                  'whiteLabel.whyItem2',
+                  'whiteLabel.whyItem3',
+                  'whiteLabel.whyItem4',
+                  'whiteLabel.whyItem5',
+                  'whiteLabel.whyItem6',
+                ].map((itemKey) => (
+                  <div key={itemKey} className="flex items-start gap-3">
                     <CheckCircle2 className="text-accent shrink-0 mt-0.5" size={18} />
-                    <span className="text-sm text-btx-200">{item}</span>
+                    <span className="text-sm text-btx-200">{t(itemKey)}</span>
                   </div>
                 ))}
               </div>
@@ -231,7 +233,7 @@ export default function WhiteLabel() {
                 to="/contact"
                 className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-accent hover:bg-accent-light text-accent-fg font-semibold rounded-lg transition-all group"
               >
-                Discuss Your Requirements
+                {t('whiteLabel.whyDiscuss')}
                 <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </div>
@@ -242,24 +244,24 @@ export default function WhiteLabel() {
               transition={{ duration: 0.6 }}
               className="bg-btx-700/50 border border-btx-500/30 rounded-xl p-8"
             >
-              <h3 className="text-lg font-semibold mb-6 text-btx-100">Typical Deployment Includes</h3>
+              <h3 className="text-lg font-semibold mb-6 text-btx-100">{t('whiteLabel.deployIncludes')}</h3>
               <div className="space-y-3">
                 {[
-                  'Branded trading UI (web & mobile-responsive)',
-                  'Full order book & matching engine access',
-                  'Risk management dashboard',
-                  'Customer management & KYC tools',
-                  'Settlement & reconciliation engine',
-                  'Reporting & analytics suite',
-                  'API access for third-party integrations',
-                  'Sandbox environment for testing',
-                ].map((item, i) => (
+                  'whiteLabel.deployItem1',
+                  'whiteLabel.deployItem2',
+                  'whiteLabel.deployItem3',
+                  'whiteLabel.deployItem4',
+                  'whiteLabel.deployItem5',
+                  'whiteLabel.deployItem6',
+                  'whiteLabel.deployItem7',
+                  'whiteLabel.deployItem8',
+                ].map((itemKey, i) => (
                   <div
-                    key={item}
+                    key={itemKey}
                     className="flex items-center gap-3 py-2 border-b border-btx-500/20 last:border-0"
                   >
                     <span className="text-accent text-xs font-mono">{String(i + 1).padStart(2, '0')}</span>
-                    <span className="text-sm text-btx-200">{item}</span>
+                    <span className="text-sm text-btx-200">{t(itemKey)}</span>
                   </div>
                 ))}
               </div>
@@ -269,10 +271,10 @@ export default function WhiteLabel() {
       </section>
 
       <CTASection
-        title="Ready to Launch Your Exchange?"
-        subtitle="Get in touch with our partnerships team to discuss your white-label requirements."
-        primaryCTA={{ label: 'Contact Partnerships', to: '/contact' }}
-        secondaryCTA={{ label: 'Explore Technology', to: '/technology' }}
+        title={t('whiteLabel.ctaTitle')}
+        subtitle={t('whiteLabel.ctaSubtitle')}
+        primaryCTA={{ label: t('whiteLabel.ctaContact'), to: '/contact' }}
+        secondaryCTA={{ label: t('whiteLabel.ctaExplore'), to: '/technology' }}
       />
     </>
   )

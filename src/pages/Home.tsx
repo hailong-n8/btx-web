@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import {
   ArrowRight,
   Waves,
@@ -22,52 +23,53 @@ import CTASection from '../components/CTASection'
 const pillars = [
   {
     icon: Waves,
-    title: 'Deep Liquidity Access',
-    description: 'Tight spreads and deep order books from professional market makers and institutional sources.',
+    titleKey: 'home.pillarLiquidity',
+    descriptionKey: 'home.pillarLiquidityDesc',
   },
   {
     icon: Cpu,
-    title: 'Exchange-Grade Technology',
-    description: 'Deterministic matching engine with low-latency execution and real-time risk controls.',
+    titleKey: 'home.pillarTech',
+    descriptionKey: 'home.pillarTechDesc',
   },
   {
     icon: Blocks,
-    title: 'Modular White-Label Infrastructure',
-    description: 'Deploy a branded exchange in weeks — UI, settlement, risk tools, and commissions included.',
+    titleKey: 'home.pillarWhiteLabel',
+    descriptionKey: 'home.pillarWhiteLabelDesc',
   },
 ]
 
 const audiences = [
   {
     icon: TrendingUp,
-    title: 'Professional Market Makers',
-    description: 'High-performance APIs, competitive fee tiers, and co-location ready.',
+    titleKey: 'home.clientMakers',
+    descriptionKey: 'home.clientMakersDesc',
   },
   {
     icon: Building2,
-    title: 'Exchanges & Operators',
-    description: 'Full branding control, settlement, and risk management.',
+    titleKey: 'home.clientExchanges',
+    descriptionKey: 'home.clientExchangesDesc',
   },
   {
     icon: Database,
-    title: 'Sports Data Partners',
-    description: 'Sports data integration, real-time feeds, and predictive analytics.',
+    titleKey: 'home.clientData',
+    descriptionKey: 'home.clientDataDesc',
   },
   {
     icon: Users,
-    title: 'Institutional Traders',
-    description: 'Professional execution, advanced order types, and transparent access.',
+    titleKey: 'home.clientTraders',
+    descriptionKey: 'home.clientTradersDesc',
   },
 ]
 
 const metrics = [
-  { value: '15+', label: 'Market Types' },
-  { value: '20+', label: 'Years Exchange DNA' },
-  { value: '99.9%', label: 'Uptime SLA' },
+  { value: '15+', labelKey: 'home.metricsTypes' },
+  { value: '20+', labelKey: 'home.metricsYears' },
+  { value: '99.9%', labelKey: 'home.metricsUptime' },
 ]
 
 export default function Home() {
-  useDocumentTitle('Market Infrastructure for Global Sports')
+  const { t } = useTranslation()
+  useDocumentTitle('home.pageTitle')
   return (
     <>
       {/* Hero */}
@@ -94,15 +96,15 @@ export default function Home() {
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-medium mb-8"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              Market Infrastructure for Sports Exchanges
+              {t('home.heroBadge')}
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] text-btx-50">
-              The Infrastructure Layer
+              {t('home.heroTitle1')}
               <br />
-              for Global Sports
+              {t('home.heroTitle2')}
               <br />
-              <span className="text-accent">Markets</span>
+              <span className="text-accent">{t('home.heroTitle3')}</span>
             </h1>
 
             <motion.p
@@ -111,7 +113,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-8 text-lg lg:text-xl text-btx-200 leading-relaxed max-w-2xl"
             >
-              Exchange technology, professional liquidity, and programmable APIs for next-generation sports trading.
+              {t('home.heroSubtitle')}
             </motion.p>
 
             <motion.div
@@ -124,20 +126,20 @@ export default function Home() {
                 to="/developers"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-accent hover:bg-accent-light text-accent-fg font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-accent/25 group"
               >
-                Access the API
+                {t('home.ctaAccessApi')}
                 <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
               </Link>
               <Link
                 to="/liquidity"
                 className="inline-flex items-center gap-2 px-7 py-3.5 border border-btx-400 hover:border-btx-300 text-btx-100 font-medium rounded-lg transition-all hover:bg-btx-600/50"
               >
-                Become a Liquidity Partner
+                {t('home.ctaLiquidityPartner')}
               </Link>
               <Link
                 to="/white-label"
                 className="inline-flex items-center gap-2 px-7 py-3.5 border border-btx-500/50 hover:border-btx-400 text-btx-200 font-medium rounded-lg transition-all hover:bg-btx-600/30"
               >
-                Explore White Label
+                {t('home.ctaExploreWhiteLabel')}
               </Link>
             </motion.div>
           </motion.div>
@@ -150,15 +152,15 @@ export default function Home() {
             className="mt-20 grid grid-cols-3 gap-px bg-btx-500/30 rounded-xl overflow-hidden border border-btx-500/30"
           >
             {[
-              { icon: Globe, label: 'Global Markets', value: 'Multi-Region' },
-              { icon: BarChart3, label: 'Market Types', value: '15+' },
-              { icon: Clock, label: 'Platform Uptime', value: '99.9%' },
+              { icon: Globe, labelKey: 'home.statGlobalMarkets', valueKey: 'home.statMultiRegion' },
+              { icon: BarChart3, labelKey: 'home.statMarketTypes', value: '15+' },
+              { icon: Clock, labelKey: 'home.statPlatformUptime', value: '99.9%' },
             ].map((stat) => (
-              <div key={stat.label} className="bg-btx-800/80 backdrop-blur-sm p-5 lg:p-6 flex items-center gap-4">
+              <div key={stat.labelKey} className="bg-btx-800/80 backdrop-blur-sm p-5 lg:p-6 flex items-center gap-4">
                 <stat.icon className="text-accent shrink-0" size={20} />
                 <div>
-                  <div className="text-lg font-bold text-btx-50">{stat.value}</div>
-                  <div className="text-xs text-btx-300 uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-lg font-bold text-btx-50">{stat.value ?? t(stat.valueKey!)}</div>
+                  <div className="text-xs text-btx-300 uppercase tracking-wider">{t(stat.labelKey)}</div>
                 </div>
               </div>
             ))}
@@ -170,14 +172,20 @@ export default function Home() {
       <section className="py-24 bg-btx-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Core Infrastructure"
-            title="Enterprise-Grade Exchange Technology"
-            subtitle="Purpose-built for professional market participants and exchange operators worldwide."
+            label={t('home.pillarsLabel')}
+            title={t('home.pillarsTitle')}
+            subtitle={t('home.pillarsSubtitle')}
             center
           />
           <div className="mt-16 grid md:grid-cols-3 gap-6">
             {pillars.map((pillar, i) => (
-              <FeatureCard key={pillar.title} {...pillar} index={i} />
+              <FeatureCard
+                key={pillar.titleKey}
+                icon={pillar.icon}
+                title={t(pillar.titleKey)}
+                description={t(pillar.descriptionKey)}
+                index={i}
+              />
             ))}
           </div>
         </div>
@@ -188,7 +196,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-3 divide-x divide-btx-500/30">
             {metrics.map((metric, i) => (
-              <MetricCard key={metric.label} {...metric} index={i} />
+              <MetricCard key={metric.labelKey} value={metric.value} label={t(metric.labelKey)} index={i} />
             ))}
           </div>
         </div>
@@ -198,15 +206,15 @@ export default function Home() {
       <section className="py-24 bg-btx-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Our Clients"
-            title="Built for Professional Market Participants"
-            subtitle="Exchange-grade infrastructure, deep liquidity, and programmable access for institutions and professionals."
+            label={t('home.clientsLabel')}
+            title={t('home.clientsTitle')}
+            subtitle={t('home.clientsSubtitle')}
             center
           />
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {audiences.map((audience, i) => (
               <motion.div
-                key={audience.title}
+                key={audience.titleKey}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-30px' }}
@@ -216,8 +224,8 @@ export default function Home() {
                 <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/15 transition-colors">
                   <audience.icon className="text-accent" size={24} />
                 </div>
-                <h3 className="font-semibold text-btx-50 mb-2">{audience.title}</h3>
-                <p className="text-sm text-btx-200 leading-relaxed">{audience.description}</p>
+                <h3 className="font-semibold text-btx-50 mb-2">{t(audience.titleKey)}</h3>
+                <p className="text-sm text-btx-200 leading-relaxed">{t(audience.descriptionKey)}</p>
               </motion.div>
             ))}
           </div>
@@ -230,22 +238,22 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <SectionHeader
-                label="Technology"
-                title="Exchange Engine Architecture"
-                subtitle="Deterministic execution with crash recovery and zero order loss."
+                label={t('home.archLabel')}
+                title={t('home.archTitle')}
+                subtitle={t('home.archSubtitle')}
               />
               <div className="mt-8 space-y-4">
                 {[
-                  'Low-latency order book with price-time priority',
-                  'Synthetic liquidity via cross-runner matching',
-                  'Real-time risk controls and position management',
-                  'gRPC API with full market and order access',
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3">
+                  'home.archFeature1',
+                  'home.archFeature2',
+                  'home.archFeature3',
+                  'home.archFeature4',
+                ].map((itemKey) => (
+                  <div key={itemKey} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center mt-0.5 shrink-0">
                       <div className="w-1.5 h-1.5 rounded-full bg-accent" />
                     </div>
-                    <span className="text-btx-200 text-sm">{item}</span>
+                    <span className="text-btx-200 text-sm">{t(itemKey)}</span>
                   </div>
                 ))}
               </div>
@@ -253,7 +261,7 @@ export default function Home() {
                 to="/technology"
                 className="inline-flex items-center gap-2 mt-8 text-accent hover:text-accent-light font-medium text-sm transition-colors group"
               >
-                Explore our technology
+                {t('home.archExplore')}
                 <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </div>
@@ -268,16 +276,16 @@ export default function Home() {
             >
               <div className="bg-btx-700/50 border border-btx-500/30 rounded-xl p-8 space-y-4">
                 {[
-                  { label: 'Client Layer', items: ['gRPC API'], color: '#0ea5e9' },
-                  { label: 'Matching Engine', items: ['Order Book', 'Price Engine', 'Risk Check'], color: '#00d4aa' },
-                  { label: 'Liquidity Bridge', items: ['Aggregation', 'Settlement'], color: '#00d4aa' },
-                  { label: 'Data Layer', items: ['Sports Data', 'Analytics'], color: '#22d3ee' },
+                  { labelKey: 'home.archClientLayer', items: ['gRPC API'], color: '#0ea5e9' },
+                  { labelKey: 'home.archMatchingEngine', items: ['Order Book', 'Price Engine', 'Risk Check'], color: '#00d4aa' },
+                  { labelKey: 'home.archLiquidityBridge', items: ['Aggregation', 'Settlement'], color: '#00d4aa' },
+                  { labelKey: 'home.archDataLayer', items: ['Sports Data', 'Analytics'], color: '#22d3ee' },
                 ].map((layer, i) => (
-                  <div key={layer.label}>
+                  <div key={layer.labelKey}>
                     <div className="flex items-center gap-3 mb-2">
                       <div className="w-2 h-2 rounded-full" style={{ backgroundColor: layer.color }} />
                       <span className="text-xs font-semibold text-btx-100 uppercase tracking-wider">
-                        {layer.label}
+                        {t(layer.labelKey)}
                       </span>
                     </div>
                     <div className="grid grid-cols-3 gap-2">
@@ -305,10 +313,10 @@ export default function Home() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Build on IQEX?"
-        subtitle="Explore API access, liquidity partnerships, or white-label deployment with our team."
-        primaryCTA={{ label: 'Contact Us', to: '/contact' }}
-        secondaryCTA={{ label: 'View API Documentation', to: '/developers' }}
+        title={t('home.ctaTitle')}
+        subtitle={t('home.ctaSubtitle')}
+        primaryCTA={{ label: t('home.ctaContact'), to: '/contact' }}
+        secondaryCTA={{ label: t('home.ctaViewApi'), to: '/developers' }}
       />
     </>
   )

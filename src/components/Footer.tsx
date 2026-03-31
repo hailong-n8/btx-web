@@ -1,45 +1,48 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import BrandLogo from './BrandLogo'
 
 const footerSections = [
   {
-    title: 'Solutions',
+    titleKey: 'footer.solutions',
     links: [
-      { label: 'Exchange Technology', to: '/technology' },
-      { label: 'Liquidity Access', to: '/liquidity' },
-      { label: 'White Label', to: '/white-label' },
-      { label: 'Web3 Rails', to: '/web3' },
+      { labelKey: 'footer.exchangeTechnology', to: '/technology' },
+      { labelKey: 'footer.liquidityAccess', to: '/liquidity' },
+      { labelKey: 'footer.whiteLabel', to: '/white-label' },
+      { labelKey: 'footer.web3Rails', to: '/web3' },
     ],
   },
   {
-    title: 'Markets',
+    titleKey: 'footer.markets',
     links: [
-      { label: 'Cricket', to: '/markets' },
-      { label: 'Football', to: '/markets' },
-      { label: 'Tennis', to: '/markets' },
-      { label: 'Custom Markets', to: '/markets' },
+      { labelKey: 'footer.cricket', to: '/markets' },
+      { labelKey: 'footer.football', to: '/markets' },
+      { labelKey: 'footer.tennis', to: '/markets' },
+      { labelKey: 'footer.customMarkets', to: '/markets' },
     ],
   },
   {
-    title: 'Developers',
+    titleKey: 'footer.developers',
     links: [
-      { label: 'API Documentation', to: '/developers' },
-      { label: 'Sandbox Access', to: '/developers' },
-      { label: 'Status Page', to: '/developers' },
+      { labelKey: 'footer.apiDocumentation', to: '/developers' },
+      { labelKey: 'footer.sandboxAccess', to: '/developers' },
+      { labelKey: 'footer.statusPage', to: '/developers' },
     ],
   },
   {
-    title: 'Company',
+    titleKey: 'footer.company',
     links: [
-      { label: 'About IQEX', to: '/about' },
-      { label: 'Compliance', to: '/compliance' },
-      { label: 'Contact', to: '/contact' },
+      { labelKey: 'footer.aboutBtx', to: '/about' },
+      { labelKey: 'footer.compliance', to: '/compliance' },
+      { labelKey: 'footer.contact', to: '/contact' },
     ],
   },
 ]
 
 export default function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer className="bg-btx-800 border-t border-btx-500/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,23 +52,23 @@ export default function Footer() {
               <BrandLogo />
             </Link>
             <p className="text-sm text-btx-200 leading-relaxed max-w-xs">
-              The infrastructure layer for global sports markets. Exchange-grade technology powering next-generation trading.
+              {t('footer.tagline')}
             </p>
           </div>
 
           {footerSections.map((section) => (
-            <div key={section.title}>
+            <div key={section.titleKey}>
               <h4 className="text-sm font-semibold text-btx-50 uppercase tracking-wider mb-4">
-                {section.title}
+                {t(section.titleKey)}
               </h4>
               <ul className="space-y-3">
                 {section.links.map((link) => (
-                  <li key={link.label}>
+                  <li key={link.labelKey}>
                     <Link
                       to={link.to}
                       className="text-sm text-btx-200 hover:text-accent transition-colors flex items-center gap-1 group"
                     >
-                      {link.label}
+                      {t(link.labelKey)}
                       <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                     </Link>
                   </li>
@@ -77,17 +80,17 @@ export default function Footer() {
 
         <div className="py-6 border-t border-btx-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-btx-300">
-            &copy; {new Date().getFullYear()} IQEX Exchange. All rights reserved.
+            {t('footer.copyright', { year: new Date().getFullYear() })}
           </p>
           <div className="flex items-center gap-6">
             <Link to="/privacy" className="text-xs text-btx-300 hover:text-btx-100 transition-colors">
-              Privacy Policy
+              {t('footer.privacyPolicy')}
             </Link>
             <Link to="/terms" className="text-xs text-btx-300 hover:text-btx-100 transition-colors">
-              Terms & Conditions
+              {t('footer.termsOfService')}
             </Link>
             <Link to="/compliance" className="text-xs text-btx-300 hover:text-btx-100 transition-colors">
-              Regulatory
+              {t('footer.regulatory')}
             </Link>
           </div>
         </div>

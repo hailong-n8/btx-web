@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import {
   Cpu,
   Radio,
@@ -19,69 +20,70 @@ import useDocumentTitle from '../hooks/useDocumentTitle'
 const engineFeatures = [
   {
     icon: Layers,
-    title: 'Multi-Level Order Book',
-    description: 'Full market depth with synthetic liquidity via cross-runner matching algorithms.',
+    titleKey: 'technology.engineOrderBook',
+    descriptionKey: 'technology.engineOrderBookDesc',
   },
   {
     icon: RotateCcw,
-    title: 'Crash Recovery',
-    description: 'Persistent order state guarantees zero loss across system restarts and failover events.',
+    titleKey: 'technology.engineRecovery',
+    descriptionKey: 'technology.engineRecoveryDesc',
   },
   {
     icon: Timer,
-    title: 'High Throughput',
-    description: 'Engineered for linear performance scaling under sustained high-volume load.',
+    titleKey: 'technology.engineThroughput',
+    descriptionKey: 'technology.engineThroughputDesc',
   },
 ]
 
 const marketFeatures = [
   {
     icon: Radio,
-    title: 'Fast In-Play Markets',
-    description: 'Sub-second updates for live event trading across all sports verticals.',
+    titleKey: 'technology.marketInPlay',
+    descriptionKey: 'technology.marketInPlayDesc',
   },
   {
     icon: GitBranch,
-    title: '15+ Market Types',
-    description: 'Match odds, handicaps, over/under, correct score, and custom markets.',
+    titleKey: 'technology.marketTypes',
+    descriptionKey: 'technology.marketTypesDesc',
   },
   {
     icon: Cpu,
-    title: 'Custom Market Creation',
-    description: 'Programmatic and agent-requested creation for niche events and prediction markets.',
+    titleKey: 'technology.marketCustom',
+    descriptionKey: 'technology.marketCustomDesc',
   },
 ]
 
 const apiCapabilities = [
-  { label: 'gRPC API', description: 'Binary protocol for orders, markets, and account management.' },
-  { label: 'Sandbox Environment', description: 'Full test environment with simulated market data.', comingSoon: true },
-  { label: 'Idempotency', description: 'Safe retry semantics for all mutating operations.' },
+  { labelKey: 'technology.apiGrpc', descriptionKey: 'technology.apiGrpcDesc' },
+  { labelKey: 'technology.apiSandbox', descriptionKey: 'technology.apiSandboxDesc', comingSoon: true },
+  { labelKey: 'technology.apiIdempotency', descriptionKey: 'technology.apiIdempotencyDesc' },
 ]
 
 export default function Technology() {
-  useDocumentTitle('Exchange Technology')
+  const { t } = useTranslation()
+  useDocumentTitle('technology.pageTitle')
   return (
     <>
       <Hero
-        badge="Exchange Technology"
-        title="Built for Performance. "
-        titleAccent="Designed for Scale."
-        subtitle="Institutional-grade matching, risk controls, and programmable APIs for professional participants."
-        primaryCTA={{ label: 'Access API Documentation', to: '/developers' }}
-        secondaryCTA={{ label: 'Contact Engineering', to: '/contact' }}
+        badge={t('technology.heroBadge')}
+        title={t('technology.heroTitle')}
+        titleAccent={t('technology.heroAccent')}
+        subtitle={t('technology.heroSubtitle')}
+        primaryCTA={{ label: t('technology.ctaAccessDocs'), to: '/developers' }}
+        secondaryCTA={{ label: t('technology.ctaContactEng'), to: '/contact' }}
       />
 
       {/* Matching Engine */}
       <section className="py-24 bg-btx-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Matching Engine"
-            title="Deterministic Order Execution"
-            subtitle="Price-time priority matching with complex order types and synthetic liquidity."
+            label={t('technology.engineLabel')}
+            title={t('technology.engineTitle')}
+            subtitle={t('technology.engineSubtitle')}
           />
           <div className="mt-14 grid sm:grid-cols-3 gap-6">
             {engineFeatures.map((f, i) => (
-              <FeatureCard key={f.title} {...f} index={i} />
+              <FeatureCard key={f.titleKey} icon={f.icon} title={t(f.titleKey)} description={t(f.descriptionKey)} index={i} />
             ))}
           </div>
         </div>
@@ -91,13 +93,13 @@ export default function Technology() {
       <section className="py-24 bg-btx-800/30 border-y border-btx-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Market Creation Engine"
-            title="Flexible Market Infrastructure"
-            subtitle="In-play markets, 15+ types, and custom market creation."
+            label={t('technology.marketLabel')}
+            title={t('technology.marketTitle')}
+            subtitle={t('technology.marketSubtitle')}
           />
           <div className="mt-14 grid sm:grid-cols-3 gap-6">
             {marketFeatures.map((f, i) => (
-              <FeatureCard key={f.title} {...f} index={i} />
+              <FeatureCard key={f.titleKey} icon={f.icon} title={t(f.titleKey)} description={t(f.descriptionKey)} index={i} />
             ))}
           </div>
         </div>
@@ -109,9 +111,9 @@ export default function Technology() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
               <SectionHeader
-                label="API Infrastructure"
-                title="Programmable Market Access"
-                subtitle="gRPC API and sandbox environments for rapid, reliable integration."
+                label={t('technology.apiLabel')}
+                title={t('technology.apiTitle')}
+                subtitle={t('technology.apiSubtitle')}
               />
               <div className="mt-8">
                 <motion.div
@@ -150,7 +152,7 @@ export default function Technology() {
             <div className="space-y-4">
               {apiCapabilities.map((cap, i) => (
                 <motion.div
-                  key={cap.label}
+                  key={cap.labelKey}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -160,10 +162,10 @@ export default function Technology() {
                   <Code2 className="text-accent shrink-0 mt-0.5" size={18} />
                   <div>
                     <div className="flex items-center gap-1.5">
-                      <h4 className="text-sm font-semibold text-btx-50">{cap.label}</h4>
+                      <h4 className="text-sm font-semibold text-btx-50">{t(cap.labelKey)}</h4>
                       {cap.comingSoon && <ComingSoonBadge />}
                     </div>
-                    <p className="text-sm text-btx-200 mt-1">{cap.description}</p>
+                    <p className="text-sm text-btx-200 mt-1">{t(cap.descriptionKey)}</p>
                   </div>
                 </motion.div>
               ))}
@@ -176,8 +178,8 @@ export default function Technology() {
       <section className="py-24 bg-btx-800/30 border-y border-btx-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="System Architecture"
-            title="End-to-End Exchange Infrastructure"
+            label={t('technology.archLabel')}
+            title={t('technology.archTitle')}
             center
           />
           <motion.div
@@ -188,21 +190,21 @@ export default function Technology() {
           >
             <div className="grid lg:grid-cols-5 gap-4 items-start">
               {[
-                { label: 'Clients', items: ['gRPC API'], color: 'bg-accent-blue' },
-                { label: 'Gateway', items: ['Auth', 'Routing'], color: 'bg-accent-cyan' },
-                { label: 'Engine', items: ['Order Book', 'Matching', 'Risk'], color: 'bg-accent' },
-                { label: 'Bridge', items: ['Aggregation', 'Settlement'], color: 'bg-accent' },
-                { label: 'Data', items: ['Sports Feed', 'Analytics'], color: 'bg-accent-cyan' },
+                { labelKey: 'technology.archClients', itemKeys: ['technology.archClientsItem1'], color: 'bg-accent-blue' },
+                { labelKey: 'technology.archGateway', itemKeys: ['technology.archGatewayItem1', 'technology.archGatewayItem2'], color: 'bg-accent-cyan' },
+                { labelKey: 'technology.archEngine', itemKeys: ['technology.archEngineItem1', 'technology.archEngineItem2', 'technology.archEngineItem3'], color: 'bg-accent' },
+                { labelKey: 'technology.archBridge', itemKeys: ['technology.archBridgeItem1', 'technology.archBridgeItem2'], color: 'bg-accent' },
+                { labelKey: 'technology.archData', itemKeys: ['technology.archDataItem1', 'technology.archDataItem2'], color: 'bg-accent-cyan' },
               ].map((block, i) => (
-                <div key={block.label}>
+                <div key={block.labelKey}>
                   <div className="text-center mb-3">
                     <span className={`inline-block w-2 h-2 rounded-full ${block.color} mr-2`} />
-                    <span className="text-xs font-semibold text-btx-100 uppercase tracking-wider">{block.label}</span>
+                    <span className="text-xs font-semibold text-btx-100 uppercase tracking-wider">{t(block.labelKey)}</span>
                   </div>
                   <div className="space-y-2">
-                    {block.items.map((item) => (
-                      <div key={item} className="bg-btx-600/50 border border-btx-500/30 rounded-md px-3 py-2.5 text-center text-xs text-btx-200 font-medium">
-                        {item}
+                    {block.itemKeys.map((itemKey) => (
+                      <div key={itemKey} className="bg-btx-600/50 border border-btx-500/30 rounded-md px-3 py-2.5 text-center text-xs text-btx-200 font-medium">
+                        {t(itemKey)}
                       </div>
                     ))}
                   </div>
@@ -219,11 +221,10 @@ export default function Technology() {
       </section>
 
       <CTASection
-        title="Ready to Integrate?"
-        subtitle="Get sandbox access and start building with our exchange APIs today."
-
-        primaryCTA={{ label: 'Get API Access', to: '/developers' }}
-        secondaryCTA={{ label: 'Talk to Engineering', to: '/contact' }}
+        title={t('technology.ctaTitle')}
+        subtitle={t('technology.ctaSubtitle')}
+        primaryCTA={{ label: t('technology.ctaGetAccess'), to: '/developers' }}
+        secondaryCTA={{ label: t('technology.ctaTalkEng'), to: '/contact' }}
       />
     </>
   )
