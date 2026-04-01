@@ -22,25 +22,25 @@ export default function Contact() {
       icon: Building2,
       title: t('contact.channelPartnership'),
       description: t('contact.channelPartnershipDesc'),
-      email: 'partnerships@iqex.io',
+      email: 'contact@iqex.io',
     },
     {
       icon: MessageSquare,
       title: t('contact.channelLiquidity'),
       description: t('contact.channelLiquidityDesc'),
-      email: 'liquidity@iqex.io',
+      email: 'contact@iqex.io',
     },
     {
       icon: Mail,
       title: t('contact.channelTechnical'),
       description: t('contact.channelTechnicalDesc'),
-      email: 'developers@iqex.io',
+      email: 'technical@iqex.io',
     },
     {
       icon: Globe,
       title: t('contact.channelGeneral'),
       description: t('contact.channelGeneralDesc'),
-      email: 'info@iqex.io',
+      email: 'contact@iqex.io',
     },
   ]
   const [formData, setFormData] = useState({

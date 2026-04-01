@@ -91,8 +91,8 @@ export default function Terms() {
             <h3 className="text-sm font-semibold text-btx-50 mb-2">{t('terms.contactTitle')}</h3>
             <p className="text-sm text-btx-200">
               {t('terms.contactPrefix')}{' '}
-              <a href="mailto:legal@iqex.io" className="text-accent hover:text-accent-light transition-colors">
-                legal@iqex.io
+              <a href="mailto:contact@iqex.io" className="text-accent hover:text-accent-light transition-colors">
+                contact@iqex.io
               </a>
             </p>
           </div>

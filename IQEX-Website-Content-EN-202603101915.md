@@ -623,10 +623,10 @@ For regulatory questions, compliance documentation, or partnership discussions.
 
 | Title | Description | Email |
 |-------|-------------|-------|
-| Partnerships & White Label | White-label deployment, operator partnerships, and commercial arrangements. | partnerships@iqex.io |
-| Liquidity & Market Making | Liquidity partner applications, fee structures, and market making programmes. | liquidity@iqex.io |
-| API & Technical Integration | API credentials, sandbox access, and technical integration support. | developers@iqex.io |
-| General Enquiries | Press, compliance, regulatory, and general enquiries. | info@iqex.io |
+| Partnerships & White Label | White-label deployment, operator partnerships, and commercial arrangements. | contact@iqex.io |
+| Liquidity & Market Making | Liquidity partner applications, fee structures, and market making programmes. | contact@iqex.io |
+| API & Technical Integration | API credentials, sandbox access, and technical integration support. | technical@iqex.io |
+| General Enquiries | Press, compliance, regulatory, and general enquiries. | contact@iqex.io |
 
 ### Response Times
 
