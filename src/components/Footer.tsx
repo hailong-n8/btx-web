@@ -23,14 +23,6 @@ const footerSections = [
     ],
   },
   {
-    titleKey: 'footer.developers',
-    links: [
-      { labelKey: 'footer.apiDocumentation', to: '/developers' },
-      { labelKey: 'footer.sandboxAccess', to: '/developers' },
-      { labelKey: 'footer.statusPage', to: '/developers' },
-    ],
-  },
-  {
     titleKey: 'footer.company',
     links: [
       { labelKey: 'footer.aboutBtx', to: '/about' },
@@ -46,8 +38,8 @@ export default function Footer() {
   return (
     <footer className="bg-btx-800 border-t border-btx-500/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
-          <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
+        <div className="py-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="col-span-2 md:col-span-3 lg:col-span-1 mb-4 lg:mb-0">
             <Link to="/" className="mb-4 inline-flex">
               <BrandLogo />
             </Link>

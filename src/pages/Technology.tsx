@@ -69,8 +69,7 @@ export default function Technology() {
         title={t('technology.heroTitle')}
         titleAccent={t('technology.heroAccent')}
         subtitle={t('technology.heroSubtitle')}
-        primaryCTA={{ label: t('technology.ctaAccessDocs'), to: '/developers' }}
-        secondaryCTA={{ label: t('technology.ctaContactEng'), to: '/contact' }}
+        primaryCTA={{ label: t('technology.ctaAccessDocs'), to: '/contact' }}
       />
 
       {/* Matching Engine */}
@@ -223,8 +222,7 @@ export default function Technology() {
       <CTASection
         title={t('technology.ctaTitle')}
         subtitle={t('technology.ctaSubtitle')}
-        primaryCTA={{ label: t('technology.ctaGetAccess'), to: '/developers' }}
-        secondaryCTA={{ label: t('technology.ctaTalkEng'), to: '/contact' }}
+        primaryCTA={{ label: t('technology.ctaGetAccess'), to: '/contact' }}
       />
     </>
   )

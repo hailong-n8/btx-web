@@ -9,7 +9,7 @@
     "compliance": "Compliance",
     "about": "About",
     "contact": "Contact",
-    "apiDocs": "API Docs",
+    "apiDocs": "API Access",
     "getStarted": "Get Started",
     "theme": "Theme",
     "language": "Language"
@@ -27,9 +27,9 @@
     "tennis": "Tennis",
     "customMarkets": "Custom Markets",
     "developers": "Developers",
-    "apiDocumentation": "API Documentation",
-    "sandboxAccess": "Sandbox Access",
-    "statusPage": "Status Page",
+    "apiDocumentation": "API Access Request",
+    "sandboxAccess": "Integration Support",
+    "statusPage": "Service Updates",
     "company": "Company",
     "aboutBtx": "About IQEX",
     "compliance": "Compliance",
@@ -46,7 +46,7 @@
     "heroTitle2": "for Global Sports",
     "heroTitle3": "Markets",
     "heroSubtitle": "Exchange technology, professional liquidity, and programmable APIs for next-generation sports trading.",
-    "ctaAccessApi": "Access the API",
+    "ctaAccessApi": "Request API Access",
     "ctaLiquidityPartner": "Become a Liquidity Partner",
     "ctaExploreWhiteLabel": "Explore White Label",
     "statGlobalMarkets": "Global Markets",
@@ -92,7 +92,7 @@
     "ctaTitle": "Ready to Build on IQEX?",
     "ctaSubtitle": "Explore API access, liquidity partnerships, or white-label deployment with our team.",
     "ctaContact": "Contact Us",
-    "ctaViewApi": "View API Documentation"
+    "ctaViewApi": "Explore Technology"
   },
   "about": {
     "pageTitle": "About IQEX",
@@ -152,7 +152,7 @@
     "heroTitle": "Built for Performance. ",
     "heroAccent": "Designed for Scale.",
     "heroSubtitle": "Institutional-grade matching, risk controls, and programmable APIs for professional participants.",
-    "ctaAccessDocs": "Access API Documentation",
+    "ctaAccessDocs": "Request API Access",
     "ctaContactEng": "Contact Engineering",
     "engineLabel": "Matching Engine",
     "engineTitle": "Deterministic Order Execution",
@@ -210,7 +210,7 @@
     "heroAccent": "Liquidity Providers",
     "heroSubtitle": "Deep order books, transparent fees, and performance infrastructure for professional market makers.",
     "ctaApply": "Apply as Liquidity Partner",
-    "ctaViewDocs": "View API Docs",
+    "ctaViewDocs": "Explore Technology",
     "feeLabel": "Fee Model",
     "feeTitle": "Competitive & Transparent Pricing",
     "feeSubtitle": "Clear maker/taker fees with volume tiers and performance incentives.",
@@ -389,7 +389,7 @@
     "ctaTitle": "Explore IQEX Markets",
     "ctaSubtitle": "Discuss market coverage, custom verticals, or operator access with our team.",
     "ctaContact": "Contact Us",
-    "ctaDocs": "API Documentation"
+    "ctaDocs": "Explore Technology"
   },
   "developers": {
     "pageTitle": "Developer Portal",
@@ -595,7 +595,7 @@
     "ctaTitle": "Integrate Web3 Payment Rails",
     "ctaSubtitle": "Connect with our team to explore stablecoin settlement and hybrid payment infrastructure.",
     "ctaContact": "Contact Us",
-    "ctaViewApi": "View API Docs"
+    "ctaViewApi": "Explore Technology"
   },
   "privacyPolicy": {
     "pageTitle": "Privacy Policy",

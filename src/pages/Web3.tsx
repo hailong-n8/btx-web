@@ -188,7 +188,7 @@ export default function Web3() {
         title={t('web3.ctaTitle')}
         subtitle={t('web3.ctaSubtitle')}
         primaryCTA={{ label: t('web3.ctaContact'), to: '/contact' }}
-        secondaryCTA={{ label: t('web3.ctaViewApi'), to: '/developers' }}
+        secondaryCTA={{ label: t('web3.ctaViewApi'), to: '/technology' }}
       />
     </>
   )

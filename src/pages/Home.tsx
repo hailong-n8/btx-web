@@ -123,7 +123,7 @@ export default function Home() {
               className="mt-10 flex flex-wrap gap-4"
             >
               <Link
-                to="/developers"
+                to="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-accent hover:bg-accent-light text-accent-fg font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-accent/25 group"
               >
                 {t('home.ctaAccessApi')}
@@ -316,7 +316,7 @@ export default function Home() {
         title={t('home.ctaTitle')}
         subtitle={t('home.ctaSubtitle')}
         primaryCTA={{ label: t('home.ctaContact'), to: '/contact' }}
-        secondaryCTA={{ label: t('home.ctaViewApi'), to: '/developers' }}
+        secondaryCTA={{ label: t('home.ctaViewApi'), to: '/technology' }}
       />
     </>
   )

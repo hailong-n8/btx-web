@@ -12,7 +12,6 @@ const navLinkKeys = [
   { path: '/liquidity', key: 'nav.liquidity' },
   { path: '/white-label', key: 'nav.whiteLabel' },
   { path: '/markets', key: 'nav.markets' },
-  { path: '/developers', key: 'nav.developers' },
   { path: '/compliance', key: 'nav.compliance' },
   { path: '/about', key: 'nav.about' },
   { path: '/contact', key: 'nav.contact' },
@@ -99,14 +98,6 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="w-px h-5 bg-btx-500/30 mx-1" />
-            <a
-              href="https://github.com/iqex-api/iqex-api"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-2 text-sm font-medium rounded-md transition-colors text-btx-200 hover:text-btx-50 hover:bg-btx-600/50"
-            >
-              {t('nav.apiDocs')}
-            </a>
             <Link
               to="/contact"
               className="px-3 py-2 text-sm font-medium rounded-md transition-colors bg-accent hover:bg-accent-light text-accent-fg"
@@ -247,14 +238,6 @@ export default function Navbar() {
             </div>
 
             <div className="flex flex-col gap-2 border-t border-btx-500/30 pt-3 mt-1">
-              <a
-                href="https://github.com/iqex-api/iqex-api"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-center text-sm font-medium text-btx-200 px-4 py-3 rounded-md border border-btx-500/50"
-              >
-                {t('nav.apiDocs')}
-              </a>
               <Link
                 to="/contact"
                 className="text-center text-sm font-medium bg-accent text-accent-fg px-4 py-3 rounded-md"

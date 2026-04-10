@@ -72,7 +72,7 @@ export default function Liquidity() {
         titleAccent={t('liquidity.heroAccent')}
         subtitle={t('liquidity.heroSubtitle')}
         primaryCTA={{ label: t('liquidity.ctaApply'), to: '/contact' }}
-        secondaryCTA={{ label: t('liquidity.ctaViewDocs'), to: '/developers' }}
+        secondaryCTA={{ label: t('liquidity.ctaViewDocs'), to: '/technology' }}
       />
 
       {/* Fee Model */}

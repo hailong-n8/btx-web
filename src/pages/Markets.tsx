@@ -248,7 +248,7 @@ export default function Markets() {
         title={t('markets.ctaTitle')}
         subtitle={t('markets.ctaSubtitle')}
         primaryCTA={{ label: t('markets.ctaContact'), to: '/contact' }}
-        secondaryCTA={{ label: t('markets.ctaDocs'), to: '/developers' }}
+        secondaryCTA={{ label: t('markets.ctaDocs'), to: '/technology' }}
       />
     </>
   )

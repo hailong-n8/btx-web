@@ -31,10 +31,11 @@ Only two external email addresses are allowed:
 
 ## 3) Related External Endpoints (Not Email)
 
-- `https://github.com/iqex-api/iqex-api` (API repository)
-- `docs.iqex.io` (documentation endpoint label)
-- `status.iqex.io` (status endpoint label)
-- `api.iqex.io:443` (gRPC endpoint sample)
+- `https://github.com/iqex-docs/api` (private API docs — invite-only, not linked on public site)
+- ~~`https://github.com/iqex-api/iqex-api`~~ (old repo — removed from site)
+- ~~`docs.iqex.io`~~ (removed — docs access is invite-only)
+- ~~`status.iqex.io`~~ (removed — no public status page currently)
+- ~~`api.iqex.io:443`~~ (removed — gRPC endpoint not disclosed publicly)
 
 ## 4) Maintenance Recommendation
 
@@ -44,7 +45,4 @@ To prevent drift, centralize contact values in one config file and reference it 
 - Suggested keys:
   - `emails.technical`
   - `emails.contact`
-  - `endpoints.docs`
-  - `endpoints.status`
-  - `endpoints.grpc`
-  - `links.githubApiRepo`
+  - `links.githubDocsRepo` (private, not rendered on public site)
