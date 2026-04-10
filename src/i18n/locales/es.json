@@ -9,7 +9,7 @@
     "compliance": "Cumplimiento",
     "about": "Nosotros",
     "contact": "Contacto",
-    "apiDocs": "Documentación API",
+    "apiDocs": "Acceso API",
     "getStarted": "Comenzar",
     "theme": "Tema",
     "language": "Idioma"
@@ -27,9 +27,9 @@
     "tennis": "Tenis",
     "customMarkets": "Mercados Personalizados",
     "developers": "Desarrolladores",
-    "apiDocumentation": "Documentación API",
-    "sandboxAccess": "Acceso al Sandbox",
-    "statusPage": "Estado del Sistema",
+    "apiDocumentation": "Solicitud de acceso API",
+    "sandboxAccess": "Soporte de integración",
+    "statusPage": "Actualizaciones del servicio",
     "company": "Empresa",
     "aboutBtx": "Acerca de IQEX",
     "compliance": "Cumplimiento",
@@ -46,7 +46,7 @@
     "heroTitle2": "para Mercados Deportivos",
     "heroTitle3": "Globales",
     "heroSubtitle": "Tecnología de exchange de alto rendimiento, liquidez profesional profunda y APIs programables que impulsan los exchanges de trading deportivo de próxima generación.",
-    "ctaAccessApi": "Acceder a la API",
+    "ctaAccessApi": "Solicitar acceso API",
     "ctaLiquidityPartner": "Convertirse en Socio de Liquidez",
     "ctaExploreWhiteLabel": "Explorar Marca Blanca",
     "statGlobalMarkets": "Mercados Globales",
@@ -92,7 +92,7 @@
     "ctaTitle": "¿Listo para Construir con IQEX?",
     "ctaSubtitle": "Conéctese con nuestro equipo para explorar acceso a la API, asociaciones de liquidez o despliegue de marca blanca.",
     "ctaContact": "Contáctenos",
-    "ctaViewApi": "Ver Documentación de la API"
+    "ctaViewApi": "Explorar tecnología"
   },
   "about": {
     "pageTitle": "Acerca de IQEX",
@@ -152,7 +152,7 @@
     "heroTitle": "Diseñado para el Rendimiento. ",
     "heroAccent": "Creado para Escalar.",
     "heroSubtitle": "Nuestro motor de exchange ofrece rendimiento de nivel institucional con matching determinístico, controles de riesgo integrales y APIs programables diseñadas para participantes profesionales del mercado.",
-    "ctaAccessDocs": "Acceder a la Documentación API",
+    "ctaAccessDocs": "Solicitar acceso API",
     "ctaContactEng": "Contactar Ingeniería",
     "engineLabel": "Motor de Matching",
     "engineTitle": "Ejecución de Órdenes Determinística",
@@ -210,7 +210,7 @@
     "heroAccent": "Liquidez Profesionales",
     "heroSubtitle": "Libros de órdenes profundos, estructuras de comisiones transparentes e infraestructura de alto rendimiento diseñada para creadores de mercado profesionales y proveedores de liquidez institucional.",
     "ctaApply": "Aplicar como Socio de Liquidez",
-    "ctaViewDocs": "Ver Documentación API",
+    "ctaViewDocs": "Explorar tecnología",
     "feeLabel": "Modelo de Comisiones",
     "feeTitle": "Precios Competitivos y Transparentes",
     "feeSubtitle": "Un modelo claro de comisiones maker/taker con niveles basados en volumen e incentivos de rendimiento.",
@@ -389,7 +389,7 @@
     "ctaTitle": "Explore los Mercados de IQEX",
     "ctaSubtitle": "Contacte a nuestro equipo para discutir cobertura de mercado, verticales personalizados o acceso para operadores.",
     "ctaContact": "Contáctenos",
-    "ctaDocs": "Documentación API"
+    "ctaDocs": "Explorar tecnología"
   },
   "developers": {
     "pageTitle": "Portal de Desarrolladores",
@@ -595,7 +595,7 @@
     "ctaTitle": "Integrate Web3 Payment Rails",
     "ctaSubtitle": "Connect with our team to explore stablecoin settlement and hybrid payment infrastructure.",
     "ctaContact": "Contact Us",
-    "ctaViewApi": "View API Docs"
+    "ctaViewApi": "Explorar tecnología"
   },
   "privacyPolicy": {
     "pageTitle": "Privacy Policy",

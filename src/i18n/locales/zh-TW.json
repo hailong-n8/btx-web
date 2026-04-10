@@ -9,7 +9,7 @@
     "compliance": "合規",
     "about": "關於我們",
     "contact": "聯絡我們",
-    "apiDocs": "API 文件",
+    "apiDocs": "API 存取",
     "getStarted": "立即開始",
     "theme": "主題",
     "language": "語言"
@@ -27,9 +27,9 @@
     "tennis": "網球",
     "customMarkets": "自訂市場",
     "developers": "開發者",
-    "apiDocumentation": "API 文件",
-    "sandboxAccess": "沙盒環境",
-    "statusPage": "服務狀態頁面",
+    "apiDocumentation": "API 存取申請",
+    "sandboxAccess": "整合支援",
+    "statusPage": "服務動態",
     "company": "公司",
     "aboutBtx": "關於 IQEX",
     "compliance": "合規",
@@ -46,7 +46,7 @@
     "heroTitle2": "市場的",
     "heroTitle3": "基礎設施層",
     "heroSubtitle": "高效能交易所技術、深度專業流動性，以及可程式化 API，驅動新一代體育交易所。",
-    "ctaAccessApi": "存取 API",
+    "ctaAccessApi": "申請 API 存取",
     "ctaLiquidityPartner": "成為流動性合作夥伴",
     "ctaExploreWhiteLabel": "探索白標方案",
     "statGlobalMarkets": "全球市場",
@@ -92,7 +92,7 @@
     "ctaTitle": "準備好在 IQEX 上構建了嗎？",
     "ctaSubtitle": "與我們的團隊聯繫，探索 API 接入、流動性合作或白標部署。",
     "ctaContact": "聯絡我們",
-    "ctaViewApi": "查看 API 文件"
+    "ctaViewApi": "探索技術"
   },
   "about": {
     "pageTitle": "關於 IQEX",
@@ -152,7 +152,7 @@
     "heroTitle": "為效能而建。",
     "heroAccent": "為規模而設計。",
     "heroSubtitle": "我們的交易所引擎提供機構等級效能，具備確定性撮合、全面的風險控制及專為專業市場參與者設計的可程式化 API。",
-    "ctaAccessDocs": "存取 API 文件",
+    "ctaAccessDocs": "申請 API 存取",
     "ctaContactEng": "聯繫工程團隊",
     "engineLabel": "撮合引擎",
     "engineTitle": "確定性訂單執行",
@@ -210,7 +210,7 @@
     "heroAccent": "流動性提供者而建",
     "heroSubtitle": "深度訂單簿、透明的費用結構及效能等級的基礎設施，專為專業造市商和機構流動性提供者設計。",
     "ctaApply": "申請成為流動性合作夥伴",
-    "ctaViewDocs": "查看 API 文件",
+    "ctaViewDocs": "探索技術",
     "feeLabel": "費用模式",
     "feeTitle": "具競爭力且透明的定價",
     "feeSubtitle": "清晰的掛單方/吃單方費用模式，具備基於交易量的等級和績效激勵。",
@@ -389,7 +389,7 @@
     "ctaTitle": "探索 IQEX 市場",
     "ctaSubtitle": "與我們的團隊聯繫，討論市場覆蓋、自訂垂直領域或營運商存取。",
     "ctaContact": "聯絡我們",
-    "ctaDocs": "API 文件"
+    "ctaDocs": "探索技術"
   },
   "developers": {
     "pageTitle": "開發者入口",
@@ -595,7 +595,7 @@
     "ctaTitle": "整合 Web3 支付通道",
     "ctaSubtitle": "聯絡我們，評估穩定幣結算與混合支付基礎設施方案。",
     "ctaContact": "聯絡我們",
-    "ctaViewApi": "查看 API 文件"
+    "ctaViewApi": "探索技術"
   },
   "privacyPolicy": {
     "pageTitle": "隱私政策",

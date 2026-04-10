@@ -9,7 +9,7 @@
     "compliance": "الامتثال",
     "about": "من نحن",
     "contact": "اتصل بنا",
-    "apiDocs": "وثائق API",
+    "apiDocs": "وصول API",
     "getStarted": "ابدأ الآن",
     "theme": "السمة",
     "language": "اللغة"
@@ -27,9 +27,9 @@
     "tennis": "التنس",
     "customMarkets": "أسواق مخصصة",
     "developers": "المطورون",
-    "apiDocumentation": "وثائق API",
-    "sandboxAccess": "الوصول إلى بيئة الاختبار",
-    "statusPage": "صفحة الحالة",
+    "apiDocumentation": "طلب وصول API",
+    "sandboxAccess": "دعم التكامل",
+    "statusPage": "تحديثات الخدمة",
     "company": "الشركة",
     "aboutBtx": "عن IQEX",
     "compliance": "الامتثال",
@@ -46,7 +46,7 @@
     "heroTitle2": "للأسواق الرياضية",
     "heroTitle3": "العالمية",
     "heroSubtitle": "تكنولوجيا بورصة عالية الأداء، وسيولة مهنية عميقة، وواجهات API قابلة للبرمجة تدعم بورصات التداول الرياضي من الجيل القادم.",
-    "ctaAccessApi": "الوصول إلى API",
+    "ctaAccessApi": "طلب وصول API",
     "ctaLiquidityPartner": "كن شريك سيولة",
     "ctaExploreWhiteLabel": "استكشف العلامة البيضاء",
     "statGlobalMarkets": "أسواق عالمية",
@@ -92,7 +92,7 @@
     "ctaTitle": "هل أنت مستعد للبناء على IQEX؟",
     "ctaSubtitle": "تواصل مع فريقنا لاستكشاف الوصول إلى API أو شراكات السيولة أو نشر العلامة البيضاء.",
     "ctaContact": "اتصل بنا",
-    "ctaViewApi": "عرض وثائق API"
+    "ctaViewApi": "استكشاف التقنية"
   },
   "about": {
     "pageTitle": "عن IQEX",
@@ -152,7 +152,7 @@
     "heroTitle": "مبني للأداء. ",
     "heroAccent": "مصمم للتوسع.",
     "heroSubtitle": "يقدم محرك البورصة لدينا أداءً بمستوى مؤسسي مع مطابقة حتمية وضوابط مخاطر شاملة وواجهات API قابلة للبرمجة مصممة للمشاركين المحترفين في السوق.",
-    "ctaAccessDocs": "الوصول إلى وثائق API",
+    "ctaAccessDocs": "طلب وصول API",
     "ctaContactEng": "تواصل مع الهندسة",
     "engineLabel": "محرك المطابقة",
     "engineTitle": "تنفيذ حتمي للأوامر",
@@ -210,7 +210,7 @@
     "heroAccent": "السيولة المحترفين",
     "heroSubtitle": "دفاتر أوامر عميقة، وهياكل رسوم شفافة، وبنية تحتية بمستوى الأداء مصممة لصناع السوق المحترفين ومزودي السيولة المؤسسيين.",
     "ctaApply": "تقدم كشريك سيولة",
-    "ctaViewDocs": "عرض وثائق API",
+    "ctaViewDocs": "استكشاف التقنية",
     "feeLabel": "نموذج الرسوم",
     "feeTitle": "تسعير تنافسي وشفاف",
     "feeSubtitle": "نموذج رسوم صانع/آخذ واضح مع مستويات قائمة على الحجم وحوافز أداء.",
@@ -389,7 +389,7 @@
     "ctaTitle": "استكشف أسواق IQEX",
     "ctaSubtitle": "تواصل مع فريقنا لمناقشة تغطية الأسواق أو القطاعات المخصصة أو وصول المشغل.",
     "ctaContact": "اتصل بنا",
-    "ctaDocs": "وثائق API"
+    "ctaDocs": "استكشاف التقنية"
   },
   "developers": {
     "pageTitle": "بوابة المطورين",
@@ -595,7 +595,7 @@
     "ctaTitle": "تكامل مسارات دفع Web3",
     "ctaSubtitle": "تواصل معنا لاستكشاف التسوية بالعملات المستقرة والبنية الهجينة للمدفوعات.",
     "ctaContact": "تواصل معنا",
-    "ctaViewApi": "عرض وثائق API"
+    "ctaViewApi": "استكشاف التقنية"
   },
   "privacyPolicy": {
     "pageTitle": "سياسة الخصوصية",

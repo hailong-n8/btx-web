@@ -9,7 +9,7 @@
     "compliance": "コンプライアンス",
     "about": "会社概要",
     "contact": "お問い合わせ",
-    "apiDocs": "APIドキュメント",
+    "apiDocs": "APIアクセス",
     "getStarted": "はじめる",
     "theme": "テーマ",
     "language": "言語"
@@ -27,9 +27,9 @@
     "tennis": "テニス",
     "customMarkets": "カスタムマーケット",
     "developers": "開発者",
-    "apiDocumentation": "APIドキュメント",
-    "sandboxAccess": "サンドボックスアクセス",
-    "statusPage": "ステータスページ",
+    "apiDocumentation": "APIアクセス申請",
+    "sandboxAccess": "統合サポート",
+    "statusPage": "サービス更新情報",
     "company": "企業情報",
     "aboutBtx": "IQEXについて",
     "compliance": "コンプライアンス",
@@ -46,7 +46,7 @@
     "heroTitle2": "グローバルスポーツ",
     "heroTitle3": "マーケット向け",
     "heroSubtitle": "ハイパフォーマンスな取引所テクノロジー、深いプロフェッショナル流動性、そしてプログラマブルAPIが次世代のスポーツトレーディング取引所を支えます。",
-    "ctaAccessApi": "APIにアクセス",
+    "ctaAccessApi": "APIアクセスを申請",
     "ctaLiquidityPartner": "流動性パートナーになる",
     "ctaExploreWhiteLabel": "ホワイトラベルを探る",
     "statGlobalMarkets": "グローバルマーケット",
@@ -92,7 +92,7 @@
     "ctaTitle": "IQEXで構築する準備はできましたか？",
     "ctaSubtitle": "APIアクセス、流動性パートナーシップ、またはホワイトラベル展開について、チームにお問い合わせください。",
     "ctaContact": "お問い合わせ",
-    "ctaViewApi": "APIドキュメントを見る"
+    "ctaViewApi": "テクノロジーを探索"
   },
   "about": {
     "pageTitle": "IQEXについて",
@@ -152,7 +152,7 @@
     "heroTitle": "パフォーマンスのために構築。",
     "heroAccent": "スケールのために設計。",
     "heroSubtitle": "当社の取引所エンジンは、決定論的マッチング、包括的なリスクコントロール、プロフェッショナルなマーケット参加者向けに設計されたプログラマブルAPIによる機関投資家グレードのパフォーマンスを提供。",
-    "ctaAccessDocs": "APIドキュメントにアクセス",
+    "ctaAccessDocs": "APIアクセスを申請",
     "ctaContactEng": "エンジニアリングに問い合わせ",
     "engineLabel": "マッチングエンジン",
     "engineTitle": "決定論的注文約定",
@@ -210,7 +210,7 @@
     "heroAccent": "流動性プロバイダー向けに構築",
     "heroSubtitle": "深い注文板、透明な手数料体系、プロフェッショナルなマーケットメイカーと機関流動性プロバイダー向けに設計されたパフォーマンスグレードのインフラ。",
     "ctaApply": "流動性パートナーとして申請",
-    "ctaViewDocs": "APIドキュメントを見る",
+    "ctaViewDocs": "テクノロジーを探索",
     "feeLabel": "料金モデル",
     "feeTitle": "競争力があり透明な価格設定",
     "feeSubtitle": "ボリュームベースのティアとパフォーマンスインセンティブを備えた明確なメイカー/テイカー料金モデル。",
@@ -389,7 +389,7 @@
     "ctaTitle": "IQEXマーケットを探る",
     "ctaSubtitle": "マーケットカバレッジ、カスタムバーティカル、またはオペレーターアクセスについてチームにお問い合わせください。",
     "ctaContact": "お問い合わせ",
-    "ctaDocs": "APIドキュメント"
+    "ctaDocs": "テクノロジーを探索"
   },
   "developers": {
     "pageTitle": "デベロッパーポータル",
@@ -595,7 +595,7 @@
     "ctaTitle": "Web3 決済レールを統合",
     "ctaSubtitle": "ステーブルコイン決済とハイブリッド決済基盤についてご相談ください。",
     "ctaContact": "お問い合わせ",
-    "ctaViewApi": "API ドキュメントを見る"
+    "ctaViewApi": "テクノロジーを探索"
   },
   "privacyPolicy": {
     "pageTitle": "プライバシーポリシー",

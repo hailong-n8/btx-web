@@ -9,7 +9,7 @@
     "compliance": "合规",
     "about": "关于我们",
     "contact": "联系我们",
-    "apiDocs": "API 文档",
+    "apiDocs": "API 访问",
     "getStarted": "立即开始",
     "theme": "主题",
     "language": "语言"
@@ -27,9 +27,9 @@
     "tennis": "网球",
     "customMarkets": "自定义市场",
     "developers": "开发者",
-    "apiDocumentation": "API 文档",
-    "sandboxAccess": "沙箱环境",
-    "statusPage": "状态页面",
+    "apiDocumentation": "API 访问申请",
+    "sandboxAccess": "集成支持",
+    "statusPage": "服务动态",
     "company": "公司",
     "aboutBtx": "关于 IQEX",
     "compliance": "合规",
@@ -46,7 +46,7 @@
     "heroTitle2": "市场的",
     "heroTitle3": "基础设施层",
     "heroSubtitle": "高性能交易所技术、深度专业流动性和可编程 API，驱动下一代体育交易所。",
-    "ctaAccessApi": "接入 API",
+    "ctaAccessApi": "申请 API 访问",
     "ctaLiquidityPartner": "成为流动性合作伙伴",
     "ctaExploreWhiteLabel": "了解白标方案",
     "statGlobalMarkets": "全球市场",
@@ -92,7 +92,7 @@
     "ctaTitle": "准备好在 IQEX 上构建了吗？",
     "ctaSubtitle": "联系我们的团队，了解 API 接入、流动性合作或白标部署。",
     "ctaContact": "联系我们",
-    "ctaViewApi": "查看 API 文档"
+    "ctaViewApi": "探索技术"
   },
   "about": {
     "pageTitle": "关于 IQEX",
@@ -152,7 +152,7 @@
     "heroTitle": "为性能而生。",
     "heroAccent": "为规模而设计。",
     "heroSubtitle": "我们的交易所引擎提供机构级性能，具备确定性撮合、全面的风控和为专业市场参与者设计的可编程 API。",
-    "ctaAccessDocs": "查阅 API 文档",
+    "ctaAccessDocs": "申请 API 访问",
     "ctaContactEng": "联系工程团队",
     "engineLabel": "撮合引擎",
     "engineTitle": "确定性订单执行",
@@ -210,7 +210,7 @@
     "heroAccent": "流动性提供商而建",
     "heroSubtitle": "深度订单簿、透明的费率结构和高性能基础设施，专为专业做市商和机构流动性提供商设计。",
     "ctaApply": "申请成为流动性合作伙伴",
-    "ctaViewDocs": "查看 API 文档",
+    "ctaViewDocs": "探索技术",
     "feeLabel": "费率模型",
     "feeTitle": "有竞争力且透明的定价",
     "feeSubtitle": "清晰的做市商/吃单方费率模型，提供基于交易量的阶梯优惠和绩效激励。",
@@ -389,7 +389,7 @@
     "ctaTitle": "探索 IQEX 市场",
     "ctaSubtitle": "联系我们的团队，讨论市场覆盖、自定义垂直领域或运营商接入。",
     "ctaContact": "联系我们",
-    "ctaDocs": "API 文档"
+    "ctaDocs": "探索技术"
   },
   "developers": {
     "pageTitle": "开发者门户",
@@ -595,7 +595,7 @@
     "ctaTitle": "接入 Web3 支付通道",
     "ctaSubtitle": "联系我们，评估稳定币结算与混合支付基础设施方案。",
     "ctaContact": "联系我们",
-    "ctaViewApi": "查看 API 文档"
+    "ctaViewApi": "探索技术"
   },
   "privacyPolicy": {
     "pageTitle": "隐私政策",

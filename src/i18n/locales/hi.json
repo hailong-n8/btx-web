@@ -9,7 +9,7 @@
     "compliance": "अनुपालन",
     "about": "हमारे बारे में",
     "contact": "संपर्क",
-    "apiDocs": "API दस्तावेज़",
+    "apiDocs": "API एक्सेस",
     "getStarted": "शुरू करें",
     "theme": "थीम",
     "language": "भाषा"
@@ -27,9 +27,9 @@
     "tennis": "टेनिस",
     "customMarkets": "कस्टम बाज़ार",
     "developers": "डेवलपर्स",
-    "apiDocumentation": "API दस्तावेज़ीकरण",
-    "sandboxAccess": "सैंडबॉक्स एक्सेस",
-    "statusPage": "स्थिति पृष्ठ",
+    "apiDocumentation": "API एक्सेस अनुरोध",
+    "sandboxAccess": "एकीकरण सहायता",
+    "statusPage": "सेवा अपडेट",
     "company": "कंपनी",
     "aboutBtx": "IQEX के बारे में",
     "compliance": "अनुपालन",
@@ -46,7 +46,7 @@
     "heroTitle2": "वैश्विक खेल",
     "heroTitle3": "बाज़ारों के लिए",
     "heroSubtitle": "उच्च-प्रदर्शन एक्सचेंज तकनीक, गहरी पेशेवर तरलता, और प्रोग्रामेबल API जो अगली पीढ़ी के खेल ट्रेडिंग एक्सचेंजों को शक्ति प्रदान करती हैं।",
-    "ctaAccessApi": "API एक्सेस करें",
+    "ctaAccessApi": "API एक्सेस का अनुरोध करें",
     "ctaLiquidityPartner": "तरलता भागीदार बनें",
     "ctaExploreWhiteLabel": "व्हाइट लेबल देखें",
     "statGlobalMarkets": "वैश्विक बाज़ार",
@@ -92,7 +92,7 @@
     "ctaTitle": "IQEX पर निर्माण के लिए तैयार?",
     "ctaSubtitle": "API एक्सेस, तरलता भागीदारी, या व्हाइट-लेबल तैनाती का पता लगाने के लिए हमारी टीम से जुड़ें।",
     "ctaContact": "हमसे संपर्क करें",
-    "ctaViewApi": "API दस्तावेज़ देखें"
+    "ctaViewApi": "प्रौद्योगिकी देखें"
   },
   "about": {
     "pageTitle": "IQEX के बारे में",
@@ -152,7 +152,7 @@
     "heroTitle": "प्रदर्शन के लिए निर्मित। ",
     "heroAccent": "स्केल के लिए डिज़ाइन किया गया।",
     "heroSubtitle": "हमारा एक्सचेंज इंजन डिटरमिनिस्टिक मैचिंग, व्यापक रिस्क कंट्रोल और पेशेवर बाज़ार प्रतिभागियों के लिए डिज़ाइन किए गए प्रोग्रामेबल API के साथ संस्थागत-ग्रेड प्रदर्शन प्रदान करता है।",
-    "ctaAccessDocs": "API दस्तावेज़ एक्सेस करें",
+    "ctaAccessDocs": "API एक्सेस का अनुरोध करें",
     "ctaContactEng": "इंजीनियरिंग से संपर्क करें",
     "engineLabel": "मैचिंग इंजन",
     "engineTitle": "डिटरमिनिस्टिक ऑर्डर निष्पादन",
@@ -210,7 +210,7 @@
     "heroAccent": "तरलता प्रदाताओं के लिए निर्मित",
     "heroSubtitle": "गहरे ऑर्डर बुक्स, पारदर्शी शुल्क संरचनाएँ और पेशेवर मार्केट मेकर्स और संस्थागत तरलता प्रदाताओं के लिए डिज़ाइन किया गया प्रदर्शन-ग्रेड इन्फ्रास्ट्रक्चर।",
     "ctaApply": "तरलता भागीदार के रूप में आवेदन करें",
-    "ctaViewDocs": "API दस्तावेज़ देखें",
+    "ctaViewDocs": "प्रौद्योगिकी देखें",
     "feeLabel": "शुल्क मॉडल",
     "feeTitle": "प्रतिस्पर्धी और पारदर्शी मूल्य निर्धारण",
     "feeSubtitle": "वॉल्यूम-आधारित टियर और प्रदर्शन प्रोत्साहन के साथ एक स्पष्ट मेकर/टेकर शुल्क मॉडल।",
@@ -389,7 +389,7 @@
     "ctaTitle": "IQEX बाज़ार देखें",
     "ctaSubtitle": "बाज़ार कवरेज, कस्टम ऊर्ध्वाधरों या ऑपरेटर एक्सेस पर चर्चा करने के लिए हमारी टीम से संपर्क करें।",
     "ctaContact": "हमसे संपर्क करें",
-    "ctaDocs": "API दस्तावेज़ीकरण"
+    "ctaDocs": "प्रौद्योगिकी देखें"
   },
   "developers": {
     "pageTitle": "डेवलपर पोर्टल",
@@ -595,7 +595,7 @@
     "ctaTitle": "Integrate Web3 Payment Rails",
     "ctaSubtitle": "Connect with our team to explore stablecoin settlement and hybrid payment infrastructure.",
     "ctaContact": "Contact Us",
-    "ctaViewApi": "View API Docs"
+    "ctaViewApi": "प्रौद्योगिकी देखें"
   },
   "privacyPolicy": {
     "pageTitle": "Privacy Policy",
